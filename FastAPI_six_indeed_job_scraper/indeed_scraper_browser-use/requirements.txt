@@ -1,0 +1,16 @@
+dotenv
+browser_use
+langchain_openai
+logging
+playwright
+undetected-chromedriver
+selenium
+selenium-stealth
+packaging
+webdriver-manager
+
+
+browser-use 
+langchain-openai 
+python-dotenv 
+asyncio

@@ -1,0 +1,16 @@
+# round 1
+fastapi==0.95.1
+uvicorn==0.22.0
+
+# round 2
+
+SQLAlchemy==2.0.13 	# ORM for SQL databases
+psycopg2==2.9.6		# PostgreSQL adapter
+
+python-dotenv==1.0.0 	# Load .env variables
+
+# round 3
+
+alembic==1.11.1
+
+

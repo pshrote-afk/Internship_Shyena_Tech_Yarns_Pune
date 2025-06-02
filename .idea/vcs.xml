@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FastAPI_six_indeed_job_scraper/linkedin_scraper_browser-use" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FastAPI_six_indeed_job_scraper/linkedin_scraper_selenium" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/algoholic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pythonPractice" vcs="Git" />
+  </component>
+</project>
