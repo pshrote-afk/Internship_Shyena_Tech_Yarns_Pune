@@ -536,6 +536,38 @@ def scrape_job_listings(driver, page_num=1):
                 driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", job_card)
                 time.sleep(0.5)
 
+                # Extract job URL from card BEFORE clicking
+                job_url = "URL not found"
+                try:
+                    # Multiple possible selectors for the job link
+                    url_selectors = [
+                        ".job-card-list__title",  # CSS selector
+                        "a.job-card-container__link",  # CSS selector
+                        "a[data-tracking-control-name='public_jobs_jserp-job-search-card']",  # CSS selector
+                        ".//a[contains(@class, 'job-card-list__title')]",  # XPath
+                        ".//a[contains(@class, 'job-card-container__link')]",  # XPath
+                    ]
+
+                    for selector in url_selectors:
+                        try:
+                            # Try CSS selector first
+                            if selector.startswith(".") or selector.startswith("a"):
+                                link_element = job_card.find_element(By.CSS_SELECTOR, selector)
+                            else:  # Then try XPath
+                                link_element = job_card.find_element(By.XPATH, selector)
+
+                            href = link_element.get_attribute('href')
+                            if href:
+                                job_url = href
+                                # Handle relative URLs
+                                if job_url.startswith('/'):
+                                    job_url = f"https://www.linkedin.com{job_url}"
+                                break
+                        except:
+                            continue
+                except Exception as url_error:
+                    print(f"⚠️ URL extraction error: {str(url_error)[:80]}...")
+
                 # Click the job using JavaScript
                 driver.execute_script("arguments[0].click();", job_card)
                 time.sleep(1.5)
@@ -578,6 +610,7 @@ def scrape_job_listings(driver, page_num=1):
                     job_data = {
                         "title": title,
                         "company": company if company else "Company not found",
+                        "url": job_url,
                         "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     }
                     jobs.append(job_data)
@@ -674,7 +707,8 @@ def save_to_csv(jobs, JOB_TITLE, filename=None):
 
     try:
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['title', 'company', 'scraped_at']
+            # Updated fieldnames with URL
+            fieldnames = ['title', 'company', 'url', 'scraped_at']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
@@ -732,6 +766,7 @@ def main():
             for idx, job in enumerate(all_jobs[:10], 1):
                 print(f"{idx:2d}. {job['title']}")
                 print(f"    🏢 {job['company']}")
+                print(f"    🔗 {job['url']}")
                 print()
 
             if len(all_jobs) > 10:
