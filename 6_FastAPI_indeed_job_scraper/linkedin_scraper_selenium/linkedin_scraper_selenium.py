@@ -10,6 +10,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.webdriver.common.action_chains import ActionChains
 
 # Load environment variables
 load_dotenv()
@@ -45,28 +46,28 @@ def login_to_linkedin(driver):
     try:
         print("🔐 Starting login process...")
         driver.get("https://www.linkedin.com/login")
-        time.sleep(2)  # Reduced from 3
+        time.sleep(2)
 
         # Wait for and fill email field
-        email_field = WebDriverWait(driver, 8).until(  # Reduced from 10
+        email_field = WebDriverWait(driver, 8).until(
             EC.presence_of_element_located((By.ID, "username"))
         )
         email_field.clear()
         email_field.send_keys(LINKEDIN_EMAIL)
-        time.sleep(0.5)  # Reduced from 1
+        time.sleep(0.5)
 
         # Fill password field
         password_field = driver.find_element(By.ID, "password")
         password_field.clear()
         password_field.send_keys(LINKEDIN_PASSWORD)
-        time.sleep(0.5)  # Reduced from 1
+        time.sleep(0.5)
 
         # Click login button
         login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
         login_button.click()
 
         print("⏳ Waiting for login to complete...")
-        time.sleep(3)  # Reduced from 5
+        time.sleep(3)
 
         # Check for multiple possible post-login scenarios
         try:
@@ -93,7 +94,7 @@ def login_to_linkedin(driver):
             login_successful = False
             for selector in success_selectors:
                 try:
-                    WebDriverWait(driver, 3).until(  # Reduced from 5
+                    WebDriverWait(driver, 3).until(
                         EC.presence_of_element_located((By.XPATH, selector))
                     )
                     login_successful = True
@@ -139,7 +140,7 @@ def apply_job_filters(driver, title, location, date_posted):
     try:
         print("🔍 Navigating to jobs page...")
         driver.get("https://www.linkedin.com/jobs")
-        time.sleep(3)  # Reduced from 5
+        time.sleep(3)
 
         # Check if we're still logged in
         if "authwall" in driver.current_url or "login" in driver.current_url:
@@ -159,7 +160,7 @@ def apply_job_filters(driver, title, location, date_posted):
             title_field = None
             for selector in title_selectors:
                 try:
-                    title_field = WebDriverWait(driver, 3).until(  # Reduced from 5
+                    title_field = WebDriverWait(driver, 3).until(
                         EC.presence_of_element_located((By.XPATH, selector))
                     )
                     break
@@ -171,9 +172,9 @@ def apply_job_filters(driver, title, location, date_posted):
                 return False
 
             title_field.clear()
-            time.sleep(0.5)  # Reduced from 1
+            time.sleep(0.5)
             title_field.send_keys(title)
-            time.sleep(1)  # Reduced from 2
+            time.sleep(1)
 
         except Exception as e:
             print(f"❌ Error entering job title: {e}")
@@ -190,7 +191,7 @@ def apply_job_filters(driver, title, location, date_posted):
             location_field = None
             for selector in location_selectors:
                 try:
-                    location_field = WebDriverWait(driver, 3).until(  # Reduced from 5
+                    location_field = WebDriverWait(driver, 3).until(
                         EC.presence_of_element_located((By.XPATH, selector))
                     )
                     break
@@ -199,13 +200,13 @@ def apply_job_filters(driver, title, location, date_posted):
 
             if location_field:
                 location_field.clear()
-                time.sleep(0.5)  # Reduced from 1
+                time.sleep(0.5)
                 location_field.send_keys(location)
-                time.sleep(1)  # Reduced from 2
+                time.sleep(1)
 
             # Press Enter to search
             title_field.send_keys(Keys.RETURN)
-            time.sleep(3)  # Reduced from 5
+            time.sleep(3)
 
         except Exception as e:
             print(f"⚠️ Warning - location field error: {e}")
@@ -225,7 +226,7 @@ def apply_job_filters(driver, title, location, date_posted):
             date_filter_button = None
             for selector in date_filter_selectors:
                 try:
-                    date_filter_button = WebDriverWait(driver, 3).until(  # Reduced from 5
+                    date_filter_button = WebDriverWait(driver, 3).until(
                         EC.element_to_be_clickable((By.XPATH, selector))
                     )
                     break
@@ -234,7 +235,7 @@ def apply_job_filters(driver, title, location, date_posted):
 
             if date_filter_button:
                 date_filter_button.click()
-                time.sleep(1)  # Reduced from 2
+                time.sleep(1)
 
                 date_options = {
                     "Past 24 hours": ["//label[@for='date-posted-r86400']", "//span[text()='Past 24 hours']"],
@@ -246,7 +247,7 @@ def apply_job_filters(driver, title, location, date_posted):
                     option_clicked = False
                     for option_selector in date_options[date_posted]:
                         try:
-                            WebDriverWait(driver, 2).until(  # Reduced from 3
+                            WebDriverWait(driver, 2).until(
                                 EC.element_to_be_clickable((By.XPATH, option_selector))
                             ).click()
                             option_clicked = True
@@ -255,7 +256,7 @@ def apply_job_filters(driver, title, location, date_posted):
                             continue
 
                     if option_clicked:
-                        time.sleep(1)  # Reduced from 2
+                        time.sleep(1)
                         # Click Apply button
                         apply_selectors = [
                             "//button[contains(@aria-label, 'Apply current filter')]",
@@ -265,14 +266,14 @@ def apply_job_filters(driver, title, location, date_posted):
 
                         for apply_selector in apply_selectors:
                             try:
-                                WebDriverWait(driver, 2).until(  # Reduced from 3
+                                WebDriverWait(driver, 2).until(
                                     EC.element_to_be_clickable((By.XPATH, apply_selector))
                                 ).click()
                                 break
                             except TimeoutException:
                                 continue
 
-                        time.sleep(2)  # Reduced from 3
+                        time.sleep(2)
 
         except Exception as e:
             print(f"⚠️ Warning - date filter error: {e}")
@@ -291,25 +292,127 @@ def apply_job_filters(driver, title, location, date_posted):
         return False
 
 
-def scrape_job_listings(driver):
+def get_total_pages(driver):
+    """Try to determine total number of pages available."""
+    try:
+        # Look for pagination info
+        pagination_selectors = [
+            "//li[contains(@class, 'artdeco-pagination__indicator--number')]",
+            "//button[contains(@aria-label, 'Page')]",
+            "//span[contains(@class, 'artdeco-pagination__pages-count')]"
+        ]
+
+        max_page = 1
+        for selector in pagination_selectors:
+            try:
+                elements = driver.find_elements(By.XPATH, selector)
+                for element in elements:
+                    try:
+                        page_num = int(element.text.strip())
+                        max_page = max(max_page, page_num)
+                    except:
+                        continue
+                if max_page > 1:
+                    break
+            except:
+                continue
+
+        return max_page if max_page > 1 else None
+    except:
+        return None
+
+
+def navigate_to_next_page(driver, current_page, max_retries=3):
+    """Navigate to the next page with enhanced selector logic."""
+    for attempt in range(max_retries):
+        try:
+            print(f"🔄 Attempting to navigate to page {current_page + 1} (attempt {attempt + 1}/{max_retries})")
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)
+
+            # Enhanced selectors for pagination buttons
+            next_button_selectors = [
+                f"//button[@aria-label='Page {current_page + 1}']",
+                f"//li[@data-test-pagination-page-btn='{current_page + 1}']//button",
+                "//button[contains(@aria-label, 'Next')]",
+                "//button[contains(@class, 'artdeco-pagination__button--next')]",
+                "//li[contains(@class, 'artdeco-pagination__indicator--next')]//button",  # New selector
+                f"//button[text()='{current_page + 1}']",
+                f"//a[text()='{current_page + 1}']"
+            ]
+
+            # Try each selector with extended timeout
+            next_button = None
+            for selector in next_button_selectors:
+                try:
+                    next_button = WebDriverWait(driver, 5).until(
+                        EC.element_to_be_clickable((By.XPATH, selector)))
+                    print(f"   ✅ Found next button with selector: {selector}")
+                    break
+                except TimeoutException:
+                    continue
+
+            if not next_button:
+                print(f"   ❌ No next button found on attempt {attempt + 1}")
+                # Final attempt: look for "See more jobs" button
+                if attempt == max_retries - 1:
+                    try:
+                        see_more = WebDriverWait(driver, 3).until(
+                            EC.element_to_be_clickable((By.XPATH,
+                                                        "//button[contains(., 'See more jobs')]")))
+                        print("   🔄 Found 'See more jobs' button instead")
+                        driver.execute_script("arguments[0].click();", see_more)
+                        time.sleep(3)
+                        return True
+                    except:
+                        pass
+                continue
+
+            # Click using JavaScript to avoid interception
+            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", next_button)
+            time.sleep(0.5)
+            driver.execute_script("arguments[0].click();", next_button)
+            time.sleep(1.5)
+
+            # Verify navigation by checking URL change
+            start_param = f"start={current_page * 25}"
+            for _ in range(8):
+                if start_param in driver.current_url:
+                    print(f"   ✅ Successfully navigated to page {current_page + 1}")
+                    time.sleep(random.uniform(2, 4))
+                    return True
+                time.sleep(1)
+
+            print(f"   ⚠️ Page might not have loaded properly")
+            return False
+
+        except Exception as e:
+            print(f"   ❌ Navigation error: {str(e)[:80]}...")
+            time.sleep(3)
+
+    print(f"   ❌ Failed to navigate to page {current_page + 1}")
+    return False
+
+
+def scrape_job_listings(driver, page_num=1):
     """Scrape job listings with enhanced scrolling simulation."""
     jobs = []
     try:
-        print("📊 Scraping job listings...")
+        print(f"📊 Scraping job listings from page {page_num}...")
 
         # Wait for initial load
         time.sleep(3)
 
         # Get initial job count
         initial_jobs = driver.find_elements(By.XPATH, "//div[contains(@class, 'job-card-container')]")
-        print(f"📊 Initial job count: {len(initial_jobs)}")
+        print(f"📊 Initial job count on page {page_num}: {len(initial_jobs)}")
 
         # Find the scrollable container
         scroll_target = None
         scroll_selectors = [
-            ".jobs-search-results-list",  # Primary container
-            ".scaffold-layout__list",  # Alternative container
-            ".jobs-search-results",  # Another possible container
+            ".jobs-search-results-list",
+            ".scaffold-layout__list",
+            ".jobs-search-results",
             ".scaffold-layout__list-detail-inner",
             ".artdeco-list"
         ]
@@ -327,7 +430,7 @@ def scrape_job_listings(driver):
             scroll_target = driver.find_element(By.TAG_NAME, "body")
 
         # Enhanced scrolling simulation
-        print("\n🖱️ Simulating enhanced scrolling behavior...")
+        print(f"\n🖱️ Simulating enhanced scrolling behavior on page {page_num}...")
 
         from selenium.webdriver import ActionChains
         from selenium.webdriver.common.keys import Keys
@@ -337,7 +440,7 @@ def scrape_job_listings(driver):
         actions.move_to_element(scroll_target).perform()
         time.sleep(0.5)
 
-        max_scroll_attempts = 10
+        max_scroll_attempts = 15  # Increased for more thorough scraping
         jobs_loaded_count = len(initial_jobs)
         no_new_jobs_streak = 0
         last_height = 0
@@ -420,44 +523,29 @@ def scrape_job_listings(driver):
 
         # Final count
         final_jobs = driver.find_elements(By.XPATH, "//div[contains(@class, 'job-card-container')]")
-        print(f"\n🎯 Final job count: {len(final_jobs)} (started with {len(initial_jobs)})")
+        print(f"\n🎯 Final job count on page {page_num}: {len(final_jobs)} (started with {len(initial_jobs)})")
 
-        # If we still have few jobs, try loading more by scrolling to very bottom
-        if len(final_jobs) < 15:
-            print("\n🔄 Final attempt: Scroll to very bottom with longer waits...")
-            for _ in range(3):
-                driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", scroll_target)
-                time.sleep(3)
-                loading_indicators = driver.find_elements(By.XPATH,
-                                                          "//*[contains(@class, 'loading') or contains(@class, 'spinner')]")
-                if loading_indicators:
-                    time.sleep(5)
+        # Process all the jobs we found - scrape ALL jobs on the page
+        print(f"\n🎯 Processing all {len(final_jobs)} jobs on page {page_num}...")
 
-            final_jobs = driver.find_elements(By.XPATH, "//div[contains(@class, 'job-card-container')]")
-            print(f"   Final count after bottom scroll: {len(final_jobs)}")
-
-        # Process all the jobs we found
-        print(f"\n🎯 Processing {min(30, len(final_jobs))} jobs...")
-
-        for idx, job_card in enumerate(final_jobs[:30]):
+        for idx, job_card in enumerate(final_jobs):
             try:
-                print(f"🔍 Processing job {idx + 1}/{min(30, len(final_jobs))}...")
+                print(f"🔍 Processing job {idx + 1}/{len(final_jobs)} on page {page_num}...")
 
                 # Scroll job into view
                 driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", job_card)
                 time.sleep(0.5)
 
-                # Click the job using JavaScript as it's more reliable
+                # Click the job using JavaScript
                 driver.execute_script("arguments[0].click();", job_card)
                 time.sleep(1.5)
 
-                # Extract job details with improved selectors
+                # Extract job details
                 title = ""
                 company = ""
 
                 # Get title
                 title_selectors = [
-
                     "//h1[contains(@class, 't-24')]"
                 ]
 
@@ -487,26 +575,88 @@ def scrape_job_listings(driver):
                         continue
 
                 if title:
-                    jobs.append({
+                    job_data = {
                         "title": title,
                         "company": company if company else "Company not found",
                         "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    })
+                    }
+                    jobs.append(job_data)
                     print(f"✅ {title} at {company if company else 'Unknown'}")
                 else:
                     print(f"⚠️ Could not get title for job {idx + 1}")
 
             except Exception as job_error:
-                print(f"⚠️ Error processing job {idx + 1}: {str(job_error)[:80]}...")
+                print(f"⚠️ Error processing job {idx + 1} on page {page_num}: {str(job_error)[:80]}...")
                 continue
 
+        print(f"\n📋 Page {page_num} Summary: Successfully scraped {len(jobs)} jobs")
         return jobs
 
     except Exception as e:
-        print(f"❌ Scraping failed: {e}")
+        print(f"❌ Scraping failed on page {page_num}: {e}")
         import traceback
         traceback.print_exc()
         return jobs
+
+
+def scrape_all_pages(driver):
+    """Scrape jobs from all available pages."""
+    all_jobs = []
+    current_page = 1
+    max_page_attempts = 5  # Safety limit to prevent infinite loops
+
+    print("\n" + "=" * 60)
+    print("🚀 STARTING MULTI-PAGE SCRAPING")
+    print("=" * 60)
+
+    # Try to get total pages
+    total_pages = get_total_pages(driver)
+    if total_pages:
+        print(f"📊 Detected approximately {total_pages} pages available")
+    else:
+        print("📊 Could not determine total pages - will scrape until no more pages")
+
+    while current_page <= max_page_attempts:
+        print(f"\n{'=' * 20} PAGE {current_page} {'=' * 20}")
+
+        if total_pages:
+            print(f"📄 Processing page {current_page} of ~{total_pages}")
+        else:
+            print(f"📄 Processing page {current_page}")
+
+        # Scrape current page
+        page_jobs = scrape_job_listings(driver, current_page)
+
+        if page_jobs:
+            all_jobs.extend(page_jobs)
+            print(f"✅ Added {len(page_jobs)} jobs from page {current_page}")
+            print(f"📊 Total jobs collected so far: {len(all_jobs)}")
+        else:
+            print(f"⚠️ No jobs found on page {current_page}")
+            if current_page == 1:
+                print("❌ No jobs found on first page. Stopping.")
+                break
+
+        # Try to navigate to next page
+        print(f"\n🔄 Attempting to navigate from page {current_page} to page {current_page + 1}...")
+
+        if navigate_to_next_page(driver, current_page):
+            current_page += 1
+            print(f"✅ Successfully moved to page {current_page}")
+        else:
+            print(f"🔚 No more pages available after page {current_page}")
+            break
+
+        # Extra safety delay between pages
+        extra_delay = random.uniform(1, 3)
+        print(f"⏱️ Extra safety delay: {extra_delay:.1f} seconds")
+        time.sleep(extra_delay)
+
+    print(f"\n🎉 SCRAPING COMPLETE!")
+    print(f"📊 Total pages processed: {current_page}")
+    print(f"📊 Total jobs collected: {len(all_jobs)}")
+
+    return all_jobs
 
 
 def save_to_csv(jobs, JOB_TITLE, filename=None):
@@ -546,7 +696,7 @@ def main():
         JOB_TITLE = "Data Scientist"
         DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 
-        print("🚀 Starting LinkedIn Job Scraper...")
+        print("🚀 Starting LinkedIn Job Scraper with Pagination...")
         print(f"🎯 Searching for: {JOB_TITLE}")
         print(f"📍 Location: {LOCATION}")
         print(f"📅 Date filter: {DATE_POSTED}")
@@ -557,27 +707,35 @@ def main():
             print("❌ Login failed. Exiting...")
             return
 
-        time.sleep(2)  # Reduced from 3
+        time.sleep(2)
 
         if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED):
             print("❌ Filter application failed. Exiting...")
             return
 
-        jobs = scrape_job_listings(driver)
+        # Scrape all pages
+        all_jobs = scrape_all_pages(driver)
 
-        # Save to CSV
-        save_to_csv(jobs,JOB_TITLE)
+        # Save all jobs to single CSV
+        save_to_csv(all_jobs, JOB_TITLE)
 
-        # Print results
+        # Print final results
         print("\n" + "=" * 60)
-        print("📊 SCRAPED JOBS SUMMARY")
+        print("📊 FINAL SCRAPING SUMMARY")
         print("=" * 60)
 
-        if jobs:
-            for idx, job in enumerate(jobs, 1):
+        if all_jobs:
+            print(f"✅ Successfully scraped {len(all_jobs)} jobs across multiple pages")
+
+            # Show sample of jobs
+            print(f"\n📋 Sample of scraped jobs (showing first 10):")
+            for idx, job in enumerate(all_jobs[:10], 1):
                 print(f"{idx:2d}. {job['title']}")
                 print(f"    🏢 {job['company']}")
                 print()
+
+            if len(all_jobs) > 10:
+                print(f"... and {len(all_jobs) - 10} more jobs")
         else:
             print("❌ No jobs found. This could be due to:")
             print("   • LinkedIn's anti-bot measures")
@@ -585,10 +743,12 @@ def main():
             print("   • Network connectivity issues")
             print("   • Invalid search parameters")
 
-        print(f"Total jobs found: {len(jobs)}")
+        print(f"\n🎯 Total jobs scraped: {len(all_jobs)}")
 
     except Exception as main_error:
         print(f"❌ Main execution error: {main_error}")
+        import traceback
+        traceback.print_exc()
     finally:
         print("\n🔚 Closing browser...")
         driver.quit()
