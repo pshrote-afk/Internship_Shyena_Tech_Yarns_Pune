@@ -509,7 +509,7 @@ def scrape_job_listings(driver):
         return jobs
 
 
-def save_to_csv(jobs, filename=None):
+def save_to_csv(jobs, JOB_TITLE, filename=None):
     """Save jobs data to CSV file."""
     if not jobs:
         print("❌ No jobs to save")
@@ -517,7 +517,10 @@ def save_to_csv(jobs, filename=None):
 
     if not filename:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"linkedin_jobs_{timestamp}.csv"
+        folder_name = "scraped_data"
+        if not os.path.exists(folder_name):
+            os.makedirs(folder_name)
+        filename = f"{folder_name}/linkedin_{JOB_TITLE}_jobs_{timestamp}.csv"
 
     try:
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
@@ -540,7 +543,7 @@ def main():
     try:
         # User-defined search parameters
         LOCATION = "United States"
-        JOB_TITLE = "Human REsources"
+        JOB_TITLE = "Data Scientist"
         DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 
         print("🚀 Starting LinkedIn Job Scraper...")
@@ -563,7 +566,7 @@ def main():
         jobs = scrape_job_listings(driver)
 
         # Save to CSV
-        save_to_csv(jobs)
+        save_to_csv(jobs,JOB_TITLE)
 
         # Print results
         print("\n" + "=" * 60)
