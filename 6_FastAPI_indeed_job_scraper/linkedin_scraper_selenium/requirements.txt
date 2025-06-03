@@ -1,2 +1,7 @@
 dotenv	
 selenium
+pandas
+langchain_openai
+langchain
+
+

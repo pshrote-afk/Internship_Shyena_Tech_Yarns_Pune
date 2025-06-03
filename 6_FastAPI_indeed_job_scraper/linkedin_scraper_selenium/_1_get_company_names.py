@@ -336,7 +336,7 @@ def navigate_to_next_page(driver, current_page, max_retries=3):
                 f"//li[@data-test-pagination-page-btn='{current_page + 1}']//button",
                 "//button[contains(@aria-label, 'Next')]",
                 "//button[contains(@class, 'artdeco-pagination__button--next')]",
-                "//li[contains(@class, 'artdeco-pagination__indicator--next')]//button",  # New selector
+                "//li[contains(@class, 'artdeco-pagination__indicator--next')]//button",
                 f"//button[text()='{current_page + 1}']",
                 f"//a[text()='{current_page + 1}']"
             ]
@@ -432,8 +432,6 @@ def scrape_job_listings(driver, page_num=1):
         # Enhanced scrolling simulation
         print(f"\n🖱️ Simulating enhanced scrolling behavior on page {page_num}...")
 
-        from selenium.webdriver import ActionChains
-        from selenium.webdriver.common.keys import Keys
 
         # Focus on the scroll area
         actions = ActionChains(driver)
@@ -606,15 +604,41 @@ def scrape_job_listings(driver, page_num=1):
                     except:
                         continue
 
+                # Get location - NEW CODE
+                location = "Location not found"
+                location_selectors = [
+                    "//span[contains(@class, 'jobs-unified-top-card__bullet')]",
+                    "//span[contains(@class, 'jobs-unified-top-card__subtitle-item')]",
+                    "//div[contains(@class, 'jobs-unified-top-card__company-name')]/following-sibling::div//li[1]",
+                    "//div[contains(@class, 'jobs-unified-top-card__primary-description')]//span",
+                    "//div[contains(@class, 'job-details-jobs-unified-top-card__primary-description')]//span",
+                    "//span[contains(@class, 'topcard__flavor--bullet')]"
+                ]
+
+                for selector in location_selectors:
+                    try:
+                        location_element = WebDriverWait(driver, 1).until(
+                            EC.presence_of_element_located((By.XPATH, selector))
+                        )
+                        location = location_element.text.strip()
+                        if location:  # Only break if we got actual text
+                            break
+                    except:
+                        continue
+
+                # Clean up location text
+                location = location.replace('\n', ' ').replace('  ', ' ').strip()
+
                 if title:
                     job_data = {
                         "title": title,
                         "company": company if company else "Company not found",
+                        "location": location,
                         "url": job_url,
                         "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     }
                     jobs.append(job_data)
-                    print(f"✅ {title} at {company if company else 'Unknown'}")
+                    print(f"✅ {title} at {company if company else 'Unknown'} in {location}")
                 else:
                     print(f"⚠️ Could not get title for job {idx + 1}")
 
@@ -636,7 +660,7 @@ def scrape_all_pages(driver):
     """Scrape jobs from all available pages."""
     all_jobs = []
     current_page = 1
-    max_page_attempts = 5  # Safety limit to prevent infinite loops
+    max_page_attempts = 2  # Safety limit to prevent infinite loops. Default: 50
 
     print("\n" + "=" * 60)
     print("🚀 STARTING MULTI-PAGE SCRAPING")
@@ -700,15 +724,15 @@ def save_to_csv(jobs, JOB_TITLE, filename=None):
 
     if not filename:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        folder_name = "scraped_data"
+        folder_name = "1_get_company_names"
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
-        filename = f"{folder_name}/linkedin_{JOB_TITLE}_jobs_{timestamp}.csv"
+        filename = f"scraped_data/{folder_name}/linkedin_{JOB_TITLE}_jobs_{timestamp}.csv"
 
     try:
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            # Updated fieldnames with URL
-            fieldnames = ['title', 'company', 'url', 'scraped_at']
+            # Updated fieldnames with location
+            fieldnames = ['title', 'company', 'location', 'url', 'scraped_at']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
             writer.writeheader()
@@ -727,7 +751,7 @@ def main():
     try:
         # User-defined search parameters
         LOCATION = "United States"
-        JOB_TITLE = "Data Scientist"
+        JOB_TITLE = "Machine Learning"
         DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 
         print("🚀 Starting LinkedIn Job Scraper with Pagination...")
@@ -766,6 +790,7 @@ def main():
             for idx, job in enumerate(all_jobs[:10], 1):
                 print(f"{idx:2d}. {job['title']}")
                 print(f"    🏢 {job['company']}")
+                print(f"    📍 {job['location']}")
                 print(f"    🔗 {job['url']}")
                 print()
 

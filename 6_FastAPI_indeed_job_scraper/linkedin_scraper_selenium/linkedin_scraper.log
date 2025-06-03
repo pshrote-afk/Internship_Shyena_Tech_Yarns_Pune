@@ -1,0 +1,95 @@
+2025-06-03 15:30:26,500 - INFO - Created directory: ./scraped_data/2_get_company_size_data
+2025-06-03 15:30:26,810 - WARNING - The chromedriver version (136.0.7103.113) detected in PATH at C:\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (137.0.7151.56); currently, chromedriver 137.0.7151.68 is recommended for chrome 137.*, so it is advised to delete the driver in PATH and retry
+2025-06-03 15:30:28,220 - INFO - Chrome driver initialized successfully
+2025-06-03 15:30:28,220 - INFO - Reading CSV file: ./scraped_data/1_get_company_names/linkedin_Machine Learning_jobs_20250603_113313.csv
+2025-06-03 15:30:28,225 - INFO - Found 43 unique companies
+2025-06-03 15:30:28,225 - INFO - Remaining companies to process: 43
+2025-06-03 15:30:50,426 - INFO - Successfully logged into LinkedIn
+2025-06-03 15:30:53,443 - INFO - 
+--- Processing 1/43: Sponsor a Pet ---
+2025-06-03 15:30:53,443 - INFO - Processing Sponsor a Pet (attempt 1)
+2025-06-03 15:31:19,456 - WARNING - Could not find companies filter for Sponsor a Pet
+2025-06-03 15:31:29,685 - ERROR - Error searching for company Sponsor a Pet: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EB6CF45+75717]
+	GetHandleVerifier [0x00007FF62EB6CFA0+75808]
+	(No symbol) [0x00007FF62E938F9A]
+	(No symbol) [0x00007FF62E98F4C6]
+	(No symbol) [0x00007FF62E98F77C]
+	(No symbol) [0x00007FF62E9E2577]
+	(No symbol) [0x00007FF62E9B73BF]
+	(No symbol) [0x00007FF62E9DF39C]
+	(No symbol) [0x00007FF62E9B7153]
+	(No symbol) [0x00007FF62E980421]
+	(No symbol) [0x00007FF62E9811B3]
+	GetHandleVerifier [0x00007FF62EE6D71D+3223453]
+	GetHandleVerifier [0x00007FF62EE67CC2+3200322]
+	GetHandleVerifier [0x00007FF62EE85AF3+3322739]
+	GetHandleVerifier [0x00007FF62EB86A1A+180890]
+	GetHandleVerifier [0x00007FF62EB8E11F+211359]
+	GetHandleVerifier [0x00007FF62EB75294+109332]
+	GetHandleVerifier [0x00007FF62EB75442+109762]
+	GetHandleVerifier [0x00007FF62EB5BA59+4825]
+	BaseThreadInitThunk [0x00007FFA39657374+20]
+	RtlUserThreadStart [0x00007FFA3AA9CC91+33]
+
+2025-06-03 15:31:29,685 - INFO - Retrying Sponsor a Pet in 5 seconds...
+2025-06-03 15:31:36,577 - INFO - Processing Sponsor a Pet (attempt 2)
+2025-06-03 15:32:23,353 - WARNING - Could not find companies filter for Sponsor a Pet
+2025-06-03 15:32:33,580 - ERROR - Error searching for company Sponsor a Pet: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EB6CF45+75717]
+	GetHandleVerifier [0x00007FF62EB6CFA0+75808]
+	(No symbol) [0x00007FF62E938F9A]
+	(No symbol) [0x00007FF62E98F4C6]
+	(No symbol) [0x00007FF62E98F77C]
+	(No symbol) [0x00007FF62E9E2577]
+	(No symbol) [0x00007FF62E9B73BF]
+	(No symbol) [0x00007FF62E9DF39C]
+	(No symbol) [0x00007FF62E9B7153]
+	(No symbol) [0x00007FF62E980421]
+	(No symbol) [0x00007FF62E9811B3]
+	GetHandleVerifier [0x00007FF62EE6D71D+3223453]
+	GetHandleVerifier [0x00007FF62EE67CC2+3200322]
+	GetHandleVerifier [0x00007FF62EE85AF3+3322739]
+	GetHandleVerifier [0x00007FF62EB86A1A+180890]
+	GetHandleVerifier [0x00007FF62EB8E11F+211359]
+	GetHandleVerifier [0x00007FF62EB75294+109332]
+	GetHandleVerifier [0x00007FF62EB75442+109762]
+	GetHandleVerifier [0x00007FF62EB5BA59+4825]
+	BaseThreadInitThunk [0x00007FFA39657374+20]
+	RtlUserThreadStart [0x00007FFA3AA9CC91+33]
+
+2025-06-03 15:32:33,580 - INFO - Retrying Sponsor a Pet in 5 seconds...
+2025-06-03 15:32:40,725 - INFO - Processing Sponsor a Pet (attempt 3)
+2025-06-03 15:33:05,921 - WARNING - Could not find companies filter for Sponsor a Pet
+2025-06-03 15:33:16,147 - ERROR - Error searching for company Sponsor a Pet: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF62EB6CF45+75717]
+	GetHandleVerifier [0x00007FF62EB6CFA0+75808]
+	(No symbol) [0x00007FF62E938F9A]
+	(No symbol) [0x00007FF62E98F4C6]
+	(No symbol) [0x00007FF62E98F77C]
+	(No symbol) [0x00007FF62E9E2577]
+	(No symbol) [0x00007FF62E9B73BF]
+	(No symbol) [0x00007FF62E9DF39C]
+	(No symbol) [0x00007FF62E9B7153]
+	(No symbol) [0x00007FF62E980421]
+	(No symbol) [0x00007FF62E9811B3]
+	GetHandleVerifier [0x00007FF62EE6D71D+3223453]
+	GetHandleVerifier [0x00007FF62EE67CC2+3200322]
+	GetHandleVerifier [0x00007FF62EE85AF3+3322739]
+	GetHandleVerifier [0x00007FF62EB86A1A+180890]
+	GetHandleVerifier [0x00007FF62EB8E11F+211359]
+	GetHandleVerifier [0x00007FF62EB75294+109332]
+	GetHandleVerifier [0x00007FF62EB75442+109762]
+	GetHandleVerifier [0x00007FF62EB5BA59+4825]
+	BaseThreadInitThunk [0x00007FFA39657374+20]
+	RtlUserThreadStart [0x00007FFA3AA9CC91+33]
+
+2025-06-03 15:33:24,866 - INFO - 
+--- Processing 2/43: Capital One ---
+2025-06-03 15:33:24,867 - INFO - Processing Capital One (attempt 1)
+2025-06-03 15:33:49,361 - WARNING - Could not find companies filter for Capital One
+2025-06-03 15:33:58,052 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/ea3e63b5c9d31092db20ed9fd4df6b70
+2025-06-03 15:34:02,149 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001ED793CA350>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/ea3e63b5c9d31092db20ed9fd4df6b70
