@@ -35,6 +35,41 @@ load_dotenv()
 LINKEDIN_EMAIL = os.getenv('LINKEDIN_EMAIL')
 LINKEDIN_PASSWORD = os.getenv('LINKEDIN_PASSWORD')
 
+# my new fav function
+def extract_website_and_company_size_info(about_section_text):
+    """
+    Extracts website and company size information from about section text.
+
+    Args:
+        about_section_text (str): The input text containing company information
+
+    Returns:
+        tuple: (website, company_size) - extracted information or "unknown" if not found
+    """
+    lines = about_section_text.split('\n')
+    website = "unknown"
+    company_size = "unknown"
+
+    for i, line in enumerate(lines):
+        line = line.strip()
+
+        # Check for Website keyword
+        if line == "Website":
+            # Check if next line exists and contains "www"
+            if i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                if "www" in next_line:
+                    website = next_line
+
+        # Check for Company size keyword
+        if line == "Company size":
+            # Check if next line exists and contains "employees"
+            if i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                if "employees" in next_line:
+                    company_size = next_line
+
+    return website, company_size
 
 def save_progress():
     """Save current progress to file"""
@@ -48,7 +83,6 @@ def save_progress():
     }
     with open(progress_file, 'w') as f:
         json.dump(progress_data, f, indent=2)
-
 
 def load_progress():
     """Load progress from file if exists"""
@@ -166,7 +200,7 @@ def process_company(driver, company_name):
             search_box.send_keys(Keys.RETURN)
             random_delay(2, 4)
         except Exception as e:
-            print(f"Search failed for {company_name}: {str(e)}")
+            print(f"Search failed for {company_name}")
             raise
 
         # Apply company filter
@@ -198,60 +232,28 @@ def process_company(driver, company_name):
             print(f"About tab not found for {company_name}")
             raise
 
-        # Extract website - more robust method
-        website = "unknown"
+            # Print all About section data
         try:
-            # Try multiple possible selectors
-            selectors = [
-                "//dt[text()='Website']/following-sibling::dd[1]/a",
-                "//div[contains(@class,'about-us__website')]//a",
-                "//a[contains(@data-tracking-control-name,'about_website')]",
-                "//a[contains(@data-tracking-control-name,'about_website_link')]"
-            ]
+            about_section = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//section[contains(@class,'about')]")))
 
-            for selector in selectors:
-                try:
-                    website_element = WebDriverWait(driver, 3).until(
-                        EC.visibility_of_element_located((By.XPATH, selector)))
-                    website = website_element.get_attribute('href')
-                    print(f"Found website: {website}")
-                    break
-                except:
-                    continue
-
-            company_website_dict[company_name] = website
+            website, company_size = extract_website_and_company_size_info(about_section.text)
+            print("------------------")
+            print(website)
+            print(company_size)
+            print("------------------\n")
 
         except Exception as e:
-            print(f"Website extraction failed: {str(e)}")
-            company_website_dict[company_name] = "unknown"
-
-        # Extract company size - more robust method
-        size_text = "unknown"
-        try:
-            # Try multiple possible selectors
-            selectors = [
-                "//dt[text()='Company size']/following-sibling::dd[1]",
-                "//div[contains(@class,'about-us__size')]//dd",
-                "//div[contains(@class,'about-us__employee-count')]//dd",
-                "//dt[contains(text(),'Company size')]/following-sibling::dd[1]"
-            ]
-
-            for selector in selectors:
-                try:
-                    size_element = WebDriverWait(driver, 3).until(
-                        EC.visibility_of_element_located((By.XPATH, selector)))
-                    size_text = size_element.text.split('\n')[0]  # Handle multi-line text
-                    print(f"Found company size: {size_text}")
-                    break
-                except:
-                    continue
-
-            bucket = get_employee_bucket(size_text)
-            company_size_dict[bucket].add(company_name)
+            print(f"Could not extract full About section")
 
         except Exception as e:
-            print(f"Company size extraction failed: {str(e)}")
-            company_size_dict["unknown"].add(company_name)
+            print(f"About tab not found for {company_name}")
+            raise
+
+        company_website_dict[company_name] = website
+
+        bucket = get_employee_bucket(company_size)
+        company_size_dict[bucket].add(company_name)
 
         # Mark as processed
         processed_companies.add(company_name)
