@@ -127,20 +127,7 @@ def handle_captcha():
     input("Press ENTER to continue after solving CAPTCHA...")
 
 
-def login_to_linkedin(driver):
-    """Login to LinkedIn with credentials"""
-    driver.get("https://www.linkedin.com/login")
-    try:
-        human_type(WebDriverWait(driver, 20).until(
-            EC.visibility_of_element_located((By.ID, "username"))), LINKEDIN_EMAIL)
-        password_field = driver.find_element(By.ID, "password")
-        human_type(password_field, LINKEDIN_PASSWORD)
-        password_field.send_keys(Keys.RETURN)
-        WebDriverWait(driver, 20).until(EC.url_contains("feed"))
-        print("Login successful")
-    except Exception as e:
-        print(f"Login failed: {str(e)}")
-        raise
+
 
 
 def get_employee_bucket(size_str):
@@ -285,28 +272,10 @@ def process_company(driver, company_name):
             pass
 
 
-def scrape_company_data(csv_file_path):
+def scrape_company_data(driver,csv_file_path):
     """Main function to scrape company data"""
     # Load any existing progress
     load_progress()
-
-    # Configure Chrome options (headless=False as requested)
-    chrome_options = webdriver.ChromeOptions()
-
-    chrome_options.add_argument("--start-maximized")
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    chrome_options.add_experimental_option('useAutomationExtension', False)
-    chrome_options.add_argument(
-        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-    # Add these to reduce detection and improve speed
-    chrome_options.add_argument("--disable-web-security")
-    chrome_options.add_argument("--allow-running-insecure-content")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-
-
-    driver = webdriver.Chrome(options=chrome_options)
 
     try:
         # Read company names from CSV
@@ -329,7 +298,7 @@ def scrape_company_data(csv_file_path):
         print(f"Found {total_companies} companies to process")
 
         # Login to LinkedIn
-        login_to_linkedin(driver)
+
 
         # Process companies
         for idx, company in enumerate(companies_to_process, 1):
@@ -380,5 +349,22 @@ def scrape_company_data(csv_file_path):
 # This allows the script to be run directly if needed
 if __name__ == "__main__":
     # Default path if run directly
+    # Configure Chrome options (headless=False as requested)
+    chrome_options = webdriver.ChromeOptions()
+
+    chrome_options.add_argument("--start-maximized")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    chrome_options.add_experimental_option('useAutomationExtension', False)
+    chrome_options.add_argument(
+        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+    # Add these to reduce detection and improve speed
+    chrome_options.add_argument("--disable-web-security")
+    chrome_options.add_argument("--allow-running-insecure-content")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+
+    driver = webdriver.Chrome(options=chrome_options)
+
     csv_path = "./scraped_data/1_scrape_job_data/scraped_jobs.csv"
-    scrape_company_data(csv_path)
+    scrape_company_data(driver,csv_path)
