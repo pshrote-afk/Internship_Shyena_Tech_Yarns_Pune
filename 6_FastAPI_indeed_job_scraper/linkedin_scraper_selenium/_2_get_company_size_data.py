@@ -148,25 +148,35 @@ def get_employee_bucket(size_str):
     if not size_str or size_str.lower() == 'unknown':
         return "unknown"
 
+    # Clean and normalize the string
     clean_str = size_str.replace(',', '').replace(' ', '').lower()
 
+    # Remove non-numeric characters except digits, '+', and '-'
+    clean_str = ''.join(c for c in clean_str if c.isdigit() or c in '+-')
+
+    # Handle different formats
     if '-' in clean_str:
+        # Handle ranges like "2-10" or "1001-5000"
         parts = clean_str.split('-')
         try:
-            max_val = int(parts[1])
+            # Take the upper bound of the range
+            max_val = int(parts[1]) if parts[1] else int(parts[0])
         except (ValueError, IndexError):
             return "unknown"
     elif '+' in clean_str:
+        # Handle "10000+" cases
         try:
             max_val = int(clean_str.split('+')[0])
         except ValueError:
             return "unknown"
     else:
+        # Handle single number cases
         try:
             max_val = int(clean_str)
         except ValueError:
             return "unknown"
 
+    # Categorize based on the max value
     if max_val <= 10:
         return "1-10 employees"
     elif max_val <= 50:
