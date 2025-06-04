@@ -58,7 +58,7 @@ def extract_website_and_company_size_info(about_section_text):
             # Check if next line exists and contains "www"
             if i + 1 < len(lines):
                 next_line = lines[i + 1].strip()
-                if "www" in next_line:
+                if "www" in next_line or "http" in next_line:
                     website = next_line
 
         # Check for Company size keyword
