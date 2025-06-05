@@ -20,6 +20,12 @@ def initialize_driver():
     # Configure Chrome options (headless=False as requested)
     chrome_options = webdriver.ChromeOptions()
 
+    # Define profile folder name
+    profile_folder = "SeleniumChromeProfile"
+    # Create folder if it doesn't exist
+    if not os.path.exists(profile_folder):
+        os.makedirs(profile_folder)
+
     profile_path = os.path.abspath("./SeleniumChromeProfile")
     chrome_options.add_argument(f"user-data-dir={profile_path}")
     chrome_options.add_argument("--start-maximized")
