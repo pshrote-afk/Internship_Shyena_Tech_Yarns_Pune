@@ -1,0 +1,76 @@
+{
+  "CertifID_CTO": {},
+  "CertifID_CIO": {},
+  "CertifID_VP - Engineering": {},
+  "CertifID_VP - Delivery": {},
+  "CertifID_Director - Engineering": {},
+  "CertifID_Director - Delivery": {},
+  "CertifID_Director of Software Engineering": {},
+  "CertifID_Director of Data": {},
+  "CertifID_Director of AI Delivery": {},
+  "CertifID_Head of Solutions Engineering": {},
+  "CertifID_Vice President of Professional Services": {},
+  "CertifID_Director Software Engineering": {},
+  "CertifID_Director of AI Solutions": {},
+  "CertifID_Head of AI": {},
+  "CertifID_Director of Product Engineering": {},
+  "AEVEX Aerospace_CTO": {},
+  "AEVEX Aerospace_CIO": {},
+  "AEVEX Aerospace_VP - Engineering": {},
+  "AEVEX Aerospace_VP - Delivery": {},
+  "AEVEX Aerospace_Director - Engineering": {},
+  "AEVEX Aerospace_Director - Delivery": {},
+  "AEVEX Aerospace_Director of Software Engineering": {},
+  "AEVEX Aerospace_Director of Data": {},
+  "AEVEX Aerospace_Director of AI Delivery": {},
+  "AEVEX Aerospace_Head of Solutions Engineering": {},
+  "AEVEX Aerospace_Vice President of Professional Services": {},
+  "AEVEX Aerospace_Director Software Engineering": {},
+  "AEVEX Aerospace_Director of AI Solutions": {},
+  "AEVEX Aerospace_Head of AI": {},
+  "AEVEX Aerospace_Director of Product Engineering": {},
+  "Scale AI_CTO": {
+    "Shoukri Kattan": {
+      "job_title": "Founder & Head CTO",
+      "linkedin_url": "invalid_linkedin_url"
+    },
+    "Supreeth Girish": {
+      "job_title": "LinkedIn Aug 15, 2023 ... CTO @Boostmysites",
+      "linkedin_url": "invalid_linkedin_url"
+    },
+    "Aaron Bawcom": {
+      "job_title": "Field CTO",
+      "linkedin_url": "https://www.linkedin.com/in/abawcom"
+    },
+    "Tom Block": {
+      "job_title": "Founding Engineer and CTO",
+      "linkedin_url": "https://www.linkedin.com/in/tom-block"
+    },
+    "Jason Wang": {
+      "job_title": "Founder & CTO",
+      "linkedin_url": "https://www.linkedin.com/in/jason-zhanshi-wang"
+    }
+  },
+  "Scale AI_CIO": {
+    "Supantha Banerjee": {
+      "job_title": "LinkedIn Nov 13, 2023 ... How to Scale AI for Maximum Impact. Heller Report July 17, 2024 ... CIO Review Apr 2016. Metals/Mining and Manufacturing industry in undergoing ...",
+      "linkedin_url": "https://www.linkedin.com/in/supantha"
+    },
+    "Steve Phillpott": {
+      "job_title": "Society for Information Management (SIM) San ... Sep 26, 2020 ... 2020 CIO Hall of Fame, 2020 CIO 100 award for AI/Advanced Analytics/ML Project, for… · Experience: Society for ... Extreme Scale HPC: How Western Digital ...",
+      "linkedin_url": "https://www.linkedin.com/in/stevephillpott"
+    },
+    "Khan Tran": {
+      "job_title": "Artificial Intelligence Field CIO/CTO",
+      "linkedin_url": "https://www.linkedin.com/in/khan-v-tran"
+    },
+    "Jonathan Woodward": {
+      "job_title": "CIO / Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/jonathankwoodward"
+    },
+    "Julio Santiago Haag": {
+      "job_title": "CIO Data & AI Lead",
+      "linkedin_url": "https://www.linkedin.com/in/julio-santiago-haag-5493b669"
+    }
+  }
+}
