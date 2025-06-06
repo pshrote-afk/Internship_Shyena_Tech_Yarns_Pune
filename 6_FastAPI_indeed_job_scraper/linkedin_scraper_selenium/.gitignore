@@ -1,5 +1,6 @@
 .env
 __pycache__
+google_api_key_and_cse_id.csv
 SeleniumChromeProfile/*
 !SeleniumChromeProfile/.gitkeep
 
