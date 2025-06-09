@@ -293,10 +293,14 @@ class GoogleAPIManager:
         current_uses = self.df.at[key_index, 'uses']
 
         if current_uses == self.warning_threshold:
+            print("=" * 50 + "\n\n")
             print(f"⚠️  WARNING: API key {key_index + 1} has reached {self.warning_threshold} uses")
+            print("\n" + "=" * 50)
 
         if current_uses >= self.daily_limit:
+            print("=" * 50 + "\n")
             print(f"🚫 API key {key_index + 1} has hit daily limit ({self.daily_limit} uses)")
+            print("\n" + "=" * 50)
 
         self.save_keys()
         self.current_key_index = (key_index + 1) % len(self.df)
@@ -336,7 +340,7 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
             'key': key_data['api_key'],
             'cx': key_data['cse_id'],
             'q': query,
-            'num': 10  # Get first 10 results
+            'num': 10  # Get first 10 google search results
         }
 
         try:

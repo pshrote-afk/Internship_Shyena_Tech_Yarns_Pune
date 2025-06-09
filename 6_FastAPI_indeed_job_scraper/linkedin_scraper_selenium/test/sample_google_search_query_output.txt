@@ -1,0 +1,633 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      {
+        "title": "Google Custom Search - Air  India CEO Pune Maharashtra India site:linkedin.com/in",
+        "totalResults": "717000",
+        "searchTerms": "Air  India CEO Pune Maharashtra India site:linkedin.com/in",
+        "count": 10,
+        "startIndex": 1,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "a06b95cee071a464f"
+      }
+    ],
+    "nextPage": [
+      {
+        "title": "Google Custom Search - Air  India CEO Pune Maharashtra India site:linkedin.com/in",
+        "totalResults": "717000",
+        "searchTerms": "Air  India CEO Pune Maharashtra India site:linkedin.com/in",
+        "count": 10,
+        "startIndex": 11,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "a06b95cee071a464f"
+      }
+    ]
+  },
+  "context": {
+    "title": "new"
+  },
+  "searchInformation": {
+    "searchTime": 0.178947,
+    "formattedSearchTime": "0.18",
+    "totalResults": "717000",
+    "formattedTotalResults": "717,000"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "Sunil Bhaskaran - Air India Limited | LinkedIn",
+      "htmlTitle": "Sunil Bhaskaran - \u003cb\u003eAir India\u003c/b\u003e Limited | LinkedIn",
+      "link": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+      "displayLink": "www.linkedin.com",
+      "snippet": "Sunil Bhaskaran is the Director - Air India Aviation Academy. He is the ... Mumbai, India. -. -. Kolkata, Pune, Bangalore. Education. Indian Institute of ...",
+      "htmlSnippet": "Sunil Bhaskaran is the Director - \u003cb\u003eAir India\u003c/b\u003e Aviation Academy. He is the ... Mumbai, \u003cb\u003eIndia\u003c/b\u003e. -. -. Kolkata, \u003cb\u003ePune\u003c/b\u003e, Bangalore. Education. \u003cb\u003eIndian\u003c/b\u003e Institute of&nbsp;...",
+      "formattedUrl": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+      "htmlFormattedUrl": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEnMCOR-ytx0ZXHO2rgJlezc4CfXm5iHZMEjL8fSfOciDiTG4CU0Uc8QO&s",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+            "og:description": "Sunil Bhaskaran is the Director - Air India Aviation Academy.  He is the former MD and… · Experience: Air India Limited · Location: {:currentLocation} · 500+ connections on LinkedIn. View Sunil Bhaskaran’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "profile:last_name": "Bhaskaran",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Sunil",
+            "og:type": "profile",
+            "twitter:title": "Sunil Bhaskaran - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Sunil Bhaskaran - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Sunil Bhaskaran is the Director - Air India Aviation Academy.  He is the former MD and… · Experience: Air India Limited · Location: {:currentLocation} · 500+ connections on LinkedIn. View Sunil Bhaskaran’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://www.linkedin.com/in/sunil-bhaskaran-31ab3b14",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "SANJAY AWHALE - Plant Manager - Tenneco Clean Air India ...",
+      "htmlTitle": "SANJAY AWHALE - Plant Manager - Tenneco Clean \u003cb\u003eAir India\u003c/b\u003e ...",
+      "link": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+      "displayLink": "in.linkedin.com",
+      "snippet": "Plant Manager at Tenneco Clean Air India Private Limited. Tenneco Clean Air India Private Limited College of Engineering Pune. Pune, Maharashtra, India. 4K ...",
+      "htmlSnippet": "Plant Manager at Tenneco Clean \u003cb\u003eAir India\u003c/b\u003e Private Limited. Tenneco Clean \u003cb\u003eAir India\u003c/b\u003e Private Limited College of Engineering \u003cb\u003ePune\u003c/b\u003e. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. 4K&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVIA_gyx6oBtzAf7VU0X8hXHt8N2j4kzsJS6UBEOB2UukHIJWElqf7t_3&s",
+            "width": "200",
+            "height": "200"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/C5103AQHWGdJ642qz4g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1570980328951?e=2147483647&v=beta&t=Y4mW1NRKojGY0W-3DC2UA3dhGKTNGhIoyBoqpvmuY6s",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+            "og:description": "Plant Manager at Tenneco Clean  Air India Private Limited · Job Objective: \nSeeking top level assignments in Operations &amp; Projects, Customer Relationship Management and Strategic Planning with an organization of repute \nProfile Summary:\n•\tA dynamic professional with over 23 years of rich experience in managing Overall Operations with key focus on conversion costs as well as optimal utilization of resources.\n•\tComprehensive experience in devising significant solutions, managing day to day production &amp; manufacturing operations and projects for making effective utilization of man, machine, method &amp; materials.\n•\tA keen planner, strategist &amp; implementer with demonstrated abilities in setting up Green Field Projects as well as ensuring smooth functioning of overall plant operations and enhancing operational efficiency by making use of leading edge manufacturing technologies including business reviews.\n•\tResourceful in deploying various methodologies to analyze various processes, recommendin",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/coquaw2cudxs4ux1s51aesui5",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/C5103AQHWGdJ642qz4g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1570980328951?e=2147483647&v=beta&t=Y4mW1NRKojGY0W-3DC2UA3dhGKTNGhIoyBoqpvmuY6s",
+            "profile:last_name": "AWHALE",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "SANJAY",
+            "og:type": "profile",
+            "twitter:title": "SANJAY AWHALE - Plant Manager - Tenneco Clean  Air India Private Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "SANJAY AWHALE - Plant Manager - Tenneco Clean  Air India Private Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Plant Manager at Tenneco Clean  Air India Private Limited · Job Objective: \nSeeking top level assignments in Operations &amp; Projects, Customer Relationship Management and Strategic Planning with an organization of repute \nProfile Summary:\n•\tA dynamic professional with over 23 years of rich experience in managing Overall Operations with key focus on conversion costs as well as optimal utilization of resources.\n•\tComprehensive experience in devising significant solutions, managing day to day production &amp; manufacturing operations and projects for making effective utilization of man, machine, method &amp; materials.\n•\tA keen planner, strategist &amp; implementer with demonstrated abilities in setting up Green Field Projects as well as ensuring smooth functioning of overall plant operations and enhancing operational efficiency by making use of leading edge manufacturing technologies including business reviews.\n•\tResourceful in deploying various methodologies to analyze various processes, recommendin",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/3kbmdc33ogmpo0bs8dolr9yre",
+            "og:url": "https://in.linkedin.com/in/sanjay-awhale-431117115",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/C5103AQHWGdJ642qz4g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1570980328951?e=2147483647&v=beta&t=Y4mW1NRKojGY0W-3DC2UA3dhGKTNGhIoyBoqpvmuY6s"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Dipayan Ghosh - VP and Head - Network Planning - Air India ...",
+      "htmlTitle": "Dipayan Ghosh - VP and \u003cb\u003eHead\u003c/b\u003e - Network Planning - \u003cb\u003eAir India\u003c/b\u003e ...",
+      "link": "https://in.linkedin.com/in/dipayanghosh",
+      "displayLink": "in.linkedin.com",
+      "snippet": "VP and Head - Network Planning - Air India | ex-Amazon | Embry-Riddle | IIT Kharagpur · Dipayan Ghosh is a highly experienced aviation executive with over ...",
+      "htmlSnippet": "VP and \u003cb\u003eHead\u003c/b\u003e - Network Planning - \u003cb\u003eAir India\u003c/b\u003e | ex-Amazon | Embry-Riddle | IIT Kharagpur · Dipayan Ghosh is a highly experienced aviation executive with over&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/dipayanghosh",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/dipayanghosh",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlDzOm_99sVyb2cx105ZFaYVGRI1Myd7NiOJKxX_c9025dEeJ_jL1MwZg&s",
+            "width": "200",
+            "height": "200"
+          }
+        ],
+        "ProfilePage": [
+          {}
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/D5603AQHTB013D2CBpA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1702738777491?e=2147483647&v=beta&t=C91lmLVGuHa0I7C1ER_Y9sfMJXtkbDJsjmXrxKDJ8vI",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/dipayanghosh",
+            "og:description": "VP and Head - Network Planning - Air India | ex-Amazon | Embry-Riddle | IIT Kharagpur · Dipayan Ghosh is a highly experienced aviation executive with over 18 years in strategic planning, network development, and significant transformation initiatives. He currently leads network planning for Air India Group, overseeing long-term network strategies. His expertise includes driving digital transformation and building global alliance strategies to expand reach and enhance competitiveness · Experience: Air India Limited · Education: Embry-Riddle Aeronautical University · Location: India · 500+ connections on LinkedIn. View Dipayan Ghosh’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/D5603AQHTB013D2CBpA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1702738777491?e=2147483647&v=beta&t=C91lmLVGuHa0I7C1ER_Y9sfMJXtkbDJsjmXrxKDJ8vI",
+            "profile:last_name": "Ghosh",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Dipayan",
+            "og:type": "profile",
+            "twitter:title": "Dipayan Ghosh - VP and Head - Network Planning - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Dipayan Ghosh - VP and Head - Network Planning - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/dipayanghosh",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "VP and Head - Network Planning - Air India | ex-Amazon | Embry-Riddle | IIT Kharagpur · Dipayan Ghosh is a highly experienced aviation executive with over 18 years in strategic planning, network development, and significant transformation initiatives. He currently leads network planning for Air India Group, overseeing long-term network strategies. His expertise includes driving digital transformation and building global alliance strategies to expand reach and enhance competitiveness · Experience: Air India Limited · Education: Embry-Riddle Aeronautical University · Location: India · 500+ connections on LinkedIn. View Dipayan Ghosh’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/dipayanghosh",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/D5603AQHTB013D2CBpA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1702738777491?e=2147483647&v=beta&t=C91lmLVGuHa0I7C1ER_Y9sfMJXtkbDJsjmXrxKDJ8vI"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Phani Kishor Nadella - Finance Director - Tenneco Clean Air India ...",
+      "htmlTitle": "Phani Kishor Nadella - Finance Director - Tenneco Clean \u003cb\u003eAir India\u003c/b\u003e ...",
+      "link": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+      "displayLink": "in.linkedin.com",
+      "snippet": "Tenneco Clean Air India Pvt. Ltd Institute of Chartered Accountants of India. Pune, Maharashtra, India. 318 followers 306 connections.",
+      "htmlSnippet": "Tenneco Clean \u003cb\u003eAir India Pvt. Ltd\u003c/b\u003e Institute of Chartered Accountants of \u003cb\u003eIndia\u003c/b\u003e. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. 318 followers 306 connections.",
+      "formattedUrl": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEnMCOR-ytx0ZXHO2rgJlezc4CfXm5iHZMEjL8fSfOciDiTG4CU0Uc8QO&s",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "ProfilePage": [
+          {}
+        ],
+        "metatags": [
+          {
+            "og:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+            "og:description": "Finance Director · Experience: Tenneco Clean Air India Pvt. Ltd · Education: Institute of Chartered Accountants of India · Location: Pune · 306 connections on LinkedIn. View Phani Kishor Nadella’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "profile:last_name": "Nadella",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Phani Kishor",
+            "og:type": "profile",
+            "twitter:title": "Phani Kishor Nadella - Finance Director - Tenneco Clean Air India Pvt. Ltd | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Phani Kishor Nadella - Finance Director - Tenneco Clean Air India Pvt. Ltd | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Finance Director · Experience: Tenneco Clean Air India Pvt. Ltd · Education: Institute of Chartered Accountants of India · Location: Pune · 306 connections on LinkedIn. View Phani Kishor Nadella’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/phani-kishor-nadella-0a346118",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Sandeep Chaukhande - Director - TENNECO Clean Air India Pvt Ltd",
+      "htmlTitle": "Sandeep Chaukhande - Director - TENNECO Clean \u003cb\u003eAir India Pvt Ltd\u003c/b\u003e",
+      "link": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+      "displayLink": "in.linkedin.com",
+      "snippet": "TENNECO Clean Air India Pvt Ltd Indian Management School & Research Centre. Pune, Maharashtra, India. 1K followers 500+ connections.",
+      "htmlSnippet": "TENNECO Clean \u003cb\u003eAir India Pvt Ltd Indian\u003c/b\u003e Management School &amp; Research Centre. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. 1K followers 500+ connections.",
+      "formattedUrl": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEnMCOR-ytx0ZXHO2rgJlezc4CfXm5iHZMEjL8fSfOciDiTG4CU0Uc8QO&s",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "ProfilePage": [
+          {}
+        ],
+        "metatags": [
+          {
+            "og:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+            "og:description": "Director- OE Sales (Sales &amp; Marketing) at Tenneco Inc. · Experience: TENNECO Clean Air India Pvt Ltd · Education: Indian Management School &amp; Research Centre · Location: Pune · 500+ connections on LinkedIn. View Sandeep Chaukhande’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "profile:last_name": "Chaukhande",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Sandeep",
+            "og:type": "profile",
+            "twitter:title": "Sandeep Chaukhande - Director - OE Sales (Sales &amp; Marketing) - TENNECO Clean Air India Pvt Ltd | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Sandeep Chaukhande - Director - OE Sales (Sales &amp; Marketing) - TENNECO Clean Air India Pvt Ltd | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Director- OE Sales (Sales &amp; Marketing) at Tenneco Inc. · Experience: TENNECO Clean Air India Pvt Ltd · Education: Indian Management School &amp; Research Centre · Location: Pune · 500+ connections on LinkedIn. View Sandeep Chaukhande’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/sandeep-chaukhande-ab97a057",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "ANIL AGRAWAL - Head of Finance - Air India Limited | LinkedIn",
+      "htmlTitle": "ANIL AGRAWAL - \u003cb\u003eHead\u003c/b\u003e of Finance - \u003cb\u003eAir India\u003c/b\u003e Limited | LinkedIn",
+      "link": "https://in.linkedin.com/in/anil-agrawal-48127018",
+      "displayLink": "in.linkedin.com",
+      "snippet": "1 year 6 months. Greater Delhi Area. Director and Co-Founder. Aniroj AI. May 2019 - Dec 2023 4 years 8 months. Pune, Maharashtra, India. Tata Group Graphic ...",
+      "htmlSnippet": "1 year 6 months. Greater Delhi Area. Director and Co-Founder. Aniroj AI. May 2019 - Dec 2023 4 years 8 months. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. Tata Group Graphic&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/anil-agrawal-48127018",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/anil-agrawal-48127018",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN3W9m96NtjmY1LOIFkSOYfrsp-ECoZ4LTRSTgAuUuyqQo5-JK668GqHkd&s",
+            "width": "199",
+            "height": "199"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/C4D03AQHF4HFLgjIvyg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516779084567?e=2147483647&v=beta&t=XaDom8EU58u6bePw_JNypBxz4iej056vkye5D63gYhQ",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/anil-agrawal-48127018",
+            "og:description": "Head Finance - Air India / Proud RVGian / ICAI / IIMA · Experienced CFO, alumni from IIM Ahmedabad &amp; Finance professional associated with large MNCs. World leading expert in Fund raising, Strategy (M&amp;A), Negotiation, Budgeting, Business Planning, Taxation, Audit and Accounting. · Experience: Air India Limited · Education: IIM Ahmedabad · Location: Greater Delhi Area · 500+ connections on LinkedIn. View ANIL AGRAWAL’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/C4D03AQHF4HFLgjIvyg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516779084567?e=2147483647&v=beta&t=XaDom8EU58u6bePw_JNypBxz4iej056vkye5D63gYhQ",
+            "profile:last_name": "AGRAWAL",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "ANIL",
+            "og:type": "profile",
+            "twitter:title": "ANIL AGRAWAL - Head of Finance - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "ANIL AGRAWAL - Head of Finance - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/anil-agrawal-48127018",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Head Finance - Air India / Proud RVGian / ICAI / IIMA · Experienced CFO, alumni from IIM Ahmedabad &amp; Finance professional associated with large MNCs. World leading expert in Fund raising, Strategy (M&amp;A), Negotiation, Budgeting, Business Planning, Taxation, Audit and Accounting. · Experience: Air India Limited · Education: IIM Ahmedabad · Location: Greater Delhi Area · 500+ connections on LinkedIn. View ANIL AGRAWAL’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/anil-agrawal-48127018",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/C4D03AQHF4HFLgjIvyg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516779084567?e=2147483647&v=beta&t=XaDom8EU58u6bePw_JNypBxz4iej056vkye5D63gYhQ"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Captain Pushpinder Singh - Air India Limited | LinkedIn - LinkedIn",
+      "htmlTitle": "Captain Pushpinder Singh - \u003cb\u003eAir India\u003c/b\u003e Limited | LinkedIn - LinkedIn",
+      "link": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+      "displayLink": "in.linkedin.com",
+      "snippet": "... Air India Limited, B777 Captain & Trainer. Air India Limited National Defence Academy, Pune. Mumbai, Maharashtra, India. 794 followers 444 connections. See your ...",
+      "htmlSnippet": "... \u003cb\u003eAir India\u003c/b\u003e Limited, B777 Captain &amp; Trainer. \u003cb\u003eAir India\u003c/b\u003e Limited National Defence Academy, \u003cb\u003ePune\u003c/b\u003e. Mumbai, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. 794 followers 444 connections. See your&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXeBlZIZLJpSs6e6_1Zn9yoL-dnki0_XklcCbe8xe34LPX6Uk6R5C_z3jS&s",
+            "width": "200",
+            "height": "200"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/C5103AQFojIRhAm1O-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1528606507809?e=2147483647&v=beta&t=Ed9l3e-4fmnW7Gr9xNLxGowRin3IVJDJ-VjeOd-d9aw",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+            "og:description": "Senior Aviation Leader, Ex COO, Air India Express Limited &amp; Ex General Manager Operations &amp; Training at Air India Limited, B777 Captain &amp; Trainer  · 37 years Aviation Experience in Air India as a Pilot including 24 years in Airline Management &amp; 20 yrs in Senior Management. \n15,000 Hours flying experience including 10,000 Hours as Captain (Pilot in Command).\nPresently a DE &amp; TRI on B777.  \nFlying experience on Airbus 310, \nBoeing 747-200/300/400 and \nBoeing 777-200ER/200LR/300ER. \n\nOperationalised since it’s inception,\nAir India&#39;s subsidiary Low Cost International Airline, Air India Express, and served as its first Chief of Operations and as its Chief Operating Officer (COO). · Experience: Air India Limited · Education: National Defence Academy, Pune · Location: Mumbai · 444 connections on LinkedIn. View Captain Pushpinder Singh’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/C5103AQFojIRhAm1O-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1528606507809?e=2147483647&v=beta&t=Ed9l3e-4fmnW7Gr9xNLxGowRin3IVJDJ-VjeOd-d9aw",
+            "profile:last_name": "Singh",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Captain Pushpinder",
+            "og:type": "profile",
+            "twitter:title": "Captain Pushpinder Singh - Airline Captain on B777, Instructor &amp; Examiner (DE &amp; TRI) - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Captain Pushpinder Singh - Airline Captain on B777, Instructor &amp; Examiner (DE &amp; TRI) - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Senior Aviation Leader, Ex COO, Air India Express Limited &amp; Ex General Manager Operations &amp; Training at Air India Limited, B777 Captain &amp; Trainer  · 37 years Aviation Experience in Air India as a Pilot including 24 years in Airline Management &amp; 20 yrs in Senior Management. \n15,000 Hours flying experience including 10,000 Hours as Captain (Pilot in Command).\nPresently a DE &amp; TRI on B777.  \nFlying experience on Airbus 310, \nBoeing 747-200/300/400 and \nBoeing 777-200ER/200LR/300ER. \n\nOperationalised since it’s inception,\nAir India&#39;s subsidiary Low Cost International Airline, Air India Express, and served as its first Chief of Operations and as its Chief Operating Officer (COO). · Experience: Air India Limited · Education: National Defence Academy, Pune · Location: Mumbai · 444 connections on LinkedIn. View Captain Pushpinder Singh’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/captain-pushpinder-singh-03142739",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/C5103AQFojIRhAm1O-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1528606507809?e=2147483647&v=beta&t=Ed9l3e-4fmnW7Gr9xNLxGowRin3IVJDJ-VjeOd-d9aw"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Himanshu Gandhi - Program Manager - Air India Limited | LinkedIn",
+      "htmlTitle": "Himanshu Gandhi - Program Manager - \u003cb\u003eAir India\u003c/b\u003e Limited | LinkedIn",
+      "link": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+      "displayLink": "in.linkedin.com",
+      "snippet": "Feb 2018 - Jun 2021 3 years 5 months. Pune, Maharashtra, India. \u003e Business Transformation Services - Digital \u003e Project Manager - Intelligent Automation for ...",
+      "htmlSnippet": "Feb 2018 - Jun 2021 3 years 5 months. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. &gt; Business Transformation Services - Digital &gt; Project Manager - Intelligent Automation for&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIM5WHnCfvwqfc2RXOIVQul9xcmO6MLzwj_tG2NO8NYxOuuLw_smEU1zDP&s",
+            "width": "200",
+            "height": "200"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/C5103AQEAMdm8rjMn6g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1519060254840?e=2147483647&v=beta&t=L6rbWZybgfp4jUNbdt5auctzIjnP9oY2Y6DusvUo4GY",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+            "og:description": "Senior Manager | Digital &amp; Technology | Enterprise Intelligent Automation | ServiceNow | Salesforce · Experienced professional with a demonstrated history of working in the IT and outsourcing/offshoring industry. Skilled in CRM, Salesforce, Project Management, Product Management, Risk &amp; Compliance. Total work experience of 15 years and post graduate from I.C.F.A.I · Experience: Air India Limited · Education: I.C.F.A.I · Location: Gurugram · 500+ connections on LinkedIn. View Himanshu Gandhi’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/C5103AQEAMdm8rjMn6g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1519060254840?e=2147483647&v=beta&t=L6rbWZybgfp4jUNbdt5auctzIjnP9oY2Y6DusvUo4GY",
+            "profile:last_name": "Gandhi",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Himanshu",
+            "og:type": "profile",
+            "twitter:title": "Himanshu Gandhi - Program Manager - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Himanshu Gandhi - Program Manager - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Senior Manager | Digital &amp; Technology | Enterprise Intelligent Automation | ServiceNow | Salesforce · Experienced professional with a demonstrated history of working in the IT and outsourcing/offshoring industry. Skilled in CRM, Salesforce, Project Management, Product Management, Risk &amp; Compliance. Total work experience of 15 years and post graduate from I.C.F.A.I · Experience: Air India Limited · Education: I.C.F.A.I · Location: Gurugram · 500+ connections on LinkedIn. View Himanshu Gandhi’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/himanshu-gandhi-b8936472",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/C5103AQEAMdm8rjMn6g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1519060254840?e=2147483647&v=beta&t=L6rbWZybgfp4jUNbdt5auctzIjnP9oY2Y6DusvUo4GY"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Samir Saraiya - Head Hubs Airport Operations Division Air India - Air ...",
+      "htmlTitle": "Samir Saraiya - \u003cb\u003eHead\u003c/b\u003e Hubs Airport Operations Division \u003cb\u003eAir India\u003c/b\u003e - Air ...",
+      "link": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+      "displayLink": "in.linkedin.com",
+      "snippet": "- Jul 2019 1 year 7 months. Pune, Maharashtra, India. Kenya Airways Graphic. Duty Officer. Kenya Airways. May 2012 - Jan 2018 5 years 9 months. Mumbai Area, ...",
+      "htmlSnippet": "- Jul 2019 1 year 7 months. \u003cb\u003ePune\u003c/b\u003e, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. Kenya \u003cb\u003eAirways\u003c/b\u003e Graphic. Duty Officer. Kenya \u003cb\u003eAirways\u003c/b\u003e. May 2012 - Jan 2018 5 years 9 months. Mumbai Area,&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEnMCOR-ytx0ZXHO2rgJlezc4CfXm5iHZMEjL8fSfOciDiTG4CU0Uc8QO&s",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+            "og:description": "Head Hubs Airport Operations Division Air India  · I am an experienced professional in the airline industry with a strong background in ground services operations. I have worked for various airlines and have successfully climbed the ranks to my current position as Head of Ground Services Hub Operations. My personality is characterized by a firm and calm demeanor, a willingness to learn and collaborate, and a flexibility to adapt to changing environments. I am always eager to take on new responsibilities and challenges in order to further my career and contribute to the success of my organization. · Experience: Air India Limited · Education: Symbiosis Centre for Management Studies- Pune · Location: Gurugram · 357 connections on LinkedIn. View Samir Saraiya’s profile on LinkedIn, a professional community of 1 billion members.",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q",
+            "profile:last_name": "Saraiya",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Samir",
+            "og:type": "profile",
+            "twitter:title": "Samir Saraiya - Head Hubs Airport Operations Division Air India - Air India Limited | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Samir Saraiya - Head Hubs Airport Operations Division Air India - Air India Limited | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Head Hubs Airport Operations Division Air India  · I am an experienced professional in the airline industry with a strong background in ground services operations. I have worked for various airlines and have successfully climbed the ranks to my current position as Head of Ground Services Hub Operations. My personality is characterized by a firm and calm demeanor, a willingness to learn and collaborate, and a flexibility to adapt to changing environments. I am always eager to take on new responsibilities and challenges in order to further my career and contribute to the success of my organization. · Experience: Air India Limited · Education: Symbiosis Centre for Management Studies- Pune · Location: Gurugram · 357 connections on LinkedIn. View Samir Saraiya’s profile on LinkedIn, a professional community of 1 billion members.",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/samir-saraiya-023b13a8",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://static.licdn.com/aero-v1/sc/h/1c5u578iilxfi4m4dvc4q810q"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Sarabjot Singh Uberoi - Independent Consultant - Freelance | LinkedIn",
+      "htmlTitle": "Sarabjot Singh Uberoi - Independent Consultant - Freelance | LinkedIn",
+      "link": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+      "displayLink": "in.linkedin.com",
+      "snippet": "Former Director Commercial and Executive Director Ground Handling Air India ... Mumbai, Maharashtra, India. Air India Limited Graphic. Deputy General Manager ...",
+      "htmlSnippet": "Former Director Commercial and Executive Director Ground Handling \u003cb\u003eAir India\u003c/b\u003e ... Mumbai, \u003cb\u003eMaharashtra\u003c/b\u003e, \u003cb\u003eIndia\u003c/b\u003e. \u003cb\u003eAir India\u003c/b\u003e Limited Graphic. Deputy General Manager&nbsp;...",
+      "formattedUrl": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+      "htmlFormattedUrl": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmtDEr6AFr-2ZTXD3f6SAxTbGpieR1Cig1gWEybffHiKEF6B8e8evmGwg&s",
+            "width": "200",
+            "height": "200"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://media.licdn.com/dms/image/v2/C5103AQGyddtYp3lU0w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1549681308126?e=2147483647&v=beta&t=gz2-0XWpcCsXA2jDadKUPvkXqKgxCnFnTEs0cFrsAH8",
+            "twitter:card": "summary",
+            "linkedin:pagetag": "openToProvider",
+            "platform-worker": "https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4",
+            "al:android:package": "com.linkedin.android",
+            "bingbot": "nocache",
+            "locale": "en_US",
+            "al:ios:url": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+            "og:description": "Independent Consultant on Aviation,Airlines ,Ground Handling,Air Cargo,Airline Marketing,Travel and Tourism  . Former Director Commercial and Executive Director Ground Handling  Air India · Experienced Executive Director (Ground Handling) and Commercial Director of AirIndia \n with a demonstrated about 40 years successful history of working in the Airlines/Aviation industry. Skilled in Airport and airline management, Sales Management,  Ground Handling and ground support, Revenue Management,Cargo ,Airline business development,airport coordination,training of Airline ground and customer services resources.            Strong business development professional with a Master of Business Administration MBA focused in Marketing from Symbiosis Institute of Business Management, Pune and Economics Degree from University of Pune. · Experience: Freelance · Education: Symbiosis Institute of Business Management, Pune · Location: Greater Delhi Area · 500+ connections on LinkedIn. View Sarabjot Singh Uberoi’s profile on",
+            "al:ios:app_store_id": "288429040",
+            "platform": "https://static.licdn.com/aero-v1/sc/h/3nokri00jcx83yrv0hkd3y3wq",
+            "twitter:image": "https://media.licdn.com/dms/image/v2/C5103AQGyddtYp3lU0w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1549681308126?e=2147483647&v=beta&t=gz2-0XWpcCsXA2jDadKUPvkXqKgxCnFnTEs0cFrsAH8",
+            "profile:last_name": "Uberoi",
+            "twitter:site": "@Linkedin",
+            "litmsprofilename": "public-profile-frontend",
+            "profile:first_name": "Sarabjot Singh",
+            "og:type": "profile",
+            "twitter:title": "Sarabjot Singh Uberoi - Independent Consultant - Freelance | LinkedIn",
+            "al:ios:app_name": "LinkedIn",
+            "og:title": "Sarabjot Singh Uberoi - Independent Consultant - Freelance | LinkedIn",
+            "pagekey": "public_profile_v3_mobile",
+            "al:android:url": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+            "viewport": "width=device-width, initial-scale=1.0",
+            "twitter:description": "Independent Consultant on Aviation,Airlines ,Ground Handling,Air Cargo,Airline Marketing,Travel and Tourism  . Former Director Commercial and Executive Director Ground Handling  Air India · Experienced Executive Director (Ground Handling) and Commercial Director of AirIndia \n with a demonstrated about 40 years successful history of working in the Airlines/Aviation industry. Skilled in Airport and airline management, Sales Management,  Ground Handling and ground support, Revenue Management,Cargo ,Airline business development,airport coordination,training of Airline ground and customer services resources.            Strong business development professional with a Master of Business Administration MBA focused in Marketing from Symbiosis Institute of Business Management, Pune and Economics Degree from University of Pune. · Experience: Freelance · Education: Symbiosis Institute of Business Management, Pune · Location: Greater Delhi Area · 500+ connections on LinkedIn. View Sarabjot Singh Uberoi’s profile on",
+            "ubba": "https://static.licdn.com/aero-v1/sc/h/e5xptkbtrj1luhdw1raygpg8i",
+            "og:url": "https://in.linkedin.com/in/sarabjot-singh-uberoi-04032916",
+            "al:android:app_name": "LinkedIn"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://media.licdn.com/dms/image/v2/C5103AQGyddtYp3lU0w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1549681308126?e=2147483647&v=beta&t=gz2-0XWpcCsXA2jDadKUPvkXqKgxCnFnTEs0cFrsAH8"
+          }
+        ],
+        "Person": [
+          {}
+        ]
+      }
+    }
+  ]
+}
