@@ -34,8 +34,7 @@ POWER_POSITIONS = [
 ]
 
 # Former position keywords to filter out
-FORMER_KEYWORDS = ["ex-", "former", "previous", "past", "retired", "formerly"]
-
+FORMER_KEYWORDS = ["ex-", "former", "previous", "past", "retired", "formerly", "student", "intern", "freelance"]
 
 def extract_person_name_from_title(title):
     """Extract person name from Google search result title"""
