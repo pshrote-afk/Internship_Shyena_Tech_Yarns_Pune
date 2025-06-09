@@ -1,76 +1,42 @@
 {
-  "CertifID_CTO": {},
-  "CertifID_CIO": {},
-  "CertifID_VP - Engineering": {},
-  "CertifID_VP - Delivery": {},
-  "CertifID_Director - Engineering": {},
-  "CertifID_Director - Delivery": {},
-  "CertifID_Director of Software Engineering": {},
-  "CertifID_Director of Data": {},
-  "CertifID_Director of AI Delivery": {},
-  "CertifID_Head of Solutions Engineering": {},
-  "CertifID_Vice President of Professional Services": {},
-  "CertifID_Director Software Engineering": {},
-  "CertifID_Director of AI Solutions": {},
-  "CertifID_Head of AI": {},
-  "CertifID_Director of Product Engineering": {},
-  "AEVEX Aerospace_CTO": {},
-  "AEVEX Aerospace_CIO": {},
-  "AEVEX Aerospace_VP - Engineering": {},
-  "AEVEX Aerospace_VP - Delivery": {},
-  "AEVEX Aerospace_Director - Engineering": {},
-  "AEVEX Aerospace_Director - Delivery": {},
-  "AEVEX Aerospace_Director of Software Engineering": {},
-  "AEVEX Aerospace_Director of Data": {},
-  "AEVEX Aerospace_Director of AI Delivery": {},
-  "AEVEX Aerospace_Head of Solutions Engineering": {},
-  "AEVEX Aerospace_Vice President of Professional Services": {},
-  "AEVEX Aerospace_Director Software Engineering": {},
-  "AEVEX Aerospace_Director of AI Solutions": {},
-  "AEVEX Aerospace_Head of AI": {},
-  "AEVEX Aerospace_Director of Product Engineering": {},
-  "Scale AI_CTO": {
-    "Shoukri Kattan": {
-      "job_title": "Founder & Head CTO",
+  "CertifID_CTO": {
+    "Muhammad Saleem Haider": {
+      "job_title": "Principal Development Lead",
       "linkedin_url": "invalid_linkedin_url"
     },
-    "Supreeth Girish": {
-      "job_title": "LinkedIn Aug 15, 2023 ... CTO @Boostmysites",
+    "Dian Karov": {
+      "job_title": "Head of System Administration Department",
       "linkedin_url": "invalid_linkedin_url"
-    },
-    "Aaron Bawcom": {
-      "job_title": "Field CTO",
-      "linkedin_url": "https://www.linkedin.com/in/abawcom"
-    },
-    "Tom Block": {
-      "job_title": "Founding Engineer and CTO",
-      "linkedin_url": "https://www.linkedin.com/in/tom-block"
-    },
-    "Jason Wang": {
-      "job_title": "Founder & CTO",
-      "linkedin_url": "https://www.linkedin.com/in/jason-zhanshi-wang"
     }
   },
-  "Scale AI_CIO": {
-    "Supantha Banerjee": {
-      "job_title": "LinkedIn Nov 13, 2023 ... How to Scale AI for Maximum Impact. Heller Report July 17, 2024 ... CIO Review Apr 2016. Metals/Mining and Manufacturing industry in undergoing ...",
-      "linkedin_url": "https://www.linkedin.com/in/supantha"
+  "CertifID_CIO": {
+    "STEVEN PLUMLEE": {
+      "job_title": "Certified CIO",
+      "linkedin_url": "https://www.linkedin.com/in/stevenplumlee"
     },
-    "Steve Phillpott": {
-      "job_title": "Society for Information Management (SIM) San ... Sep 26, 2020 ... 2020 CIO Hall of Fame, 2020 CIO 100 award for AI/Advanced Analytics/ML Project, for… · Experience: Society for ... Extreme Scale HPC: How Western Digital ...",
-      "linkedin_url": "https://www.linkedin.com/in/stevephillpott"
+    "Dr.Mukund KS (DLitt) CIO Certified": {
+      "job_title": "LinkedIn Jun 15, 2023 ... Dr.Mukund KS (DLitt) is a Distinguished Global CIO Certified (ISB) Technology and…",
+      "linkedin_url": "invalid_linkedin_url"
     },
-    "Khan Tran": {
-      "job_title": "Artificial Intelligence Field CIO/CTO",
-      "linkedin_url": "https://www.linkedin.com/in/khan-v-tran"
+    "Dr. Girish Kulkarni": {
+      "job_title": "LinkedIn Mar 20, 2024 ... Global CIO Certified (ISB), CHCIO · Experienced CIO / CMIO with a demonstrated history of working in the Hospital & Healthcare industry.",
+      "linkedin_url": "invalid_linkedin_url"
+    }
+  },
+  "CertifID_VP - Engineering": {
+    "Morgan Whaley": {
+      "job_title": "LinkedIn Jan 15, 2021 ... Technologist and engineering leader with 20 years of combined professional experience. I… · Experience: CertifID · Education: Utah Wilderness Medicine ...",
+      "linkedin_url": "https://www.linkedin.com/in/morganraewhaley"
+    }
+  },
+  "CertifID_VP - Delivery": {
+    "Mohab Farag": {
+      "job_title": "Assistant Vice President, Name Screening/KYC at Citi Jan 15, 2021 ... ... Shipping Guarantee, Trust Receipt, Export LC advising, Export Bills Negotiation ... Certifid Documentary Credit Specialist.",
+      "linkedin_url": "https://www.linkedin.com/in/mohabfarag"
     },
-    "Jonathan Woodward": {
-      "job_title": "CIO / Director of Operations",
-      "linkedin_url": "https://www.linkedin.com/in/jonathankwoodward"
-    },
-    "Julio Santiago Haag": {
-      "job_title": "CIO Data & AI Lead",
-      "linkedin_url": "https://www.linkedin.com/in/julio-santiago-haag-5493b669"
+    "Lynn Robb": {
+      "job_title": "Feb 2019 1 year 1 month. Greater Pittsburgh Area ... VP National Sales. iMortgage Services. Jan 2006",
+      "linkedin_url": "https://www.linkedin.com/in/lynn-robb-2631437"
     }
   }
 }

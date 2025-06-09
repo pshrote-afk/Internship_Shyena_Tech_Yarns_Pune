@@ -179,7 +179,7 @@ def search_linkedin_profiles_api(api_manager, title, company_name, max_results):
     # Workaround 1: Use broader search terms and filter results
     search_strategies = [
         # Strategy 1: Remove quotes from company name (quotes may be too restrictive)
-        f'site:linkedin.com/in/ "{title}" {company_name}',
+        f'site:linkedin.com/in/ "{title}" AND "{company_name}"',
 
         # Strategy 2: Use partial company name matching
         f'site:linkedin.com/in/ {title} {company_name}',
