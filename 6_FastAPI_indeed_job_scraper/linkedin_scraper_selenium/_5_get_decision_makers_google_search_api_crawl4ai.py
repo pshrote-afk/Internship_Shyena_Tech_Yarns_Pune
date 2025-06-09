@@ -18,6 +18,7 @@ from crawl4ai import LLMConfig
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 async def scrape_decision_makers_google_api(json_file_path, decision_maker_titles, max_results_per_search,
                                             api_csv_path):
@@ -26,7 +27,6 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
     OUTPUT_DIR = "./scraped_data/4_get_decision_makers_google_api"
     PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
     OUTPUT_FILE = f"{OUTPUT_DIR}/company_name_versus_decision_maker_name.json"
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     SEARCH_DELAY_MIN = 2
     SEARCH_DELAY_MAX = 5
     CRAWL_DELAY_MIN = 3
@@ -300,8 +300,7 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
             llm_config=LLMConfig(
                 provider="openai/gpt-4o",
                 api_token=OPENAI_API_KEY,  # Add your API key here
-                model_tokens=4000,
-                temperature=0.1
+                max_tokens=4000
             ),
             schema={
                 "type": "object",
@@ -329,7 +328,8 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
             Extract the person's information from this LinkedIn profile.
             Focus on finding someone who works at "{company_name}" with a title related to "{expected_title}".
             Return the most current/recent job information.
-            """
+            """,
+            extra_args={"temperature": 0.1}
         )
 
         result = await crawler.arun(
@@ -385,7 +385,7 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
     except Exception as e:
         if "blocked" in str(e).lower() or "anti-bot" in str(e).lower():
             raise Exception(f"Anti-bot measures detected")
-        print(f"    Error crawling profile")
+        print(f"    Error crawling profile:\n {str(e)}")
 
     return None
 
