@@ -1,8 +1,8 @@
 import asyncio
-from driver_initialize_and_login import initialize_driver,login_to_linkedin
-#from _1_get_company_names import sth
-from _2_get_company_size_data import scrape_company_data
-from _3_get_decision_makers_google_search_api_crawl4ai import scrape_decision_makers_google_api
+from src.driver_initialize_and_login import initialize_driver,login_to_linkedin
+#from src._1_get_company_names import sth
+from src._2_get_company_size_data import scrape_company_data
+from src._3_get_decision_makers_with_google_search_api import scrape_decision_makers_google_api
 
 
 if __name__ == "__main__":
