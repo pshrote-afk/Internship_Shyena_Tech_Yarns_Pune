@@ -15,44 +15,27 @@ import asyncio
 
 from crawl4ai import LLMConfig
 
-# Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 async def scrape_decision_makers_google_api(json_file_path, decision_maker_titles, max_results_per_search,
                                             api_csv_path):
-    """
-    Scrape LinkedIn for decision makers using Google Search API and Crawl4AI v0.6.0.
-
-    Args:
-        json_file_path (str): Path to JSON file containing companies organized by employee count
-        decision_maker_titles (list): List of decision maker titles to search for
-        max_results_per_search (int): Maximum number of results to extract per search (default: 5)
-        api_csv_path (str): Path to CSV file containing API keys
-
-    Returns:
-        dict: Dictionary with company names as keys and decision makers as values
-    """
-
-    # Load environment variables
     load_dotenv()
 
-    # Configuration
     OUTPUT_DIR = "./scraped_data/4_get_decision_makers_google_api"
     PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
     OUTPUT_FILE = f"{OUTPUT_DIR}/company_name_versus_decision_maker_name.json"
-    SEARCH_DELAY_MIN = 2  # Minimum delay between searches (seconds)
-    SEARCH_DELAY_MAX = 5  # Maximum delay between searches (seconds)
-    CRAWL_DELAY_MIN = 3  # Minimum delay between crawls (seconds)
-    CRAWL_DELAY_MAX = 7  # Maximum delay between crawls (seconds)
-    DAILY_LIMIT = 100  # Google Custom Search API daily limit per key
-    WARNING_THRESHOLD = 70  # Warn when API key usage hits this threshold
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    SEARCH_DELAY_MIN = 2
+    SEARCH_DELAY_MAX = 5
+    CRAWL_DELAY_MIN = 3
+    CRAWL_DELAY_MAX = 7
+    DAILY_LIMIT = 100
+    WARNING_THRESHOLD = 70
 
-    # Create output directory if it doesn't exist
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # Load company size filter from .env
     company_size_filter = os.getenv('LINKEDIN_COMPANY_SIZE_FILTER', '[]')
     try:
         size_filter = json.loads(company_size_filter)
@@ -62,7 +45,6 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
 
     print(f"Company size filter: {size_filter}")
 
-    # Load input JSON file
     try:
         with open(json_file_path, 'r', encoding='utf-8') as f:
             companies_data = json.load(f)
@@ -73,7 +55,6 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
         print(f"Error: Invalid JSON format in {json_file_path}")
         return {}
 
-    # Filter companies based on size criteria
     filtered_companies = []
     for size_category in size_filter:
         if size_category in companies_data:
@@ -81,55 +62,52 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
 
     print(f"Total companies to process: {len(filtered_companies)}")
 
-    # Load existing progress
     progress_data = load_progress(PROGRESS_FILE)
     final_results = load_progress(OUTPUT_FILE)
 
-    # Initialize API key manager
     api_manager = GoogleAPIManager(api_csv_path, DAILY_LIMIT, WARNING_THRESHOLD)
 
-    # Initialize AsyncWebCrawler with v0.6.0 configuration
+    chrome_profile_path = os.path.abspath("./SeleniumChromeProfile")
+
     async with AsyncWebCrawler(
-            browser_type="chromium",  # Updated from crawler_type
-            headless=True,
-            verbose=True
+            browser_type="chrome",
+            headless=False,
+            user_data_dir=chrome_profile_path,
+            verbose=True,
+            extra_args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-web-security",
+                "--disable-features=VizDisplayCompositor"
+            ]
     ) as crawler:
         try:
-            # Process each company
             for company_idx, company_name in enumerate(filtered_companies):
                 print(f"\nProcessing company {company_idx + 1}/{len(filtered_companies)}: {company_name}")
 
-                # Skip if already processed
                 if company_name in final_results:
                     print(f"Company {company_name} already processed, skipping...")
                     continue
 
                 company_decision_makers = {}
 
-                # Search for each decision maker title
                 for title_idx, title in enumerate(decision_maker_titles):
                     print(f"  Searching for {title} at {company_name}")
 
-                    # Create unique key for progress tracking
                     progress_key = f"{company_name}_{title}"
 
-                    # Skip if already processed
                     if progress_key in progress_data:
                         print(f"    Already processed {title} for {company_name}")
-                        # Add to company results if not already there
                         for person_data in progress_data[progress_key]:
                             name = person_data.get('name')
                             if name:
                                 company_decision_makers[name] = person_data
                         continue
 
-                    # Check if we can make API calls
                     if not api_manager.can_make_request():
                         print("All API keys have hit their daily limits. Queuing for next day...")
                         print("Please run this script tomorrow to continue processing.")
                         break
 
-                    # Perform search
                     search_results = search_linkedin_profiles_google_api(
                         api_manager, title, company_name, max_results_per_search
                     )
@@ -140,12 +118,10 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
                         save_progress(PROGRESS_FILE, progress_data)
                         continue
 
-                    # Scrape each LinkedIn profile
                     scraped_profiles = []
                     for linkedin_url in search_results:
                         print(f"    Scraping profile: {linkedin_url}")
 
-                        # Human-like delay before crawling
                         delay = random.uniform(CRAWL_DELAY_MIN, CRAWL_DELAY_MAX)
                         print(f"    Waiting {delay:.1f} seconds before crawling...")
                         time.sleep(delay)
@@ -156,34 +132,29 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
                                 scraped_profiles.append(profile_data)
                                 print(f"      Found: {profile_data['name']} - {profile_data['job_title']}")
                         except Exception as e:
-                            print(f"    Error scraping {linkedin_url}: {str(e)}")
+                            print(f"    Error scraping {linkedin_url}")
                             if "anti-bot" in str(e).lower() or "blocked" in str(e).lower():
                                 print("Anti-bot measures detected. Please resolve manually and restart.")
                                 input("Press Enter when ready to continue...")
                             continue
 
-                    # Save progress for this search
                     progress_data[progress_key] = scraped_profiles
                     save_progress(PROGRESS_FILE, progress_data)
 
-                    # Add to company results
                     for person_data in scraped_profiles:
                         name = person_data.get('name')
                         if name:
                             company_decision_makers[name] = person_data
 
-                    # Random delay between searches
                     delay = random.uniform(SEARCH_DELAY_MIN, SEARCH_DELAY_MAX)
                     print(f"    Waiting {delay:.1f} seconds...")
                     time.sleep(delay)
 
-                # Save company results
                 final_results[company_name] = company_decision_makers
                 save_progress(OUTPUT_FILE, final_results)
 
                 print(f"  Found {len(company_decision_makers)} decision makers for {company_name}")
 
-                # Check if we should stop due to API limits
                 if not api_manager.can_make_request():
                     print("All API keys have hit their daily limits. Stopping processing.")
                     break
@@ -191,15 +162,13 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
         except KeyboardInterrupt:
             print("\nScraping interrupted by user. Progress saved.")
         except Exception as e:
-            print(f"Error during scraping: {str(e)}")
+            print(f"Error during scraping")
 
     print(f"\nScraping completed. Results saved to {OUTPUT_FILE}")
     return final_results
 
 
 class GoogleAPIManager:
-    """Manages Google API keys rotation and usage tracking."""
-
     def __init__(self, csv_file, daily_limit, warning_threshold):
         self.csv_file = csv_file
         self.daily_limit = daily_limit
@@ -208,16 +177,14 @@ class GoogleAPIManager:
         self.load_keys()
 
     def load_keys(self):
-        """Load API keys from CSV file."""
         try:
             self.df = pd.read_csv(self.csv_file)
             self.update_daily_usage()
             print(f"Loaded {len(self.df)} API keys")
         except Exception as e:
-            raise Exception(f"Error loading API keys: {str(e)}")
+            raise Exception(f"Error loading API keys")
 
     def update_daily_usage(self):
-        """Reset usage count if date has changed."""
         today = datetime.now().strftime('%Y-%m-%d')
 
         for idx, row in self.df.iterrows():
@@ -228,7 +195,6 @@ class GoogleAPIManager:
         self.save_keys()
 
     def get_next_available_key(self):
-        """Get next available API key that hasn't hit daily limit."""
         for _ in range(len(self.df)):
             current_row = self.df.iloc[self.current_key_index]
 
@@ -244,7 +210,6 @@ class GoogleAPIManager:
         return None
 
     def increment_usage(self, key_index):
-        """Increment usage count for a specific key."""
         self.df.at[key_index, 'uses'] += 1
         current_uses = self.df.at[key_index, 'uses']
 
@@ -258,42 +223,24 @@ class GoogleAPIManager:
         self.current_key_index = (key_index + 1) % len(self.df)
 
     def can_make_request(self):
-        """Check if any API key is available."""
         return self.get_next_available_key() is not None
 
     def save_keys(self):
-        """Save updated API key data to CSV."""
         try:
             self.df.to_csv(self.csv_file, index=False)
         except Exception as e:
-            print(f"Error saving API keys: {str(e)}")
+            print(f"Error saving API keys")
 
 
 def search_linkedin_profiles_google_api(api_manager, title, company_name, max_results):
-    """
-    Search for LinkedIn profiles using Google Custom Search API.
-
-    Args:
-        api_manager: GoogleAPIManager instance
-        title (str): Decision maker title to search for
-        company_name (str): Company name to search for
-        max_results (int): Maximum number of results to return
-
-    Returns:
-        list: List of LinkedIn profile URLs
-    """
-
-    # Get available API key
     key_data = api_manager.get_next_available_key()
     if not key_data:
         print("No available API keys")
         return []
 
-    # Construct search query - modified approach for better results
     search_queries = [
-        f'site:linkedin.com/in/ "{title}" "{company_name}"',
-        f'site:linkedin.com/in/ "{company_name}" "{title}"',
-        f'site:linkedin.com/in/ {title.replace(" ", "+")} {company_name.replace(" ", "+")}'
+        f'site:linkedin.com/in/ "{title}" AND "{company_name}"',
+        f'site:linkedin.com/in/ {title.replace(" ", "+")} AND {company_name.replace(" ", "+")}'
     ]
 
     all_urls = set()
@@ -304,13 +251,12 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
 
         print(f"    API query: {query}")
 
-        # Make API request
         url = "https://www.googleapis.com/customsearch/v1"
         params = {
             'key': key_data['api_key'],
             'cx': key_data['cse_id'],
             'q': query,
-            'num': min(10, max_results * 2)  # Get extra results to filter
+            'num': min(10, max_results * 2)
         }
 
         try:
@@ -331,17 +277,16 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                     print(f"    No results found for query: {query}")
             else:
                 print(f"    API request failed: {response.status_code} - {response.text}")
-                if response.status_code == 429:  # Rate limit
+                if response.status_code == 429:
                     print("    Rate limit hit, trying next key...")
                     key_data = api_manager.get_next_available_key()
                     if not key_data:
                         break
 
         except Exception as e:
-            print(f"    Error making API request: {str(e)}")
+            print(f"    Error making API request")
             continue
 
-        # Get next key for variety
         key_data = api_manager.get_next_available_key()
         if not key_data:
             break
@@ -350,23 +295,14 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
 
 
 async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company_name):
-    """
-    Scrape LinkedIn profile using Crawl4AI v0.6.0.
-
-    Args:
-        crawler: AsyncWebCrawler instance
-        linkedin_url (str): LinkedIn profile URL
-        expected_title (str): Expected job title
-        company_name (str): Expected company name
-
-    Returns:
-        dict: Profile data with name, job_title, linkedin_url
-    """
-
     try:
-        # Define extraction strategy with updated v0.6.0 format
         extraction_strategy = LLMExtractionStrategy(
-            llm_config=LLMConfig(provider="ollama/llama2"),  # You may need to adjust this based on your setup
+            llm_config=LLMConfig(
+                provider="openai/gpt-4o",
+                api_token=OPENAI_API_KEY,  # Add your API key here
+                model_tokens=4000,
+                temperature=0.1
+            ),
             schema={
                 "type": "object",
                 "properties": {
@@ -396,39 +332,43 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
             """
         )
 
-        # Updated crawl method for v0.6.0
         result = await crawler.arun(
             url=linkedin_url,
             extraction_strategy=extraction_strategy,
             bypass_cache=True,
             js_code=[
+                "window.scrollTo(0, document.body.scrollHeight/2);",
+                "await new Promise(resolve => setTimeout(resolve, 2000));",
                 "window.scrollTo(0, document.body.scrollHeight);"
             ],
-            wait_for="css:.pv-text-details__left-panel",
-            page_timeout=20000,  # Updated parameter name
-            delay_before_return_html=2.0  # Updated parameter name
+            wait_for="css:.pv-text-details__left-panel, css:.pv-top-card, css:h1",
+            page_timeout=30000,
+            delay_before_return_html=3.0
         )
 
         if result.success and result.extracted_content:
             try:
-                # Handle both string and list formats for extracted content
                 if isinstance(result.extracted_content, list):
                     profile_data = result.extracted_content[0] if result.extracted_content else {}
                 else:
                     profile_data = json.loads(result.extracted_content) if isinstance(result.extracted_content,
                                                                                       str) else result.extracted_content
 
-                # Validate and clean the data
                 name = clean_text(profile_data.get('name', ''))
                 job_title = clean_text(profile_data.get('current_job_title', ''))
                 company = clean_text(profile_data.get('company', ''))
 
-                # Basic validation
+                # you may remove below
+                # Add after the extraction attempt in scrape_linkedin_profile
+                print(f"    Extracted data: {profile_data}")
+                print(f"    Name: {name}, Job: {job_title}, Company: {company}")
+                # you may remove above code
+
+
                 if name and job_title and len(name) > 2 and len(job_title) > 2:
-                    # Check if this profile matches our search criteria
-                    if (company_name.lower() in company.lower() or
-                            any(title_word.lower() in job_title.lower()
-                                for title_word in expected_title.split())):
+                    # if (company_name.lower() in company.lower() or
+                    #         any(title_word.lower() in job_title.lower()
+                    #             for title_word in expected_title.split())):
                         return {
                             'name': name,
                             'job_title': job_title,
@@ -437,37 +377,21 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
                         }
 
             except (json.JSONDecodeError, TypeError):
-                # Fallback: try to extract from raw content
                 return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
 
-        # If structured extraction fails, try raw content extraction
         if result.success and result.html:
             return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
 
     except Exception as e:
         if "blocked" in str(e).lower() or "anti-bot" in str(e).lower():
-            raise Exception(f"Anti-bot measures detected: {str(e)}")
-        print(f"    Error crawling profile: {str(e)}")
+            raise Exception(f"Anti-bot measures detected")
+        print(f"    Error crawling profile")
 
     return None
 
 
 def extract_from_raw_content(html_content, linkedin_url, expected_title, company_name):
-    """
-    Fallback extraction from raw HTML content.
-
-    Args:
-        html_content (str): Raw HTML content
-        linkedin_url (str): LinkedIn profile URL
-        expected_title (str): Expected job title
-        company_name (str): Expected company name
-
-    Returns:
-        dict: Profile data or None
-    """
-
     try:
-        # Extract name (usually in title or h1 tags)
         name_patterns = [
             r'<title>([^|]+)\s*\|',
             r'<h1[^>]*>([^<]+)</h1>',
@@ -481,7 +405,6 @@ def extract_from_raw_content(html_content, linkedin_url, expected_title, company
                 name = clean_text(match.group(1))
                 break
 
-        # Extract job title and company
         job_patterns = [
             r'<div[^>]*class="[^"]*pv-text-details[^"]*"[^>]*>([^<]+)</div>',
             r'<span[^>]*class="[^"]*text-body[^"]*"[^>]*>([^<]*(?:' + '|'.join(
@@ -498,45 +421,35 @@ def extract_from_raw_content(html_content, linkedin_url, expected_title, company
                     job_title = potential_title
                     break
 
-        # Basic validation
         if name and job_title and len(name) > 2 and len(job_title) > 2:
             return {
                 'name': name,
                 'job_title': job_title,
                 'linkedin_url': linkedin_url,
-                'company': company_name  # Use expected company as fallback
+                'company': company_name
             }
 
     except Exception as e:
-        print(f"    Error in fallback extraction: {str(e)}")
+        print(f"    Error in fallback extraction")
 
     return None
 
 
 def clean_text(text):
-    """Clean and normalize extracted text."""
     if not text:
         return ""
 
-    # Remove HTML tags
     text = re.sub(r'<[^>]+>', '', text)
-
-    # Remove extra whitespace
     text = re.sub(r'\s+', ' ', text)
     text = text.strip()
-
-    # Remove common prefixes/suffixes
     text = re.sub(r'^[-|•]\s*', '', text)
     text = re.sub(r'\s*[-|•]$', '', text)
-
-    # Remove LinkedIn suffixes
     text = re.sub(r'\s*-\s*LinkedIn$', '', text, re.IGNORECASE)
 
     return text
 
 
 def load_progress(filename):
-    """Load progress from JSON file."""
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -548,18 +461,14 @@ def load_progress(filename):
 
 
 def save_progress(filename, data):
-    """Save progress to JSON file."""
     try:
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     except Exception as e:
-        print(f"Error saving progress to {filename}: {str(e)}")
+        print(f"Error saving progress to {filename}")
 
 
-# Example usage
 async def main():
-    """Main function to run the scraper."""
-    # Example decision maker titles
     decision_maker_titles = [
         "CTO", "CIO", "VP Engineering", "VP Delivery", "Director Engineering",
         "Director Delivery", "Director Software Engineering", "Director Data",
@@ -568,10 +477,8 @@ async def main():
         "Director AI Solutions", "Head AI", "Director Product Engineering"
     ]
 
-    # API CSV path
     api_csv_path = "google_api_key_and_cse_id.csv"
 
-    # Run the scraper
     results = await scrape_decision_makers_google_api(
         json_file_path="companies.json",
         decision_maker_titles=decision_maker_titles,
@@ -583,5 +490,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    # Run the async main function
     asyncio.run(main())
