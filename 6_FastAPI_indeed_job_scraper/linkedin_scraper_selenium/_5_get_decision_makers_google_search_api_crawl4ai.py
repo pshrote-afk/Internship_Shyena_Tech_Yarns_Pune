@@ -183,7 +183,10 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
                     for person_data in progress_data[progress_key]:
                         name = person_data.get('name')
                         if name and name not in already_found_names:
-                            company_decision_makers[name] = person_data
+                            company_decision_makers[name] = {
+                                'job_title': person_data.get('job_title'),
+                                'linkedin_url': person_data.get('linkedin_url')
+                            }
                             already_found_names.append(name)
                     continue
 
