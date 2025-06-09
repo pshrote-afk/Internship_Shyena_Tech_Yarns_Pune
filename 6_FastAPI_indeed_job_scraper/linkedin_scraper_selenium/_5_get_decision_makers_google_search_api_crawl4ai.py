@@ -5,27 +5,19 @@ import random
 import pandas as pd
 from datetime import datetime
 import requests
-from crawl4ai import AsyncWebCrawler
-from crawl4ai.extraction_strategy import LLMExtractionStrategy
 from dotenv import load_dotenv
 import re
 from urllib.parse import quote_plus, urljoin
 import logging
-import asyncio
-
-from crawl4ai import LLMConfig
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OUTPUT_DIR = "./scraped_data/4_get_decision_makers_google_api"
 PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
 OUTPUT_FILE = f"{OUTPUT_DIR}/company_name_versus_decision_maker_name.json"
 SEARCH_DELAY_MIN = 2
 SEARCH_DELAY_MAX = 5
-CRAWL_DELAY_MIN = 3
-CRAWL_DELAY_MAX = 7
 DAILY_LIMIT = 100
 WARNING_THRESHOLD = 70
 
@@ -41,17 +33,83 @@ POWER_POSITIONS = [
     "Head of", "Global Head", "Regional Head", "Country Head", "Division Head"
 ]
 
+# Former position keywords to filter out
+FORMER_KEYWORDS = ["ex-", "former", "previous", "past", "retired", "formerly"]
 
-def is_profile_relevant(search_result_item, decision_maker_titles, company_name):
+
+def extract_person_name_from_title(title):
+    """Extract person name from Google search result title"""
+    # Remove LinkedIn suffix
+    title = re.sub(r'\s*-\s*LinkedIn$', '', title, re.IGNORECASE)
+
+    # Split by common separators and take first part
+    separators = [' - ', ' | ', ' at ', ' — ']
+    for sep in separators:
+        if sep in title:
+            name = title.split(sep)[0].strip()
+            if len(name) > 2:
+                return name
+
+    # If no separator found, return cleaned title
+    return title.strip()
+
+
+def extract_current_job_title(title, snippet):
+    """Extract current job title from title and snippet, avoiding former positions"""
+    combined_text = f"{title} {snippet}".lower()
+
+    # Check for former position keywords
+    for keyword in FORMER_KEYWORDS:
+        if keyword in combined_text:
+            return None
+
+    # Look for job title patterns in title first
+    title_lower = title.lower()
+    for pos in POWER_POSITIONS:
+        if pos.lower() in title_lower:
+            # Extract the job title portion
+            if ' - ' in title:
+                parts = title.split(' - ')
+                for part in parts[1:]:  # Skip name part
+                    if pos.lower() in part.lower():
+                        return part.strip()
+            elif ' | ' in title:
+                parts = title.split(' | ')
+                for part in parts[1:]:
+                    if pos.lower() in part.lower():
+                        return part.strip()
+
+    # Look in snippet if not found in title
+    snippet_sentences = snippet.split('.')
+    for sentence in snippet_sentences:
+        sentence_lower = sentence.lower()
+        for pos in POWER_POSITIONS:
+            if pos.lower() in sentence_lower:
+                return sentence.strip()
+
+    return None
+
+
+def is_profile_relevant(search_result_item, decision_maker_titles, company_name, already_found_names):
     """
     Check if the search result represents a relevant decision maker profile
     """
-    title = search_result_item.get('title', '').lower()
-    snippet = search_result_item.get('snippet', '').lower()
-    combined_text = f"{title} {snippet}"
+    title = search_result_item.get('title', '')
+    snippet = search_result_item.get('snippet', '')
+    combined_text = f"{title} {snippet}".lower()
+
+    # Check for former position keywords
+    for keyword in FORMER_KEYWORDS:
+        if keyword in combined_text:
+            return False
 
     # Check exact company name match
     if company_name.lower() not in combined_text:
+        return False
+
+    # Extract person name and check if already found
+    person_name = extract_person_name_from_title(title)
+    if person_name.lower() in [name.lower() for name in already_found_names]:
         return False
 
     # Check for decision maker titles
@@ -104,103 +162,83 @@ async def scrape_decision_makers_google_api(json_file_path, decision_maker_title
 
     api_manager = GoogleAPIManager(api_csv_path, DAILY_LIMIT, WARNING_THRESHOLD)
 
-    chrome_profile_path = os.path.abspath("./SeleniumChromeProfile")
+    try:
+        for company_idx, company_name in enumerate(filtered_companies):
+            print(f"\nProcessing company {company_idx + 1}/{len(filtered_companies)}: {company_name}")
 
-    async with AsyncWebCrawler(
-            browser_type="chrome",
-            headless=False,
-            user_data_dir=chrome_profile_path,
-            verbose=True,
-            extra_args=[
-                "--disable-blink-features=AutomationControlled",
-                "--disable-web-security",
-                "--disable-features=VizDisplayCompositor"
-            ]
-    ) as crawler:
-        try:
-            for company_idx, company_name in enumerate(filtered_companies):
-                print(f"\nProcessing company {company_idx + 1}/{len(filtered_companies)}: {company_name}")
+            if company_name in final_results:
+                print(f"Company {company_name} already processed, skipping...")
+                continue
 
-                if company_name in final_results:
-                    print(f"Company {company_name} already processed, skipping...")
+            company_decision_makers = {}
+            already_found_names = []
+
+            for title_idx, title in enumerate(decision_maker_titles):
+                print(f"  Searching for {title} at {company_name}")
+
+                progress_key = f"{company_name}_{title}"
+
+                if progress_key in progress_data:
+                    print(f"    Already processed {title} for {company_name}")
+                    for person_data in progress_data[progress_key]:
+                        name = person_data.get('name')
+                        if name and name not in already_found_names:
+                            company_decision_makers[name] = person_data
+                            already_found_names.append(name)
                     continue
 
-                company_decision_makers = {}
-
-                for title_idx, title in enumerate(decision_maker_titles):
-                    print(f"  Searching for {title} at {company_name}")
-
-                    progress_key = f"{company_name}_{title}"
-
-                    if progress_key in progress_data:
-                        print(f"    Already processed {title} for {company_name}")
-                        for person_data in progress_data[progress_key]:
-                            name = person_data.get('name')
-                            if name:
-                                company_decision_makers[name] = person_data
-                        continue
-
-                    if not api_manager.can_make_request():
-                        print("All API keys have hit their daily limits. Queuing for next day...")
-                        print("Please run this script tomorrow to continue processing.")
-                        break
-
-                    search_results = search_linkedin_profiles_google_api(
-                        api_manager, title, company_name, max_results_per_search, decision_maker_titles
-                    )
-
-                    if not search_results:
-                        print(f"    No relevant LinkedIn profiles found for {title} at {company_name}")
-                        progress_data[progress_key] = []
-                        save_progress(PROGRESS_FILE, progress_data)
-                        continue
-
-                    scraped_profiles = []
-                    for linkedin_url in search_results:
-                        print(f"    Scraping profile: {linkedin_url}")
-
-                        delay = random.uniform(CRAWL_DELAY_MIN, CRAWL_DELAY_MAX)
-                        print(f"    Waiting {delay:.1f} seconds before crawling...")
-                        time.sleep(delay)
-
-                        try:
-                            profile_data = await scrape_linkedin_profile(crawler, linkedin_url, title, company_name,
-                                                                         decision_maker_titles)
-                            if profile_data:
-                                scraped_profiles.append(profile_data)
-                                print(f"      Found: {profile_data['name']} - {profile_data['job_title']}")
-                        except Exception as e:
-                            print(f"    Error scraping {linkedin_url}")
-                            if "anti-bot" in str(e).lower() or "blocked" in str(e).lower():
-                                print("Anti-bot measures detected. Please resolve manually and restart.")
-                                input("Press Enter when ready to continue...")
-                            continue
-
-                    progress_data[progress_key] = scraped_profiles
-                    save_progress(PROGRESS_FILE, progress_data)
-
-                    for person_data in scraped_profiles:
-                        name = person_data.get('name')
-                        if name:
-                            company_decision_makers[name] = person_data
-
-                    delay = random.uniform(SEARCH_DELAY_MIN, SEARCH_DELAY_MAX)
-                    print(f"    Waiting {delay:.1f} seconds...")
-                    time.sleep(delay)
-
-                final_results[company_name] = company_decision_makers
-                save_progress(OUTPUT_FILE, final_results)
-
-                print(f"  Found {len(company_decision_makers)} decision makers for {company_name}")
-
                 if not api_manager.can_make_request():
-                    print("All API keys have hit their daily limits. Stopping processing.")
+                    print("All API keys have hit their daily limits. Queuing for next day...")
+                    print("Please run this script tomorrow to continue processing.")
                     break
 
-        except KeyboardInterrupt:
-            print("\nScraping interrupted by user. Progress saved.")
-        except Exception as e:
-            print(f"Error during scraping")
+                search_results = search_linkedin_profiles_google_api(
+                    api_manager, title, company_name, max_results_per_search, decision_maker_titles, already_found_names
+                )
+
+                print(f"    DEBUG: search_results length: {len(search_results)}")
+                for i, result in enumerate(search_results):
+                    print(f"    DEBUG: Result {i}: {result}")
+
+                if not search_results:
+                    print(f"    No relevant LinkedIn profiles found for {title} at {company_name}")
+                    progress_data[progress_key] = []
+                    save_progress(PROGRESS_FILE, progress_data)
+                    continue
+
+                processed_profiles = []
+                for result_data in search_results:
+                    person_name = result_data['name']
+                    if person_name not in already_found_names:
+                        processed_profiles.append(result_data)
+                        company_decision_makers[person_name] = {
+                            'job_title': result_data['job_title'],
+                            'linkedin_url': result_data['linkedin_url']
+                        }
+                        already_found_names.append(person_name)
+                        print(f"      Found: {person_name} - {result_data['job_title']}")
+
+                print(f"    DEBUG: processed_profiles length: {len(processed_profiles)}")
+                progress_data[progress_key] = processed_profiles
+                save_progress(PROGRESS_FILE, progress_data)
+
+                delay = random.uniform(SEARCH_DELAY_MIN, SEARCH_DELAY_MAX)
+                print(f"    Waiting {delay:.1f} seconds...")
+                time.sleep(delay)
+
+            final_results[company_name] = company_decision_makers
+            save_progress(OUTPUT_FILE, final_results)
+
+            print(f"  Found {len(company_decision_makers)} decision makers for {company_name}")
+
+            if not api_manager.can_make_request():
+                print("All API keys have hit their daily limits. Stopping processing.")
+                break
+
+    except KeyboardInterrupt:
+        print("\nScraping interrupted by user. Progress saved.")
+    except Exception as e:
+        print(f"Error during scraping")
 
     print(f"\nScraping completed. Results saved to {OUTPUT_FILE}")
     return final_results
@@ -270,7 +308,8 @@ class GoogleAPIManager:
             print(f"Error saving API keys")
 
 
-def search_linkedin_profiles_google_api(api_manager, title, company_name, max_results, decision_maker_titles):
+def search_linkedin_profiles_google_api(api_manager, title, company_name, max_results, decision_maker_titles,
+                                        already_found_names):
     key_data = api_manager.get_next_available_key()
     if not key_data:
         print("No available API keys")
@@ -281,10 +320,10 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
         f'site:linkedin.com/in/ {title.replace(" ", "+")} AND {company_name.replace(" ", "+")}'
     ]
 
-    all_urls = []
+    all_results = []
 
     for query in search_queries:
-        if len(all_urls) >= max_results:
+        if len(all_results) >= max_results:
             break
 
         print(f"    API query: {query}")
@@ -305,26 +344,33 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                 data = response.json()
 
                 if 'items' in data:
-                    relevant_urls = []
                     for item in data['items']:
-                        # Check relevance before adding URL
-                        if is_profile_relevant(item, decision_maker_titles, company_name):
-                            url = item.get('link', '')
-                            if 'linkedin.com/in/' in url and url not in [u for u in all_urls]:
-                                relevant_urls.append(url)
-                                print(f"      Relevant profile found: {item.get('title', 'N/A')}")
+                        # Check relevance before processing
+                        if is_profile_relevant(item, decision_maker_titles, company_name, already_found_names):
+                            person_name = extract_person_name_from_title(item.get('title', ''))
+                            job_title = extract_current_job_title(item.get('title', ''), item.get('snippet', ''))
+                            linkedin_url = item.get('link', '')
+
+                            if person_name and job_title and 'linkedin.com/in/' in linkedin_url:
+                                result_data = {
+                                    'name': person_name,
+                                    'job_title': job_title,
+                                    'linkedin_url': linkedin_url
+                                }
+                                all_results.append(result_data)
+                                print(f"      Relevant profile found: {person_name} - {job_title}")
+
+                                if len(all_results) >= max_results:
+                                    break
                         else:
                             print(f"      Skipped irrelevant: {item.get('title', 'N/A')}")
 
-                    all_urls.extend(relevant_urls)
                     # Save progress after each search query
-                    save_progress(f"{OUTPUT_DIR}/search_urls_progress.json", {
+                    save_progress(f"{OUTPUT_DIR}/search_results_progress.json", {
                         'company': company_name,
                         'title': title,
-                        'urls_found': all_urls
+                        'results_found': all_results
                     })
-                    if len(all_urls) >= max_results:
-                        break
                 else:
                     print(f"    No results found for query: {query}")
             else:
@@ -343,166 +389,7 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
         if not key_data:
             break
 
-    return all_urls[:max_results]
-
-
-async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company_name, decision_maker_titles):
-    try:
-        # Create combined titles list for LLM instruction
-        all_titles = decision_maker_titles + POWER_POSITIONS
-        titles_str = ", ".join(all_titles[:20])  # Limit for prompt size
-
-        extraction_strategy = LLMExtractionStrategy(
-            llm_config=LLMConfig(
-                provider="openai/gpt-4o",
-                api_token=OPENAI_API_KEY,
-                max_tokens=4000
-            ),
-            schema={
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "description": "Full name of the person"
-                    },
-                    "current_job_title": {
-                        "type": "string",
-                        "description": "Current job title/position"
-                    },
-                    "company": {
-                        "type": "string",
-                        "description": "Current company name"
-                    },
-                    "experience": {
-                        "type": "string",
-                        "description": "Brief work experience summary"
-                    },
-                    "is_decision_maker": {
-                        "type": "boolean",
-                        "description": "Whether this person holds a decision-making or leadership position"
-                    }
-                },
-                "required": ["name", "current_job_title", "company", "is_decision_maker"]
-            },
-            instruction=f"""
-            Extract the person's information from this LinkedIn profile.
-            Focus on finding someone who works at "{company_name}" with a title related to "{expected_title}" or any leadership/decision-making role.
-
-            Consider these as decision-making positions: {titles_str}
-
-            Set is_decision_maker to true if the person has any leadership, executive, or decision-making role.
-            Return the most current/recent job information.
-            """,
-            extra_args={"temperature": 0.1}
-        )
-
-        result = await crawler.arun(
-            url=linkedin_url,
-            extraction_strategy=extraction_strategy,
-            bypass_cache=True,
-            js_code=[
-                "window.scrollTo(0, document.body.scrollHeight/2);",
-                "await new Promise(resolve => setTimeout(resolve, 2000));",
-                "window.scrollTo(0, document.body.scrollHeight);"
-            ],
-            wait_for="css:.pv-text-details__left-panel, css:.pv-top-card, css:h1",
-            page_timeout=30000,
-            delay_before_return_html=3.0
-        )
-
-        if result.success and result.extracted_content:
-            try:
-                if isinstance(result.extracted_content, list):
-                    profile_data = result.extracted_content[0] if result.extracted_content else {}
-                else:
-                    profile_data = json.loads(result.extracted_content) if isinstance(result.extracted_content,
-                                                                                      str) else result.extracted_content
-
-                name = clean_text(profile_data.get('name', ''))
-                job_title = clean_text(profile_data.get('current_job_title', ''))
-                company = clean_text(profile_data.get('company', ''))
-                is_decision_maker = profile_data.get('is_decision_maker', False)
-
-                print(f"    Extracted data: {profile_data}")
-                print(f"    Name: {name}, Job: {job_title}, Company: {company}, Decision Maker: {is_decision_maker}")
-
-                if name and job_title and len(name) > 2 and len(job_title) > 2:
-                    # Check if company matches exactly
-                    if company_name.lower() == company.lower() or company_name.lower() in company.lower():
-                        return {
-                            'job_title': job_title,
-                            'linkedin_url': linkedin_url
-                        }
-
-            except (json.JSONDecodeError, TypeError):
-                return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
-
-        if result.success and result.html:
-            return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
-
-    except Exception as e:
-        if "blocked" in str(e).lower() or "anti-bot" in str(e).lower():
-            raise Exception(f"Anti-bot measures detected")
-        print(f"    Error crawling profile:\n {str(e)}")
-
-    return None
-
-
-def extract_from_raw_content(html_content, linkedin_url, expected_title, company_name):
-    try:
-        name_patterns = [
-            r'<title>([^|]+)\s*\|',
-            r'<h1[^>]*>([^<]+)</h1>',
-            r'data-generated-suggestion-target[^>]*>([^<]+)</span>'
-        ]
-
-        name = ""
-        for pattern in name_patterns:
-            match = re.search(pattern, html_content, re.IGNORECASE)
-            if match:
-                name = clean_text(match.group(1))
-                break
-
-        job_patterns = [
-            r'<div[^>]*class="[^"]*pv-text-details[^"]*"[^>]*>([^<]+)</div>',
-            r'<span[^>]*class="[^"]*text-body[^"]*"[^>]*>([^<]*(?:' + '|'.join(
-                ['CEO', 'CTO', 'CIO', 'VP', 'Director', 'Head', 'Manager', 'Engineer', 'Lead']
-            ) + r')[^<]*)</span>',
-        ]
-
-        job_title = ""
-        for pattern in job_patterns:
-            match = re.search(pattern, html_content, re.IGNORECASE)
-            if match:
-                potential_title = clean_text(match.group(1))
-                if any(word.lower() in potential_title.lower() for word in expected_title.split()):
-                    job_title = potential_title
-                    break
-
-        if name and job_title and len(name) > 2 and len(job_title) > 2:
-            return {
-                'job_title': job_title,
-                'linkedin_url': linkedin_url
-            }
-
-    except Exception as e:
-        print(f"    Error in fallback extraction")
-
-    return None
-
-
-def clean_text(text):
-    if not text:
-        return ""
-
-    text = re.sub(r'<[^>]+>', '', text)
-    text = re.sub(r'\s+', ' ', text)
-    text = text.strip()
-    text = re.sub(r'^[-|•]\s*', '', text)
-    text = re.sub(r'\s*[-|•]$', '', text)
-    text = re.sub(r'\s*-\s*LinkedIn$', '', text, re.IGNORECASE)
-
-    return text
+    return all_results[:max_results]
 
 
 def load_progress(filename):
@@ -546,4 +433,6 @@ async def main():
 
 
 if __name__ == "__main__":
+    import asyncio
+
     asyncio.run(main())
