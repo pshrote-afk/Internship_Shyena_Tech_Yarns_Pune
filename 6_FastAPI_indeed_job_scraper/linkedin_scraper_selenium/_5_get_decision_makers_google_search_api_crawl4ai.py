@@ -296,7 +296,6 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
 
 async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company_name):
     try:
-        print("check 1")
         extraction_strategy = LLMExtractionStrategy(
             llm_config=LLMConfig(
                 provider="openai/gpt-4o",
@@ -332,20 +331,6 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
             """,
             extra_args={"temperature": 0.1}
         )
-        print("check 2")
-
-        print("Checking if logged in...")
-        check_result = await crawler.arun(
-            url="https://www.linkedin.com/feed/",
-            bypass_cache=True,
-            wait_for="css:nav, css:.global-nav",
-            page_timeout=10000
-        )
-
-        if "Sign in" in check_result.html or "Join now" in check_result.html:
-            print("❌ Not logged in - session expired or profile not loaded")
-        else:
-            print("✅ Logged in successfully")
 
         result = await crawler.arun(
             url=linkedin_url,
@@ -360,23 +345,18 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
             page_timeout=30000,
             delay_before_return_html=3.0
         )
-        print("check 3")
 
         if result.success and result.extracted_content:
             try:
-                print("check 4")
-
                 if isinstance(result.extracted_content, list):
                     profile_data = result.extracted_content[0] if result.extracted_content else {}
                 else:
                     profile_data = json.loads(result.extracted_content) if isinstance(result.extracted_content,
                                                                                       str) else result.extracted_content
 
-                print("check 5")
                 name = clean_text(profile_data.get('name', ''))
                 job_title = clean_text(profile_data.get('current_job_title', ''))
                 company = clean_text(profile_data.get('company', ''))
-                print("check 6")
 
                 # you may remove below
                 # Add after the extraction attempt in scrape_linkedin_profile
@@ -384,13 +364,11 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
                 print(f"    Name: {name}, Job: {job_title}, Company: {company}")
                 # you may remove above code
 
-                print("check 7")
 
                 if name and job_title and len(name) > 2 and len(job_title) > 2:
                     # if (company_name.lower() in company.lower() or
                     #         any(title_word.lower() in job_title.lower()
                     #             for title_word in expected_title.split())):
-                        print("check 8")
                         return {
                             'name': name,
                             'job_title': job_title,
@@ -402,7 +380,6 @@ async def scrape_linkedin_profile(crawler, linkedin_url, expected_title, company
                 return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
 
         if result.success and result.html:
-            print("check 9")
             return extract_from_raw_content(result.html, linkedin_url, expected_title, company_name)
 
     except Exception as e:
