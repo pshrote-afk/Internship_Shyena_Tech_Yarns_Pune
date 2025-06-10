@@ -628,7 +628,7 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
 
                 # Clean up location text
                 location = location.replace('\n', ' ').replace('  ', ' ').strip()
-
+                location = location.split('·')[0].strip()
                 if title:
                     job_data = {
                         "title": title,
