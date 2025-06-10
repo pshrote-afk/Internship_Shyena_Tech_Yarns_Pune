@@ -1,43 +1,44 @@
 {
   "1-10 employees": [
-    "AUGUST",
-    "Nichefire",
-    "Company not found"
+    "Voyant Photonics",
+    "Science",
+    "Koobz"
   ],
   "11-50 employees": [
-    "Bedrock Analytics",
-    "Marencor",
-    "BioSpace",
-    "TalentAlly",
-    "Fuse3 Solutions"
+    "May Ship Repair Contracting Corp.",
+    "Chiparama",
+    "BioSpace"
   ],
   "51-200 employees": [
-    "Cerby",
-    "AARATECH",
-    "Slip Robotics",
-    "Accord Technologies Inc"
+    "Mill"
   ],
   "201-500 employees": [
-    "Life360",
-    "Goal Solutions"
+    "CMES, Inc.",
+    "Delta Electronics Americas",
+    "Orange EV",
+    "Aurubis Richmond",
+    "BE Power Equipment"
   ],
   "501-1000 employees": [
-    "Wisk"
+    "Synapse ITS",
+    "East Kentucky Power Cooperative"
   ],
   "1001-5000 employees": [
-    "FanDuel",
-    "Zurn Elkay Water Solutions",
-    "Presidio",
-    "Pacer Staffing"
+    "DLR Group",
+    "The Hiller Companies",
+    "nLIGHT, Inc.",
+    "JR Automation"
   ],
-  "5001-10,000 employees": [],
+  "5001-10,000 employees": [
+    "Marvin"
+  ],
   "10,001+ employees": [
-    "Comcast",
-    "Atria Management Company"
+    "JLL",
+    "SKF Group",
+    "U.S. Pacific Fleet",
+    "Energy Transfer",
+    "Holcim",
+    "Lincoln Electric"
   ],
-  "unknown": [
-    "Ripple Logics",
-    "American Unit, Inc",
-    "UL Research Institutes"
-  ]
+  "unknown": []
 }
