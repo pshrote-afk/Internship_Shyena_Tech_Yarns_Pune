@@ -394,7 +394,7 @@ def navigate_to_next_page(driver, current_page, max_retries=3):
     return False
 
 
-def scrape_job_listings(driver, page_num=1):
+def scrape_job_listings(driver, page_num=1, job_title=""):
     """Scrape job listings with enhanced scrolling simulation."""
     jobs = []
     try:
@@ -635,9 +635,14 @@ def scrape_job_listings(driver, page_num=1):
                         "company": company if company else "Company not found",
                         "location": location,
                         "url": job_url,
-                        "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        "scraped_at": datetime.now().strftime("%Y-%m-%d")
                     }
+
                     jobs.append(job_data)
+
+                    # Save immediately to CSV
+                    save_to_csv([job_data], job_title, append=(len(jobs) > 1))
+
                     print(f"✅ {title} at {company if company else 'Unknown'} in {location}")
                 else:
                     print(f"⚠️ Could not get title for job {idx + 1}")
@@ -656,7 +661,7 @@ def scrape_job_listings(driver, page_num=1):
         return jobs
 
 
-def scrape_all_pages(driver):
+def scrape_all_pages(driver, JOB_TITLE):
     """Scrape jobs from all available pages."""
     all_jobs = []
     current_page = 1
@@ -682,7 +687,7 @@ def scrape_all_pages(driver):
             print(f"📄 Processing page {current_page}")
 
         # Scrape current page
-        page_jobs = scrape_job_listings(driver, current_page)
+        page_jobs = scrape_job_listings(driver, current_page, JOB_TITLE)
 
         if page_jobs:
             all_jobs.extend(page_jobs)
@@ -716,35 +721,37 @@ def scrape_all_pages(driver):
     return all_jobs
 
 
-def save_to_csv(jobs, JOB_TITLE, filename=None):
+def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     """Save jobs data to CSV file."""
     if not jobs:
         print("❌ No jobs to save")
         return
 
     if not filename:
-        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        folder_name = "1_get_company_names"
+        folder_name = "scraped_data/1_get_company_names"
         if not os.path.exists(folder_name):
-            os.makedirs(folder_name)
-        filename = f"scraped_data/{folder_name}/linkedin_'{JOB_TITLE}'_jobs.csv"
+            os.makedirs(folder_name, exist_ok=True)
+        filename = f"{folder_name}/linkedin_{JOB_TITLE}_jobs.csv"
 
     try:
-        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            # Updated fieldnames with location
+        mode = 'a' if append else 'w'
+        with open(filename, mode, newline='', encoding='utf-8') as csvfile:
             fieldnames = ['title', 'company', 'location', 'url', 'scraped_at']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-            writer.writeheader()
+           # Write header only if it's a new file
+            if not append:
+                writer.writeheader()
+            
             for job in jobs:
                 writer.writerow(job)
 
-        print(f"✅ Data saved to {filename}")
-        print(f"📊 Total records: {len(jobs)}")
+        if not append:
+            print(f"✅ Data saved to {filename}")
+            print(f"📊 Total records: {len(jobs)}")
 
     except Exception as e:
         print(f"❌ Error saving to CSV: {e}")
-
 
 def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
     try:
@@ -767,7 +774,7 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
             return
 
         # Scrape all pages
-        all_jobs = scrape_all_pages(driver)
+        all_jobs = scrape_all_pages(driver, JOB_TITLE)
 
         # Save all jobs to single CSV
         save_to_csv(all_jobs, JOB_TITLE)
@@ -812,6 +819,6 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
 if __name__ == "__main__":
      driver = initialize_driver()
      LOCATION = "United States"
-     JOB_TITLE = "Machine Learning"
+     JOB_TITLE = "Generative AI Developer"
      DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
      get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED)
