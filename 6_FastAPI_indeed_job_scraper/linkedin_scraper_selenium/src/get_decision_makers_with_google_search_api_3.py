@@ -124,13 +124,13 @@ def is_profile_relevant(search_result_item, decision_maker_titles, company_name,
     return False
 
 
-async def scrape_decision_makers_google_api(json_file_path, decision_maker_titles, max_results_per_search,
+async def scrape_decision_makers_google_api(LINKEDIN_COMPANY_SIZE_FILTER, json_file_path, decision_maker_titles, max_results_per_search,
                                             api_csv_path):
     load_dotenv()
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    company_size_filter = os.getenv('LINKEDIN_COMPANY_SIZE_FILTER', '[]')
+    company_size_filter = LINKEDIN_COMPANY_SIZE_FILTER
     try:
         size_filter = json.loads(company_size_filter)
     except json.JSONDecodeError:
