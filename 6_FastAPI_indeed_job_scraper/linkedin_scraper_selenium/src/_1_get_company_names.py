@@ -723,11 +723,11 @@ def save_to_csv(jobs, JOB_TITLE, filename=None):
         return
 
     if not filename:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         folder_name = "1_get_company_names"
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
-        filename = f"scraped_data/{folder_name}/linkedin_{JOB_TITLE}_jobs_{timestamp}.csv"
+        filename = f"scraped_data/{folder_name}/linkedin_'{JOB_TITLE}'_jobs.csv"
 
     try:
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
@@ -746,13 +746,8 @@ def save_to_csv(jobs, JOB_TITLE, filename=None):
         print(f"❌ Error saving to CSV: {e}")
 
 
-def main():
-    driver = initialize_driver()
+def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
     try:
-        # User-defined search parameters
-        LOCATION = "United States"
-        JOB_TITLE = "Machine Learning"
-        DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 
         print("🚀 Starting LinkedIn Job Scraper with Pagination...")
         print(f"🎯 Searching for: {JOB_TITLE}")
@@ -815,4 +810,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+     driver = initialize_driver()
+     LOCATION = "United States"
+     JOB_TITLE = "Machine Learning"
+     DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
+     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED)

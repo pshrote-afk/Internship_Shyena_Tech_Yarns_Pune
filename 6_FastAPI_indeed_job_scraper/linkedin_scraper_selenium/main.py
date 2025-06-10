@@ -1,6 +1,6 @@
 import asyncio
 from src.driver_initialize_and_login import initialize_driver,login_to_linkedin
-#from src._1_get_company_names import sth
+from src._1_get_company_names import get_company_names
 from src._2_get_company_size_data import scrape_company_data
 from src._3_get_decision_makers_with_google_search_api import scrape_decision_makers_google_api
 
@@ -11,7 +11,15 @@ if __name__ == "__main__":
 
 	#Part 1 - get company names
 
+        LOCATION = "United States"
+        JOB_TITLE = "Machine Learning"
+        DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
+        
+        get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED)
+
+
 	#Part 2 - get company size data
+
 #	csv_file_path = "./scraped_data/1_get_company_names/linkedin_Machine Learning_jobs_20250603_113313.csv"
 #
 #	try:
