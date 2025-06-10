@@ -280,13 +280,15 @@ def scrape_company_data(driver,csv_file_path):
     try:
         # Read company names from CSV
         companies = set()
+        print("test before opening csv file\n")
         with open(csv_file_path, 'r', encoding='utf-8') as f:
+            print("test after opening csv file\n")
             reader = csv.DictReader(f)
             for row in reader:
                 company = row['company'].strip()
                 if company:  # Skip empty company names
                     companies.add(company)
-
+        print("test after exiting csv file\n")
         # Filter out already processed companies
         companies_to_process = [c for c in companies if c not in processed_companies]
         total_companies = len(companies_to_process)

@@ -1,60 +1,43 @@
 {
   "1-10 employees": [
-    "Shinkei",
-    "Stella Contracting, Inc"
+    "AUGUST",
+    "Nichefire",
+    "Company not found"
   ],
   "11-50 employees": [
-    "Hooglee",
-    "AngioSafe, Inc.",
-    "Sponsor a Pet",
-    "AI Fund"
+    "Bedrock Analytics",
+    "Marencor",
+    "BioSpace",
+    "TalentAlly",
+    "Fuse3 Solutions"
   ],
-  "51-200 employees": [],
+  "51-200 employees": [
+    "Cerby",
+    "AARATECH",
+    "Slip Robotics",
+    "Accord Technologies Inc"
+  ],
   "201-500 employees": [
-    "Helion",
-    "BioCatch"
+    "Life360",
+    "Goal Solutions"
   ],
   "501-1000 employees": [
-    "AEVEX Aerospace",
-    "Scale AI",
-    "Boviet Solar"
+    "Wisk"
   ],
   "1001-5000 employees": [
-    "Georgia Tech Research Institute",
-    "Nixon Peabody LLP",
-    "Fish & Richardson P.C.",
-    "Terumo Neuro"
+    "FanDuel",
+    "Zurn Elkay Water Solutions",
+    "Presidio",
+    "Pacer Staffing"
   ],
-  "5001-10,000 employees": [
-    "Victra - Verizon Authorized Retailer",
-    "Suntory Global Spirits",
-    "Westinghouse Electric Company",
-    "CooperVision",
-    "Boston Medical Center (BMC)"
-  ],
+  "5001-10,000 employees": [],
   "10,001+ employees": [
-    "Sanofi",
-    "KLA",
-    "NVIDIA",
-    "Analog Devices",
-    "Lam Research",
-    "AMD",
-    "Samsung Electronics America",
-    "Tokyo Electron US",
-    "Federal Bureau of Investigation (FBI)",
-    "Capital One",
-    "Iron Mountain",
-    "GE Vernova",
-    "MediaTek",
-    "Medtronic",
-    "Los Alamos National Laboratory",
-    "Nokia",
-    "Qualcomm",
-    "TSMC",
-    "Genentech",
-    "Cisco",
-    "NRG Energy",
-    "Eli Lilly and Company"
+    "Comcast",
+    "Atria Management Company"
   ],
-  "unknown": []
+  "unknown": [
+    "Ripple Logics",
+    "American Unit, Inc",
+    "UL Research Institutes"
+  ]
 }

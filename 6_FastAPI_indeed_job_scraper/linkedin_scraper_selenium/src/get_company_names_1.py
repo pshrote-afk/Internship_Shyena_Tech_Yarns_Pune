@@ -807,8 +807,7 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scrape
         import traceback
         traceback.print_exc()
     finally:
-        print("\n🔚 Closing browser...")
-        driver.quit()
+        print("\n🔚 Part 1: Scrape new jobs COMPLETE...")
 
 
 if __name__ == "__main__":

@@ -47,6 +47,26 @@ def initialize_driver():
 def login_to_linkedin(driver):
     """Login to LinkedIn with credentials and handle verification if needed"""
     driver.get("https://www.linkedin.com/login")
+
+    # check if provided driver already has an active linkedin session
+    success_selectors = [
+        "//nav[@aria-label='Global navigation']",
+        "//nav[contains(@class, 'global-nav')]",
+        "//div[@id='global-nav']",
+        "//a[@href='/feed/']",
+        "//span[text()='Home']"
+    ]
+
+    for selector in success_selectors:
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, selector))
+            )
+            print("\nAlready logged in...\n")
+            return True
+        except TimeoutException:
+            continue
+
     try:
         # Type email and password
         human_type(WebDriverWait(driver, 20).until(
@@ -76,14 +96,6 @@ def login_to_linkedin(driver):
 
 
             # Try multiple selectors for successful login verification
-            success_selectors = [
-                "//nav[@aria-label='Global navigation']",
-                "//nav[contains(@class, 'global-nav')]",
-                "//div[@id='global-nav']",
-                "//a[@href='/feed/']",
-                "//span[text()='Home']"
-            ]
-
             login_successful = False
             for selector in success_selectors:
                 try:

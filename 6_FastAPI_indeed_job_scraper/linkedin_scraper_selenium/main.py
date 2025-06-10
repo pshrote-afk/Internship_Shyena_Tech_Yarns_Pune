@@ -6,30 +6,33 @@ from src.get_decision_makers_with_google_search_api_3 import scrape_decision_mak
 
 
 if __name__ == "__main__":
-	driver = initialize_driver()
-	login_to_linkedin(driver)
-
-	#Part 1 - get company names
-
+	# driver = initialize_driver()
+	# login_to_linkedin(driver)
+	#
+	# #Part 1 - get company names
+	#
 	LOCATION = "United States"
 	JOB_TITLE = "Data Engineer"
 	DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
-	max_pages_scraped = 1  # Safety limit to prevent infinite loops. Default: 50
-
-	get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped)
-
-
+	# max_pages_scraped = 1  # Safety limit to prevent infinite loops. Default: 50
+	#
+	# get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped)
+	#
+	
+	#later UPDATE: sleep for 15 mins, change vpn, change linkedin account
 	#Part 2 - get company size data
 
-	csv_file_path = "./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
-
+	driver = initialize_driver()
+	login_to_linkedin(driver)
+	csv_file_path = f"./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
 	try:
 		scrape_company_data(driver,csv_file_path)
 		print("Scraping completed successfully!")
  
 	except Exception as e:
-		print(f"Scraping failed")
-	
+		print(f"Scraping failed: {str(e)}")
+
+	print("\nQuitting driver...\n")
 	driver.quit()
 
 	# Part 3 - get decision maker
