@@ -661,11 +661,11 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
         return jobs
 
 
-def scrape_all_pages(driver, JOB_TITLE):
+def scrape_all_pages(driver, JOB_TITLE, max_pages_scraped):
     """Scrape jobs from all available pages."""
     all_jobs = []
     current_page = 1
-    max_page_attempts = 2  # Safety limit to prevent infinite loops. Default: 50
+    max_pages_scraped = max_pages_scraped
 
     print("\n" + "=" * 60)
     print("🚀 STARTING MULTI-PAGE SCRAPING")
@@ -678,7 +678,7 @@ def scrape_all_pages(driver, JOB_TITLE):
     else:
         print("📊 Could not determine total pages - will scrape until no more pages")
 
-    while current_page <= max_page_attempts:
+    while current_page <= max_pages_scraped:
         print(f"\n{'=' * 20} PAGE {current_page} {'=' * 20}")
 
         if total_pages:
@@ -753,7 +753,7 @@ def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     except Exception as e:
         print(f"❌ Error saving to CSV: {e}")
 
-def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
+def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped):
     try:
 
         print("🚀 Starting LinkedIn Job Scraper with Pagination...")
@@ -762,11 +762,6 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
         print(f"📅 Date filter: {DATE_POSTED}")
         print("-" * 50)
 
-        # Execute steps
-        if not login_to_linkedin(driver):
-            print("❌ Login failed. Exiting...")
-            return
-
         time.sleep(2)
 
         if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED):
@@ -774,7 +769,7 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED):
             return
 
         # Scrape all pages
-        all_jobs = scrape_all_pages(driver, JOB_TITLE)
+        all_jobs = scrape_all_pages(driver, JOB_TITLE, max_pages_scraped)
 
         # Save all jobs to single CSV
         save_to_csv(all_jobs, JOB_TITLE)
@@ -821,4 +816,5 @@ if __name__ == "__main__":
      LOCATION = "United States"
      JOB_TITLE = "Generative AI Developer"
      DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
-     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED)
+     max_pages_scraped = 2 # Safety limit to prevent infinite loops. Default: 50
+     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped)

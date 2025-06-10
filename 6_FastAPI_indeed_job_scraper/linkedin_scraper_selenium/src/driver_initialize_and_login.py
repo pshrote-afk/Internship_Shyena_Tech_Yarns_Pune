@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-from _2_get_company_size_data import human_type
+from src.get_company_size_data_2 import human_type
 
 load_dotenv()
 LINKEDIN_EMAIL = os.getenv('LINKEDIN_EMAIL')

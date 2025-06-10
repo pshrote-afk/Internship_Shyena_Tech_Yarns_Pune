@@ -13,7 +13,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-OUTPUT_DIR = "./scraped_data/4_get_decision_makers_google_api"
+OUTPUT_DIR = "./scraped_data/3_get_decision_makers_google_api"
 PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
 OUTPUT_FILE = f"{OUTPUT_DIR}/company_name_versus_decision_maker_name.json"
 SEARCH_DELAY_MIN = 2
