@@ -135,7 +135,7 @@ def login_to_linkedin(driver):
         return False
 
 
-def apply_job_filters(driver, title, location, date_posted):
+def apply_job_filters(driver, title, location, date_posted, industry_filter):
     """Apply filters on LinkedIn Jobs page."""
     try:
         print("🔍 Navigating to jobs page...")
@@ -275,9 +275,7 @@ def apply_job_filters(driver, title, location, date_posted):
 
                         time.sleep(2)
 
-        except Exception as e:
-            print(f"⚠️ Warning - date filter error: {e}")
-            # Continue without date filter
+
 
         print("✅ Filters applied successfully!")
         return True
@@ -753,18 +751,19 @@ def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     except Exception as e:
         print(f"❌ Error saving to CSV: {e}")
 
-def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped):
+def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped):
     try:
 
         print("🚀 Starting LinkedIn Job Scraper with Pagination...")
         print(f"🎯 Searching for: {JOB_TITLE}")
         print(f"📍 Location: {LOCATION}")
         print(f"📅 Date filter: {DATE_POSTED}")
+        print(f"Industry filter: {INDUSTRY_FILTER}")
         print("-" * 50)
 
         time.sleep(2)
 
-        if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED):
+        if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED, INDUSTRY_FILTER):
             print("❌ Filter application failed. Exiting...")
             return
 
@@ -816,4 +815,4 @@ if __name__ == "__main__":
      JOB_TITLE = "Generative AI Developer"
      DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
      max_pages_scraped = 2 # Safety limit to prevent infinite loops. Default: 50
-     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, max_pages_scraped)
+     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, industry_filter, max_pages_scraped)
