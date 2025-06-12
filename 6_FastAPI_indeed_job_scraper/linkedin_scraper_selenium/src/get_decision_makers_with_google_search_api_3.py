@@ -13,13 +13,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-OUTPUT_DIR = "./scraped_data/3_get_decision_makers_google_api"
-PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
-OUTPUT_FILE = f"{OUTPUT_DIR}/company_name_versus_decision_maker_name.json"
-SEARCH_DELAY_MIN = 2
-SEARCH_DELAY_MAX = 5
-DAILY_LIMIT = 100
-WARNING_THRESHOLD = 70
+
 
 # Hardcoded power positions list
 POWER_POSITIONS = [
@@ -35,6 +29,7 @@ POWER_POSITIONS = [
 
 # Former position keywords to filter out
 FORMER_KEYWORDS = ["ex-", "former", "previous", "past", "retired", "formerly", "student", "intern", "freelance"]
+
 
 def extract_person_name_from_title(title):
     """Extract person name from Google search result title"""
@@ -124,8 +119,19 @@ def is_profile_relevant(search_result_item, decision_maker_titles, company_name,
     return False
 
 
-async def scrape_decision_makers_google_api(LINKEDIN_COMPANY_SIZE_FILTER, json_file_path, decision_maker_titles, max_results_per_search,
+async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path, decision_maker_titles,
+                                            max_results_per_search,
                                             api_csv_path):
+
+    OUTPUT_DIR = "./scraped_data/3_get_decision_makers_google_api"
+    PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
+    OUTPUT_FILE = f"{OUTPUT_DIR}/{JOB_TITLE}_company_name_versus_decision_maker_name.json"
+    SEARCH_DELAY_MIN = 2
+    SEARCH_DELAY_MAX = 5
+    DAILY_LIMIT = 100
+    WARNING_THRESHOLD = 70
+
+
     load_dotenv()
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -140,19 +146,16 @@ async def scrape_decision_makers_google_api(LINKEDIN_COMPANY_SIZE_FILTER, json_f
     print(f"Company size filter: {size_filter}")
 
     try:
-        with open(json_file_path, 'r', encoding='utf-8') as f:
-            companies_data = json.load(f)
+        df = pd.read_csv(csv_file_path)
     except FileNotFoundError:
-        print(f"Error: File {json_file_path} not found")
+        print(f"Error: File {csv_file_path} not found")
         return {}
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON format in {json_file_path}")
+    except Exception as e:
+        print(f"Error reading CSV file: {e}")
         return {}
 
-    filtered_companies = []
-    for size_category in size_filter:
-        if size_category in companies_data:
-            filtered_companies.extend(companies_data[size_category])
+    # Filter companies by size
+    filtered_companies = df[df['company_size'].isin(size_filter)]['company'].tolist()
 
     print(f"Total companies to process: {len(filtered_companies)}")
 
@@ -418,6 +421,8 @@ def save_progress(filename, data):
 
 
 async def main():
+    JOB_TITLE = "Sample_job"
+
     decision_maker_titles = [
         "CTO", "CIO", "VP Engineering", "VP Delivery", "Director Engineering",
         "Director Delivery", "Director Software Engineering", "Director Data",
@@ -428,8 +433,13 @@ async def main():
 
     api_csv_path = "google_api_key_and_cse_id.csv"
 
+    # Set company size filter
+    LINKEDIN_COMPANY_SIZE_FILTER = '["51-200 employees","201-500 employees","10,001+ employees"]'
+
     results = await scrape_decision_makers_google_api(
-        json_file_path="companies.json",
+        JOB_TITLE,
+        LINKEDIN_COMPANY_SIZE_FILTER=LINKEDIN_COMPANY_SIZE_FILTER,
+        csv_file_path=f"Generative AI_company_website_industry_size.csv",
         decision_maker_titles=decision_maker_titles,
         max_results_per_search=5,
         api_csv_path=api_csv_path
