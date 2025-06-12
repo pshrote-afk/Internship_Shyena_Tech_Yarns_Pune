@@ -61,6 +61,16 @@ def extract_website_and_company_size_info(about_section_text):
                 if "www" in next_line or "http" in next_line:
                     website = next_line
 
+
+        if line == "Industry":
+            # Check if previous, previous  line contains "Verified page"
+            next_line = lines[i + 1].strip()
+            next_to_next_line = lines[i + 2].strip()
+            if "Company size" in next_to_next_line:
+                industry = next_line
+
+
+
         # Check for Company size keyword
         if line == "Company size":
             # Check if next line exists and contains "employees"
@@ -68,6 +78,7 @@ def extract_website_and_company_size_info(about_section_text):
                 next_line = lines[i + 1].strip()
                 if "employees" in next_line:
                     company_size = next_line
+
 
     return website, company_size
 
@@ -280,15 +291,12 @@ def scrape_company_data(driver,csv_file_path):
     try:
         # Read company names from CSV
         companies = set()
-        print("test before opening csv file\n")
         with open(csv_file_path, 'r', encoding='utf-8') as f:
-            print("test after opening csv file\n")
             reader = csv.DictReader(f)
             for row in reader:
                 company = row['company'].strip()
                 if company:  # Skip empty company names
                     companies.add(company)
-        print("test after exiting csv file\n")
         # Filter out already processed companies
         companies_to_process = [c for c in companies if c not in processed_companies]
         total_companies = len(companies_to_process)
@@ -368,5 +376,5 @@ if __name__ == "__main__":
 
     driver = webdriver.Chrome(options=chrome_options)
 
-    csv_path = "./scraped_data/1_scrape_job_data/scraped_jobs.csv"
+    csv_path = "./scraped_data/1_get_company_names/linkedin_Generative AI_jobs.csv"
     scrape_company_data(driver,csv_path)
