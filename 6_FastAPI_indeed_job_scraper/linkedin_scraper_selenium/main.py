@@ -6,27 +6,27 @@ from src.get_decision_makers_with_google_search_api_3 import scrape_decision_mak
 from src.generate_final_output_4 import process_data
 
 if __name__ == "__main__":
-	driver = initialize_driver()
-	login_to_linkedin(driver)
-
-	# Part 1 - get company names
-
-	LOCATION = "United States"
+	# driver = initialize_driver()
+	# login_to_linkedin(driver)
+	#
+	# # Part 1 - get company names
+	#
+	# LOCATION = "United States"
 	JOB_TITLE = "Generative AI"
-	DATE_POSTED = "Past month"  # Options: "Past 24 hours", "Past week", "Past month"
-	INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
-	max_pages_scraped = 40  # Safety limit to prevent infinite loops. Default: 50
-	LINKEDIN_COMPANY_SIZE_FILTER='["501-1000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1000 employees" OR "1001-5000 employees" OR "5001-10,000 employees" OR "10,001+ employees" OR "unknown"
-
-	# example:
-	# LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees"]'
-	# LINKEDIN_COMPANY_SIZE_FILTER='["51-200 employees","501-1000 employees"]'
-	# LINKEDIN_COMPANY_SIZE_FILTER='["501-1000 employees"]'
-
-	get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped)
-
-	print("\nQuitting driver...\n")
-	driver.quit()
+	# DATE_POSTED = "Past month"  # Options: "Past 24 hours", "Past week", "Past month"
+	# INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
+	# max_pages_scraped = 40  # Safety limit to prevent infinite loops. Default: 50
+	# LINKEDIN_COMPANY_SIZE_FILTER='["501-1000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1000 employees" OR "1001-5000 employees" OR "5001-10,000 employees" OR "10,001+ employees" OR "unknown"
+	#
+	# # example:
+	# # LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees"]'
+	# # LINKEDIN_COMPANY_SIZE_FILTER='["51-200 employees","501-1000 employees"]'
+	# # LINKEDIN_COMPANY_SIZE_FILTER='["501-1000 employees"]'
+	#
+	# get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped)
+	#
+	# print("\nQuitting driver...\n")
+	# driver.quit()
 
 
 	# later UPDATE: sleep for 15 mins, change vpn, change linkedin account
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 	login_to_linkedin(driver)
 	csv_file_path = f"./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
 	try:
-		scrape_company_data(driver,csv_file_path)
+		scrape_company_data(driver,JOB_TITLE, csv_file_path)
 		print("Scraping completed successfully!")
 
 	except Exception as e:

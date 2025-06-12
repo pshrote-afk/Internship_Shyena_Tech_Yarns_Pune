@@ -17,23 +17,13 @@ OUTPUT_DIR = "./scraped_data/2_get_company_size_data"
 
 # Initialize data structures
 processed_companies = set()
-company_website_dict = {}
-company_size_dict = {
-    "1-10 employees": set(),
-    "11-50 employees": set(),
-    "51-200 employees": set(),
-    "201-500 employees": set(),
-    "501-1000 employees": set(),
-    "1001-5000 employees": set(),
-    "5001-10,000 employees": set(),
-    "10,001+ employees": set(),
-    "unknown": set()
-}
+company_data = {}  # {company_name: {website, industry, company_size}}
 
 # Load environment variables
 load_dotenv()
 LINKEDIN_EMAIL = os.getenv('LINKEDIN_EMAIL')
 LINKEDIN_PASSWORD = os.getenv('LINKEDIN_PASSWORD')
+
 
 # my new fav function
 def extract_website_and_company_size_info(about_section_text):
@@ -61,15 +51,12 @@ def extract_website_and_company_size_info(about_section_text):
                 if "www" in next_line or "http" in next_line:
                     website = next_line
 
-
         if line == "Industry":
             # Check if previous, previous  line contains "Verified page"
             next_line = lines[i + 1].strip()
             next_to_next_line = lines[i + 2].strip()
             if "Company size" in next_to_next_line:
                 industry = next_line
-
-
 
         # Check for Company size keyword
         if line == "Company size":
@@ -79,8 +66,8 @@ def extract_website_and_company_size_info(about_section_text):
                 if "employees" in next_line:
                     company_size = next_line
 
+    return website, industry, company_size
 
-    return website, company_size
 
 def save_progress():
     """Save current progress to file"""
@@ -89,15 +76,15 @@ def save_progress():
 
     progress_data = {
         'processed': list(processed_companies),
-        'websites': company_website_dict,
-        'sizes': {k: list(v) for k, v in company_size_dict.items()}
+        'company_data': company_data
     }
     with open(progress_file, 'w') as f:
         json.dump(progress_data, f, indent=2)
 
+
 def load_progress():
     """Load progress from file if exists"""
-    global processed_companies, company_website_dict, company_size_dict
+    global processed_companies, company_data
 
     progress_file = f"{OUTPUT_DIR}/progress.json"
     if not os.path.exists(progress_file):
@@ -108,12 +95,7 @@ def load_progress():
             progress_data = json.load(f)
 
         processed_companies = set(progress_data.get('processed', []))
-        company_website_dict = progress_data.get('websites', {})
-
-        # Load sizes and convert lists back to sets
-        sizes = progress_data.get('sizes', {})
-        for bucket in company_size_dict.keys():
-            company_size_dict[bucket] = set(sizes.get(bucket, []))
+        company_data = progress_data.get('company_data', {})
 
     except json.JSONDecodeError:
         print("Progress file corrupted, starting fresh")
@@ -136,62 +118,6 @@ def handle_captcha():
     """Handle CAPTCHA by waiting for manual intervention"""
     print("\nCAPTCHA detected! Please solve it manually in the browser...")
     input("Press ENTER to continue after solving CAPTCHA...")
-
-
-
-
-
-def get_employee_bucket(size_str):
-    """Categorize employee count into buckets"""
-    if not size_str or size_str.lower() == 'unknown':
-        return "unknown"
-
-    # Clean and normalize the string
-    clean_str = size_str.replace(',', '').replace(' ', '').lower()
-
-    # Remove non-numeric characters except digits, '+', and '-'
-    clean_str = ''.join(c for c in clean_str if c.isdigit() or c in '+-')
-
-    # Handle different formats
-    if '-' in clean_str:
-        # Handle ranges like "2-10" or "1001-5000"
-        parts = clean_str.split('-')
-        try:
-            # Take the upper bound of the range
-            max_val = int(parts[1]) if parts[1] else int(parts[0])
-        except (ValueError, IndexError):
-            return "unknown"
-    elif '+' in clean_str:
-        # Handle "10000+" cases
-        try:
-            max_val = int(clean_str.split('+')[0])
-        except ValueError:
-            return "unknown"
-    else:
-        # Handle single number cases
-        try:
-            max_val = int(clean_str)
-        except ValueError:
-            return "unknown"
-
-    # Categorize based on the max value
-    if max_val <= 10:
-        return "1-10 employees"
-    elif max_val <= 50:
-        return "11-50 employees"
-    elif max_val <= 200:
-        return "51-200 employees"
-    elif max_val <= 500:
-        return "201-500 employees"
-    elif max_val <= 1000:
-        return "501-1000 employees"
-    elif max_val <= 5000:
-        return "1001-5000 employees"
-    elif max_val <= 10000:
-        return "5001-10,000 employees"
-    elif max_val > 10000:
-        return "10,001+ employees"
-    return "unknown"
 
 
 def process_company(driver, company_name):
@@ -240,28 +166,28 @@ def process_company(driver, company_name):
             print(f"About tab not found for {company_name}")
             raise
 
-            # Print all About section data
+        # Print all About section data
         try:
             about_section = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//section[contains(@class,'about')]")))
 
-            website, company_size = extract_website_and_company_size_info(about_section.text)
+            website, industry, company_size = extract_website_and_company_size_info(about_section.text)
             print("------------------")
             print(website)
+            print(industry)
             print(company_size)
             print("------------------\n")
 
         except Exception as e:
             print(f"Could not extract full About section")
+            website, industry, company_size = "unknown", "unknown", "unknown"
 
-        except Exception as e:
-            print(f"About tab not found for {company_name}")
-            raise
-
-        company_website_dict[company_name] = website
-
-        bucket = get_employee_bucket(company_size)
-        company_size_dict[bucket].add(company_name)
+        # Store company data
+        company_data[company_name] = {
+            'website': website,
+            'industry': industry,
+            'company_size': company_size
+        }
 
         # Mark as processed
         processed_companies.add(company_name)
@@ -269,8 +195,11 @@ def process_company(driver, company_name):
 
     except Exception as e:
         print(f"Error processing {company_name}: {str(e)}")
-        company_website_dict[company_name] = "unknown"
-        company_size_dict["unknown"].add(company_name)
+        company_data[company_name] = {
+            'website': "unknown",
+            'industry': "unknown",
+            'company_size': "unknown"
+        }
         processed_companies.add(company_name)
         save_progress()
         raise
@@ -283,7 +212,7 @@ def process_company(driver, company_name):
             pass
 
 
-def scrape_company_data(driver,csv_file_path):
+def scrape_company_data(driver, JOB_TITLE, csv_file_path):
     """Main function to scrape company data"""
     # Load any existing progress
     load_progress()
@@ -297,6 +226,7 @@ def scrape_company_data(driver,csv_file_path):
                 company = row['company'].strip()
                 if company:  # Skip empty company names
                     companies.add(company)
+
         # Filter out already processed companies
         companies_to_process = [c for c in companies if c not in processed_companies]
         total_companies = len(companies_to_process)
@@ -306,9 +236,6 @@ def scrape_company_data(driver,csv_file_path):
             return
 
         print(f"Found {total_companies} companies to process")
-
-        # Login to LinkedIn
-
 
         # Process companies
         for idx, company in enumerate(companies_to_process, 1):
@@ -335,17 +262,22 @@ def scrape_company_data(driver,csv_file_path):
             else:
                 random_delay(1, 3)
 
-        # Save final results
-        website_file = f"{OUTPUT_DIR}/company_versus_website.json"
-        with open(website_file, 'w') as f:
-            json.dump(company_website_dict, f, indent=2)
+        # Save final CSV results
+        output_csv = f"{OUTPUT_DIR}/{JOB_TITLE}_company_website_industry_size.csv"
+        with open(output_csv, 'w', newline='', encoding='utf-8') as f:
+            fieldnames = ['company', 'website', 'industry', 'company_size']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
 
-        size_file = f"{OUTPUT_DIR}/company_size_versus_company_name.json"
-        size_dict_serializable = {k: list(v) for k, v in company_size_dict.items()}
-        with open(size_file, 'w') as f:
-            json.dump(size_dict_serializable, f, indent=2)
+            for company_name, data in company_data.items():
+                writer.writerow({
+                    'company': company_name,
+                    'website': data['website'],
+                    'industry': data['industry'],
+                    'company_size': data['company_size']
+                })
 
-        print("\nProcessing complete. Final results saved.")
+        print(f"\nProcessing complete. Results saved to {output_csv}")
 
         # Clean up progress file after successful completion
         progress_file = f"{OUTPUT_DIR}/progress.json"
@@ -358,6 +290,7 @@ def scrape_company_data(driver,csv_file_path):
 
 # This allows the script to be run directly if needed
 if __name__ == "__main__":
+    JOB_TITLE = "Sample_job"
     # Default path if run directly
     # Configure Chrome options (headless=False as requested)
     chrome_options = webdriver.ChromeOptions()
@@ -377,4 +310,4 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=chrome_options)
 
     csv_path = "./scraped_data/1_get_company_names/linkedin_Generative AI_jobs.csv"
-    scrape_company_data(driver,csv_path)
+    scrape_company_data(driver, JOB_TITLE, csv_path)
