@@ -49,32 +49,32 @@ if __name__ == "__main__":
 
 	csv_company_file_path=f"./scraped_data/2_get_company_size_data/{JOB_TITLE}_company_website_industry_size.csv"
 
-	decision_maker_titles = ["CTO", "CIO", "VP of Engineering", "VP of Delivery", "Director of Engineering", "Director of Delivery",
-              "Director of Software Engineering", "Director of Data", "Director of AI Delivery",
-               "Head of Solutions Engineering", "Vice President of Professional Services",
-              "Director Software Engineering", "Director of AI Solutions", "Head of AI",
-              "Director of Product Engineering", "Head Of Engineering"]
-
-	api_csv_path="./google_api_key_and_cse_id.csv"
-
-	results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
-	         LINKEDIN_COMPANY_SIZE_FILTER,
-	         csv_company_file_path,
-	         decision_maker_titles,
-	   	 max_results_per_search=5,
-	 	 api_csv_path=api_csv_path
-	 	))
+	# decision_maker_titles = ["CTO", "CIO", "VP of Engineering", "VP of Delivery", "Director of Engineering", "Director of Delivery",
+    #           "Director of Software Engineering", "Director of Data", "Director of AI Delivery",
+    #            "Head of Solutions Engineering", "Vice President of Professional Services",
+    #           "Director Software Engineering", "Director of AI Solutions", "Head of AI",
+    #           "Director of Product Engineering", "Head Of Engineering"]
+	#
+	# api_csv_path="./google_api_key_and_cse_id.csv"
+	#
+	# results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
+	#          LINKEDIN_COMPANY_SIZE_FILTER,
+	#          csv_company_file_path,
+	#          decision_maker_titles,
+	#    	 max_results_per_search=5,
+	#  	 api_csv_path=api_csv_path
+	#  	))
 
 	# Part 4 - combine all results
 
 	final = process_data(
 	csv_file_path,
-	f'./scraped_data/2_get_company_size_data/{JOB_TITLE}_company_website_industry_size.csv',
-	'./scraped_data/2_get_company_Size_data/company_versus_website.json',
-	'./scraped_data/3_get_decision_makers_google_api/company_name_versus_decision_maker_name.json'
+	csv_company_file_path,
+	f'./scraped_data/3_get_decision_makers_google_api/{JOB_TITLE}_company_name_versus_decision_maker_name.json'
 	)
 
 	print(final)
+
 
 
 
