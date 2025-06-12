@@ -13,22 +13,91 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-
-# Hardcoded power positions list
-POWER_POSITIONS = [
-    "CEO", "Chief Executive Officer", "President", "Chairman", "Founder", "Co-Founder",
-    "COO", "Chief Operating Officer", "CFO", "Chief Financial Officer",
-    "General Manager", "Managing Director", "Executive Director", "Senior Director",
-    "Vice President", "VP", "Senior Vice President", "SVP", "Executive Vice President", "EVP",
-    "Chief Technology Officer", "Chief Information Officer", "Chief Data Officer",
-    "Chief Strategy Officer", "Chief Product Officer", "Chief Marketing Officer",
-    "Chief Revenue Officer", "Chief Sales Officer", "Chief Innovation Officer",
-    "Head of", "Global Head", "Regional Head", "Country Head", "Division Head"
-]
+# Industry-specific decision maker titles
+DECISION_MAKER_TITLES = {
+    "IT Services and IT Consulting": [
+        "Chief Technology Officer",
+        "Chief Information Officer",
+        "IT Director",
+        "IT Manager",
+        "VP of IT",
+        "Director of IT Services",
+        "Solutions Architect",
+        "IT Consulting Manager",
+        "Head of Infrastructure",
+        "Cloud Services Manager"
+    ],
+    "Software Development": [
+        "Chief Technology Officer",
+        "VP of Engineering",
+        "Director of Software Development",
+        "Software Development Manager",
+        "Head of Product Development",
+        "Technical Lead",
+        "Engineering Manager",
+        "Product Manager (Technical)",
+        "DevOps Manager",
+        "Scrum Master / Agile Coach"
+    ],
+    "Technology, Information and Internet": [
+        "Chief Technology Officer",
+        "Chief Product Officer",
+        "VP of Technology",
+        "Director of Engineering",
+        "Head of Digital Transformation",
+        "Product Manager",
+        "Data Science Manager",
+        "Director of Information Systems",
+        "Head of Innovation",
+        "Technical Program Manager"
+    ],
+    "unknown": [
+        "CEO",
+        "COO",
+        "CFO",
+        "President",
+        "General Manager",
+        "Director of Operations",
+        "Business Development Manager",
+        "Head of Strategy",
+        "VP of Business Operations",
+        "Managing Director"
+    ]
+}
 
 # Former position keywords to filter out
 FORMER_KEYWORDS = ["ex-", "former", "previous", "past", "retired", "formerly", "student", "intern", "freelance"]
+
+
+def get_industry_specific_titles(industry):
+    """Get decision maker titles based on company industry"""
+    if not industry or pd.isna(industry):
+        return DECISION_MAKER_TITLES["unknown"]
+
+    industry = str(industry).strip()
+
+    # Check for exact string match first
+    if industry in DECISION_MAKER_TITLES:
+        return DECISION_MAKER_TITLES[industry]
+
+    # Check if company falls under multiple industry categories
+    matching_titles = []
+    for industry_key in DECISION_MAKER_TITLES.keys():
+        if industry_key != "unknown" and industry_key in industry:
+            matching_titles.extend(DECISION_MAKER_TITLES[industry_key])
+
+    # Remove duplicates while preserving order
+    if matching_titles:
+        seen = set()
+        unique_titles = []
+        for title in matching_titles:
+            if title not in seen:
+                seen.add(title)
+                unique_titles.append(title)
+        return unique_titles
+
+    # Default to unknown if no match found
+    return DECISION_MAKER_TITLES["unknown"]
 
 
 def extract_person_name_from_title(title):
@@ -48,7 +117,7 @@ def extract_person_name_from_title(title):
     return title.strip()
 
 
-def extract_current_job_title(title, snippet):
+def extract_current_job_title(title, snippet, relevant_titles):
     """Extract current job title from title and snippet, avoiding former positions"""
     combined_text = f"{title} {snippet}".lower()
 
@@ -59,26 +128,26 @@ def extract_current_job_title(title, snippet):
 
     # Look for job title patterns in title first
     title_lower = title.lower()
-    for pos in POWER_POSITIONS:
-        if pos.lower() in title_lower:
+    for title_option in relevant_titles:
+        if title_option.lower() in title_lower:
             # Extract the job title portion
             if ' - ' in title:
                 parts = title.split(' - ')
                 for part in parts[1:]:  # Skip name part
-                    if pos.lower() in part.lower():
+                    if title_option.lower() in part.lower():
                         return part.strip()
             elif ' | ' in title:
                 parts = title.split(' | ')
                 for part in parts[1:]:
-                    if pos.lower() in part.lower():
+                    if title_option.lower() in part.lower():
                         return part.strip()
 
     # Look in snippet if not found in title
     snippet_sentences = snippet.split('.')
     for sentence in snippet_sentences:
         sentence_lower = sentence.lower()
-        for pos in POWER_POSITIONS:
-            if pos.lower() in sentence_lower:
+        for title_option in relevant_titles:
+            if title_option.lower() in sentence_lower:
                 return sentence.strip()
 
     return None
@@ -111,30 +180,21 @@ def is_profile_relevant(search_result_item, decision_maker_titles, company_name,
         if dm_title.lower() in combined_text:
             return True
 
-    # Check for hardcoded power positions
-    for power_pos in POWER_POSITIONS:
-        if power_pos.lower() in combined_text:
-            return True
-
     return False
 
 
-async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path, decision_maker_titles,
+async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path,
+                                            decision_maker_titles,
                                             max_results_per_search,
                                             api_csv_path):
-
+    """
+    Modified function to use industry-specific decision maker titles
+    """
     OUTPUT_DIR = "./scraped_data/3_get_decision_makers_google_api"
     PROGRESS_FILE = f"{OUTPUT_DIR}/scraping_progress.json"
     OUTPUT_FILE = f"{OUTPUT_DIR}/{JOB_TITLE}_company_name_versus_decision_maker_name.json"
-    SEARCH_DELAY_MIN = 2
-    SEARCH_DELAY_MAX = 5
-    DAILY_LIMIT = 100
-    WARNING_THRESHOLD = 70
 
-
-    load_dotenv()
-
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    DECISION_MAKER_TITLES = decision_maker_titles
 
     company_size_filter = LINKEDIN_COMPANY_SIZE_FILTER
     try:
@@ -144,18 +204,36 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
         return {}
 
     print(f"Company size filter: {size_filter}")
+    SEARCH_DELAY_MIN = 2
+    SEARCH_DELAY_MAX = 5
+    DAILY_LIMIT = 100
+    WARNING_THRESHOLD = 70
+
+    load_dotenv()
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     try:
         df = pd.read_csv(csv_file_path)
+        print(f"Required columns: company, website, industry, company_size")
+        print(f"CSV columns found: {list(df.columns)}")
+
+        # Verify required columns exist
+        required_columns = ['company', 'website', 'industry', 'company_size']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        if missing_columns:
+            print(f"Error: Missing required columns: {missing_columns}")
+            return {}
+
+        # Filter companies by size
+        filtered_companies = df[df['company_size'].isin(size_filter)]
+        print(f"Total companies after company_size filter: {len(filtered_companies)}")
+
     except FileNotFoundError:
         print(f"Error: File {csv_file_path} not found")
         return {}
     except Exception as e:
         print(f"Error reading CSV file: {e}")
         return {}
-
-    # Filter companies by size
-    filtered_companies = df[df['company_size'].isin(size_filter)]['company'].tolist()
 
     print(f"Total companies to process: {len(filtered_companies)}")
 
@@ -165,17 +243,26 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
     api_manager = GoogleAPIManager(api_csv_path, DAILY_LIMIT, WARNING_THRESHOLD)
 
     try:
-        for company_idx, company_name in enumerate(filtered_companies):
-            print(f"\nProcessing company {company_idx + 1}/{len(filtered_companies)}: {company_name}")
+        for idx, row in filtered_companies.iterrows():
+            company_name = row['company']
+            industry = row['industry']
+
+            print(f"\nProcessing company {idx + 1}/{len(filtered_companies)}: {company_name}")
+            print(f"Industry: {industry}")
 
             if company_name in final_results:
                 print(f"Company {company_name} already processed, skipping...")
                 continue
 
+            # Get industry-specific decision maker titles instead of using the passed parameter
+            company_decision_maker_titles = get_industry_specific_titles(industry)
+            print(
+                f"Using {len(company_decision_maker_titles)} industry-specific titles: {company_decision_maker_titles}")
+
             company_decision_makers = {}
             already_found_names = []
 
-            for title_idx, title in enumerate(decision_maker_titles):
+            for title_idx, title in enumerate(company_decision_maker_titles):
                 print(f"  Searching for {title} at {company_name}")
 
                 progress_key = f"{company_name}_{title}"
@@ -198,7 +285,8 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
                     break
 
                 search_results = search_linkedin_profiles_google_api(
-                    api_manager, title, company_name, max_results_per_search, decision_maker_titles, already_found_names
+                    api_manager, title, company_name, max_results_per_search, company_decision_maker_titles,
+                    already_found_names
                 )
 
                 print(f"    DEBUG: search_results length: {len(search_results)}")
@@ -215,6 +303,8 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
                 for result_data in search_results:
                     person_name = result_data['name']
                     if person_name not in already_found_names:
+                        # Add industry information to result
+                        result_data['industry'] = industry
                         processed_profiles.append(result_data)
                         company_decision_makers[person_name] = {
                             'job_title': result_data['job_title'],
@@ -243,7 +333,7 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
     except KeyboardInterrupt:
         print("\nScraping interrupted by user. Progress saved.")
     except Exception as e:
-        print(f"Error during scraping")
+        print(f"Error during scraping: {str(e)}")
 
     print(f"\nScraping completed. Results saved to {OUTPUT_FILE}")
     return final_results
@@ -263,7 +353,7 @@ class GoogleAPIManager:
             self.update_daily_usage()
             print(f"Loaded {len(self.df)} API keys")
         except Exception as e:
-            raise Exception(f"Error loading API keys")
+            raise Exception(f"Error loading API keys: {str(e)}")
 
     def update_daily_usage(self):
         today = datetime.now().strftime('%Y-%m-%d')
@@ -314,7 +404,7 @@ class GoogleAPIManager:
         try:
             self.df.to_csv(self.csv_file, index=False)
         except Exception as e:
-            print(f"Error saving API keys")
+            print(f"Error saving API keys: {str(e)}")
 
 
 def search_linkedin_profiles_google_api(api_manager, title, company_name, max_results, decision_maker_titles,
@@ -357,7 +447,8 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                         # Check relevance before processing
                         if is_profile_relevant(item, decision_maker_titles, company_name, already_found_names):
                             person_name = extract_person_name_from_title(item.get('title', ''))
-                            job_title = extract_current_job_title(item.get('title', ''), item.get('snippet', ''))
+                            job_title = extract_current_job_title(item.get('title', ''), item.get('snippet', ''),
+                                                                  decision_maker_titles)
                             linkedin_url = item.get('link', '')
 
                             if person_name and job_title and 'linkedin.com/in/' in linkedin_url:
@@ -374,12 +465,6 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                         else:
                             print(f"      Skipped irrelevant: {item.get('title', 'N/A')}")
 
-                    # Save progress after each search query
-                    save_progress(f"{OUTPUT_DIR}/search_results_progress.json", {
-                        'company': company_name,
-                        'title': title,
-                        'results_found': all_results
-                    })
                 else:
                     print(f"    No results found for query: {query}")
             else:
@@ -417,38 +502,27 @@ def save_progress(filename, data):
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     except Exception as e:
-        print(f"Error saving progress to {filename}")
+        print(f"Error saving progress to {filename}: {str(e)}")
 
 
-async def main():
-    JOB_TITLE = "Sample_job"
-
-    decision_maker_titles = [
-        "CTO", "CIO", "VP Engineering", "VP Delivery", "Director Engineering",
-        "Director Delivery", "Director Software Engineering", "Director Data",
-        "Director AI Delivery", "Head Solutions Engineering",
-        "Vice President Professional Services", "Director Software Engineering",
-        "Director AI Solutions", "Head AI", "Director Product Engineering"
-    ]
-
-    api_csv_path = "google_api_key_and_cse_id.csv"
-
-    # Set company size filter
-    LINKEDIN_COMPANY_SIZE_FILTER = '["51-200 employees","201-500 employees","10,001+ employees"]'
-
-    results = await scrape_decision_makers_google_api(
-        JOB_TITLE,
-        LINKEDIN_COMPANY_SIZE_FILTER=LINKEDIN_COMPANY_SIZE_FILTER,
-        csv_file_path=f"Generative AI_company_website_industry_size.csv",
-        decision_maker_titles=decision_maker_titles,
-        max_results_per_search=5,
-        api_csv_path=api_csv_path
-    )
-
-    print(f"Total results: {len(results)}")
-
-
+# Example usage
 if __name__ == "__main__":
     import asyncio
 
-    asyncio.run(main())
+    # Example parameters
+    JOB_TITLE = "Software_Engineer"  # Used for output file naming
+    LINKEDIN_COMPANY_SIZE_FILTER = '["1-10", "11-50", "51-200"]'  # JSON string
+    csv_file_path = "companies.csv"  # CSV with columns: company, website, industry, company_size
+    decision_maker_titles = DECISION_MAKER_TITLES  # This will be overridden by industry-specific logic
+    max_results_per_search = 5
+    api_csv_path = "api_keys.csv"
+
+    # Run the scraper
+    results = asyncio.run(scrape_decision_makers_google_api(
+        JOB_TITLE=JOB_TITLE,
+        LINKEDIN_COMPANY_SIZE_FILTER=LINKEDIN_COMPANY_SIZE_FILTER,
+        csv_file_path=csv_file_path,
+        decision_maker_titles=decision_maker_titles,
+        max_results_per_search=max_results_per_search,
+        api_csv_path=api_csv_path
+    ))

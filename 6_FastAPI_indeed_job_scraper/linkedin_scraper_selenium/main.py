@@ -49,21 +49,66 @@ if __name__ == "__main__":
 
 	csv_company_file_path=f"./scraped_data/2_get_company_size_data/{JOB_TITLE}_company_website_industry_size.csv"
 
-	# decision_maker_titles = ["CTO", "CIO", "VP of Engineering", "VP of Delivery", "Director of Engineering", "Director of Delivery",
-    #           "Director of Software Engineering", "Director of Data", "Director of AI Delivery",
-    #            "Head of Solutions Engineering", "Vice President of Professional Services",
-    #           "Director Software Engineering", "Director of AI Solutions", "Head of AI",
-    #           "Director of Product Engineering", "Head Of Engineering"]
-	#
-	# api_csv_path="./google_api_key_and_cse_id.csv"
-	#
-	# results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
-	#          LINKEDIN_COMPANY_SIZE_FILTER,
-	#          csv_company_file_path,
-	#          decision_maker_titles,
-	#    	 max_results_per_search=5,
-	#  	 api_csv_path=api_csv_path
-	#  	))
+	decision_maker_titles = {
+    "IT Services and IT Consulting": [
+        "Chief Technology Officer",
+        "Chief Information Officer",
+        "IT Director",
+        "IT Manager",
+        "VP of IT",
+        "Director of IT Services",
+        "Solutions Architect",
+        "IT Consulting Manager",
+        "Head of Infrastructure",
+        "Cloud Services Manager"
+    ],
+    "Software Development": [
+        "Chief Technology Officer",
+        "VP of Engineering",
+        "Director of Software Development",
+        "Software Development Manager",
+        "Head of Product Development",
+        "Technical Lead",
+        "Engineering Manager",
+        "Product Manager (Technical)",
+        "DevOps Manager",
+        "Scrum Master / Agile Coach"
+    ],
+    "Technology, Information and Internet": [
+        "Chief Technology Officer",
+        "Chief Product Officer",
+        "VP of Technology",
+        "Director of Engineering",
+        "Head of Digital Transformation",
+        "Product Manager",
+        "Data Science Manager",
+        "Director of Information Systems",
+        "Head of Innovation",
+        "Technical Program Manager"
+    ],
+    "unknown": [
+        "CEO",
+        "COO",
+        "CFO",
+        "President",
+        "General Manager",
+        "Director of Operations",
+        "Business Development Manager",
+        "Head of Strategy",
+        "VP of Business Operations",
+        "Managing Director"
+    ]
+}
+
+	api_csv_path="./google_api_key_and_cse_id.csv"
+
+	results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
+	         LINKEDIN_COMPANY_SIZE_FILTER,
+	         csv_company_file_path,
+	         decision_maker_titles,
+	   	 max_results_per_search=5,
+	 	 api_csv_path=api_csv_path
+	 	))
 
 	# Part 4 - combine all results
 
