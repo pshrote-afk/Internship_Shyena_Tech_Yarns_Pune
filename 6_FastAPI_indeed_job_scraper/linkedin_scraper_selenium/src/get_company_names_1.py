@@ -275,6 +275,109 @@ def apply_job_filters(driver, title, location, date_posted, industry_filter):
 
                         time.sleep(2)
 
+        except Exception as e:
+            print(f"⚠️ Warning - date filter error: {e}")
+            # Continue without date filter
+
+        # Apply industry filter
+        try:
+            print("🏭 Applying industry filter")
+
+            # Multiple selectors for "All filters" button
+            all_filters_selectors = [
+                "//button[contains(text(), 'All filters')]",
+                "//span[contains(text(), 'All filters')]/parent::button",
+                "//button[contains(@aria-label, 'All filters')]",
+                "//button[contains(@class, 'search-reusables__all-filters-pill-button')]",
+                "//span[@class='artdeco-button__text' and contains(text(), 'All filters')]/parent::button"
+            ]
+
+            all_filters_button = None
+            for selector in all_filters_selectors:
+                try:
+                    all_filters_button = WebDriverWait(driver, 3).until(
+                        EC.element_to_be_clickable((By.XPATH, selector))
+                    )
+                    break
+                except:
+                    continue
+
+            if not all_filters_button:
+                print("❌ All filters button not found")
+                return
+
+            all_filters_button.click()
+            time.sleep(2)
+
+            # Wait for popup to appear
+            WebDriverWait(driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'artdeco-modal')]"))
+            )
+
+            # Multiple selectors for Industry section
+            industry_selectors = [
+                "//h3[contains(text(), 'Industry')]",
+                "//label[contains(text(), 'Industry')]",
+                "//span[contains(text(), 'Industry')]",
+                "//*[text()='Industry']"
+            ]
+
+            industry_section = None
+            for selector in industry_selectors:
+                try:
+                    industry_section = WebDriverWait(driver, 3).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    break
+                except:
+                    continue
+
+            if industry_section:
+                driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", industry_section)
+                time.sleep(1)
+
+            # Industry mapping
+            industry_mapping = {
+                "IT Services and IT Consulting": "advanced-filter-industry-96",
+                "Software Development": "advanced-filter-industry-4",
+                "Technology, Information and Internet": "advanced-filter-industry-6"
+            }
+
+            # Select industries from industry_filter variable
+            for industry in industry_filter:
+                if industry in industry_mapping:
+                    try:
+                        industry_element = WebDriverWait(driver, 2).until(
+                            EC.element_to_be_clickable((By.XPATH, f"//label[@for='{industry_mapping[industry]}']"))
+                        )
+                        industry_element.click()
+                        time.sleep(0.5)
+                    except:
+                        continue
+
+            # Click "Show results" button
+            show_results_selectors = [
+                "//button[contains(text(), 'Show results')]",
+                "//button[contains(@aria-label, 'Show results')]",
+                "//button[contains(@class, 'search-reusables__secondary-filters-show-results-button')]"
+            ]
+
+            for selector in show_results_selectors:
+                try:
+                    WebDriverWait(driver, 3).until(
+                        EC.element_to_be_clickable((By.XPATH, selector))
+                    ).click()
+                    break
+                except:
+                    continue
+
+            time.sleep(2)
+            print("✅ Industry filter applied")
+
+        except Exception as e:
+            print(f"❌ Industry filter failed: {e}")
+
+
 
 
         print("✅ Filters applied successfully!")
@@ -288,6 +391,7 @@ def apply_job_filters(driver, title, location, date_posted, industry_filter):
         except:
             pass
         return False
+
 
 
 def get_total_pages(driver):
