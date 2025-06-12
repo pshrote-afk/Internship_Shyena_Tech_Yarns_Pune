@@ -10,15 +10,18 @@ def open_protonvpn():
     time.sleep(1)
     pyautogui.press('enter')      # Launch
     time.sleep(5)                 # Wait for app
-    print("ProtonVPN opened\n")
+    print("&" * 50)
+    print("ProtonVPN opened")
 
 def quick_connect_and_close():
     pyautogui.press('tab', presses=3, interval=0.3)  # Focus Quick Connect
     pyautogui.press('enter')      # Click it
     time.sleep(5)                 # Wait 4 sec
-    print("VPN server changed\n")
+    print("VPN server changed")
     pyautogui.hotkey('alt', 'f4') # Close app
-    print("ProtonVPN closed\n")
+    print("ProtonVPN closed")
+    print("&" * 50)
+
 # Run
 open_protonvpn()
 quick_connect_and_close()
