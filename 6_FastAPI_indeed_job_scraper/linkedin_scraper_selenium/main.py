@@ -12,11 +12,11 @@ if __name__ == "__main__":
 	# Part 1 - get company names
 
 	LOCATION = "United States"
-	JOB_TITLE = "Generative AI"
+	JOB_TITLE = "Machine Learning"
 	DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 	INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
-	max_pages_scraped = 2  # Safety limit to prevent infinite loops. Default: 50
-	LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees", "201-500 employees", "501-1,000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1,000 employees" OR "1,001-5,000 employees" OR "5,001-10,000 employees" OR "10,001+ employees" OR "unknown"
+	max_pages_scraped = 2  # Safety limit to prevent infinite loops. Default: 40
+	LINKEDIN_COMPANY_SIZE_FILTER='["51-200 employees", "201-500 employees", "501-1,000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1,000 employees" OR "1,001-5,000 employees" OR "5,001-10,000 employees" OR "10,001+ employees" OR "unknown"
 
 	# example:
 	# LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees"]'
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
 	# driver = initialize_driver()
 	# login_to_linkedin(driver)
-	# csv_file_path = f"./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
+	csv_file_path = f"./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
 	# try:
 	# 	scrape_company_data(driver,JOB_TITLE, csv_file_path)
 	# 	print("Scraping completed successfully!")
@@ -102,17 +102,17 @@ if __name__ == "__main__":
 
 	api_csv_path="./google_api_key_and_cse_id.csv"
 
-	results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
-	         LINKEDIN_COMPANY_SIZE_FILTER,
-	         csv_company_file_path,
-	         decision_maker_titles,
-	   	 max_results_per_search=5,
-	 	 api_csv_path=api_csv_path
-	 	))
+	# results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
+	#          LINKEDIN_COMPANY_SIZE_FILTER,
+	#          csv_company_file_path,
+	#          decision_maker_titles,
+	#    	 max_results_per_search=5,
+	#  	 api_csv_path=api_csv_path
+	#  	))
 
 	# Part 4 - combine all results
 
-	final = process_data(
+	final = process_data(LINKEDIN_COMPANY_SIZE_FILTER,
 	csv_file_path,
 	csv_company_file_path,
 	f'./scraped_data/3_get_decision_makers_google_api/{JOB_TITLE}_company_name_versus_decision_maker_name.json'

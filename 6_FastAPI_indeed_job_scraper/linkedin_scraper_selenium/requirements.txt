@@ -1,10 +1,6 @@
 dotenv	
 selenium
 pandas
-langchain_openai
-langchain
-crawl4ai
 requests 
 pyautogui
-
 
