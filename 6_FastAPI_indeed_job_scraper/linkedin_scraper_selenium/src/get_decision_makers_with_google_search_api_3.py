@@ -3,7 +3,7 @@ import os
 import time
 import random
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 from dotenv import load_dotenv
 import re
@@ -227,6 +227,8 @@ async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FIL
         # Filter companies by size
         filtered_companies = df[df['company_size'].isin(size_filter)]
         print(f"Total companies after company_size filter: {len(filtered_companies)}")
+        print("TEST.")
+        print(f"{filtered_companies}")
 
     except FileNotFoundError:
         print(f"Error: File {csv_file_path} not found")
@@ -356,7 +358,8 @@ class GoogleAPIManager:
             raise Exception(f"Error loading API keys: {str(e)}")
 
     def update_daily_usage(self):
-        today = datetime.now().strftime('%Y-%m-%d')
+        # today = datetime.now().strftime('%Y-%m-%d')       # for IST
+        today = (datetime.now() + timedelta(hours=-12.5)).strftime('%Y-%m-%d %H:%M') + " PST"       # for Pacific Standard Time - google search results reset at midnight of this
 
         for idx, row in self.df.iterrows():
             if row['last_used_date'] != today:

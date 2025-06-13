@@ -38,6 +38,7 @@ def extract_website_and_company_size_info(about_section_text):
     """
     lines = about_section_text.split('\n')
     website = "unknown"
+    industry = "unknown"
     company_size = "unknown"
 
     for i, line in enumerate(lines):
