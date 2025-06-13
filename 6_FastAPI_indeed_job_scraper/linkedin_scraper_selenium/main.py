@@ -12,11 +12,11 @@ if __name__ == "__main__":
 	# Part 1 - get company names
 
 	LOCATION = "United States"
-	JOB_TITLE = "Machine Learning"
+	JOB_TITLE = "Generative AI"
 	DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 	INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
 	max_pages_scraped = 2  # Safety limit to prevent infinite loops. Default: 40
-	LINKEDIN_COMPANY_SIZE_FILTER='["51-200 employees", "201-500 employees", "501-1,000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1,000 employees" OR "1,001-5,000 employees" OR "5,001-10,000 employees" OR "10,001+ employees" OR "unknown"
+	LINKEDIN_COMPANY_SIZE_FILTER='["11-50 employees", "51-200 employees", "201-500 employees", "501-1,000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1,000 employees" OR "1,001-5,000 employees" OR "5,001-10,000 employees" OR "10,001+ employees" OR "unknown"
 
 	# example:
 	# LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees"]'
