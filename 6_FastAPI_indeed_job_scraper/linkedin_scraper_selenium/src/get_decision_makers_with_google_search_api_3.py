@@ -156,6 +156,7 @@ def extract_current_job_title(title, snippet, relevant_titles):
 def is_profile_relevant(search_result_item, decision_maker_titles, company_name, already_found_names):
     """
     Check if the search result represents a relevant decision maker profile
+    Returns (is_relevant: bool, reason: str)
     """
     title = search_result_item.get('title', '')
     snippet = search_result_item.get('snippet', '')
@@ -164,23 +165,23 @@ def is_profile_relevant(search_result_item, decision_maker_titles, company_name,
     # Check for former position keywords
     for keyword in FORMER_KEYWORDS:
         if keyword in combined_text:
-            return False
+            return False, "former position"
 
     # Check exact company name match
     if company_name.lower() not in combined_text:
-        return False
+        return False, "wrong company"
 
     # Extract person name and check if already found
     person_name = extract_person_name_from_title(title)
     if person_name.lower() in [name.lower() for name in already_found_names]:
-        return False
+        return False, "duplicate name"
 
     # Check for decision maker titles
     for dm_title in decision_maker_titles:
         if dm_title.lower() in combined_text:
-            return True
+            return True, ""
 
-    return False
+    return False, "not decision maker"
 
 
 async def scrape_decision_makers_google_api(JOB_TITLE, LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path,
@@ -448,7 +449,8 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                 if 'items' in data:
                     for item in data['items']:
                         # Check relevance before processing
-                        if is_profile_relevant(item, decision_maker_titles, company_name, already_found_names):
+                        is_relevant, reason = is_profile_relevant(item, decision_maker_titles, company_name, already_found_names)
+                        if is_relevant:
                             person_name = extract_person_name_from_title(item.get('title', ''))
                             job_title = extract_current_job_title(item.get('title', ''), item.get('snippet', ''),
                                                                   decision_maker_titles)
@@ -466,7 +468,7 @@ def search_linkedin_profiles_google_api(api_manager, title, company_name, max_re
                                 if len(all_results) >= max_results:
                                     break
                         else:
-                            print(f"      Skipped irrelevant: {item.get('title', 'N/A')}")
+                            print(f"      Skipped irrelevant ({reason}): {item.get('title', 'N/A')}")
 
                 else:
                     print(f"    No results found for query: {query}")
