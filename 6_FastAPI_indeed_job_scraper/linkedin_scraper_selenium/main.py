@@ -6,44 +6,46 @@ from src.get_decision_makers_with_google_search_api_3 import scrape_decision_mak
 from src.generate_final_output_4 import process_data
 
 if __name__ == "__main__":
-	# driver = initialize_driver()
-	# login_to_linkedin(driver)
+	driver = initialize_driver()
+	login_to_linkedin(driver)
 
 	# Part 1 - get company names
 
 	LOCATION = "United States"
-	JOB_TITLE = "Generative AI"
+	JOB_TITLE = "Data Science"
 	DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 	INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
 	max_pages_scraped = 2  # Safety limit to prevent infinite loops. Default: 40
 	LINKEDIN_COMPANY_SIZE_FILTER='["11-50 employees", "51-200 employees", "201-500 employees", "501-1,000 employees"]'	# "1-10 employees" OR "11-50 employees" OR "51-200 employees" OR "201-500 employees" OR "501-1,000 employees" OR "1,001-5,000 employees" OR "5,001-10,000 employees" OR "10,001+ employees" OR "unknown"
+	EXPERIENCE_LEVEL_FILTER = ["Entry level", "Associate", "Mid-Senior level"]
 
-	# example:
+# example:
 	# LINKEDIN_COMPANY_SIZE_FILTER='["1-10 employees", "11-50 employees", "51-200 employees"]'
 	# LINKEDIN_COMPANY_SIZE_FILTER='["51-200 employees","501-1,000 employees"]'
 	# LINKEDIN_COMPANY_SIZE_FILTER='["501-1,000 employees"]'
+	# EXPERIENCE_LEVEL_FILTER = ["Entry level", "Associate", "Mid-Senior level"]
 
-	# get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped)
-    #
-	# print("\nQuitting driver...\n")
-	# driver.quit()
+	get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped, EXPERIENCE_LEVEL_FILTER)
+
+	print("\nQuitting driver...\n")
+	driver.quit()
 
 
 	# later UPDATE: sleep for 15 mins, change vpn, change linkedin account
 	# Part 2 - get company size data
 
-	# driver = initialize_driver()
-	# login_to_linkedin(driver)
+	driver = initialize_driver()
+	login_to_linkedin(driver)
 	csv_file_path = f"./scraped_data/1_get_company_names/linkedin_{JOB_TITLE}_jobs.csv"
-	# try:
-	# 	scrape_company_data(driver,JOB_TITLE, csv_file_path)
-	# 	print("Scraping completed successfully!")
-    #
-	# except Exception as e:
-	# 	print(f"Scraping failed: {str(e)}")
-    #
-	# print("\nQuitting driver...\n")
-	# driver.quit()
+	try:
+		scrape_company_data(driver,JOB_TITLE, csv_file_path)
+		print("Scraping completed successfully!")
+
+	except Exception as e:
+		print(f"Scraping failed: {str(e)}")
+
+	print("\nQuitting driver...\n")
+	driver.quit()
 
 	# Part 3 - get decision maker
 
@@ -102,13 +104,13 @@ if __name__ == "__main__":
 
 	api_csv_path="./google_api_key_and_cse_id.csv"
 
-	# results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
-	#          LINKEDIN_COMPANY_SIZE_FILTER,
-	#          csv_company_file_path,
-	#          decision_maker_titles,
-	#    	 max_results_per_search=5,
-	#  	 api_csv_path=api_csv_path
-	#  	))
+	results = asyncio.run(scrape_decision_makers_google_api(JOB_TITLE,
+	         LINKEDIN_COMPANY_SIZE_FILTER,
+	         csv_company_file_path,
+	         decision_maker_titles,
+	   	 max_results_per_search=5,
+	 	 api_csv_path=api_csv_path
+	 	))
 
 	# Part 4 - combine all results
 

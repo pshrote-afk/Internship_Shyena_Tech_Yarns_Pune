@@ -135,7 +135,7 @@ def login_to_linkedin(driver):
         return False
 
 
-def apply_job_filters(driver, title, location, date_posted, industry_filter):
+def apply_job_filters(driver, title, location, date_posted, industry_filter, experience_level_filter):
     """Apply filters on LinkedIn Jobs page."""
     try:
         print("🔍 Navigating to jobs page...")
@@ -354,6 +354,51 @@ def apply_job_filters(driver, title, location, date_posted, industry_filter):
                         time.sleep(0.5)
                     except:
                         continue
+
+            print("Applying Experience Level filter")
+
+            # Experience level section selectors
+            experience_selectors = [
+                "//h3[contains(text(), 'Experience level')]",
+                "//label[contains(text(), 'Experience level')]",
+                "//span[contains(text(), 'Experience level')]",
+                "//*[text()='Experience level']"
+            ]
+
+            experience_section = None
+            for selector in experience_selectors:
+                try:
+                    experience_section = WebDriverWait(driver, 3).until(
+                        EC.presence_of_element_located((By.XPATH, selector))
+                    )
+                    break
+                except:
+                    continue
+
+            if experience_section:
+                driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", experience_section)
+                time.sleep(1)
+
+            # Experience level mapping
+            experience_mapping = {
+                "Entry level": "advanced-filter-experience-2",
+                "Associate": "advanced-filter-experience-3",
+                "Mid-Senior level": "advanced-filter-experience-4"
+            }
+
+            # Apply experience level filters if list is not empty
+            if experience_level_filter:
+                for exp_level in experience_level_filter:
+                    if exp_level in experience_mapping:
+                        try:
+                            exp_element = WebDriverWait(driver, 2).until(
+                                EC.element_to_be_clickable(
+                                    (By.XPATH, f"//label[@for='{experience_mapping[exp_level]}']"))
+                            )
+                            exp_element.click()
+                            time.sleep(0.5)
+                        except:
+                            continue
 
             # Click "Show results" button
             show_results_selectors = [
@@ -855,7 +900,7 @@ def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     except Exception as e:
         print(f"❌ Error saving to CSV: {e}")
 
-def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped):
+def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER, max_pages_scraped, EXPERIENCE_LEVEL_FILTER):
     try:
 
         print("🚀 Starting LinkedIn Job Scraper with Pagination...")
@@ -867,7 +912,7 @@ def get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, INDUSTRY_FILTER,
 
         time.sleep(2)
 
-        if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED, INDUSTRY_FILTER):
+        if not apply_job_filters(driver, JOB_TITLE, LOCATION, DATE_POSTED, INDUSTRY_FILTER, EXPERIENCE_LEVEL_FILTER):
             print("❌ Filter application failed. Exiting...")
             return
 
@@ -919,4 +964,5 @@ if __name__ == "__main__":
      JOB_TITLE = "Generative AI Developer"
      DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
      max_pages_scraped = 2 # Safety limit to prevent infinite loops. Default: 50
-     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, industry_filter, max_pages_scraped)
+     EXPERIENCE_LEVEL_FILTER = ["Entry level", "Associate", "Mid-Senior level"]
+     get_company_names(driver, LOCATION, JOB_TITLE, DATE_POSTED, industry_filter, max_pages_scraped, EXPERIENCE_LEVEL_FILTER)
