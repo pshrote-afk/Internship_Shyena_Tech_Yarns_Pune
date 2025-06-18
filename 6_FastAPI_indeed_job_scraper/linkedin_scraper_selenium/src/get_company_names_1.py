@@ -2,7 +2,7 @@ import os
 import time
 import csv
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -11,6 +11,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
+import re
+
+
 
 # Load environment variables
 load_dotenv()
@@ -19,6 +22,40 @@ LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
 
 if not LINKEDIN_EMAIL or not LINKEDIN_PASSWORD:
     raise ValueError("Missing credentials in .env file!")
+
+
+def parse_posted_date(cleaned_location_string):
+    try:
+        parts = cleaned_location_string.split('·')
+        if len(parts) < 2:
+            raise ValueError("Invalid format")
+
+        time_part = parts[1].strip()
+
+        # Extract number and unit from patterns like "23 hours ago", "Reposted 4 days ago"
+        match = re.search(r'(\d+)\s+(minute|hour|day|week)s?\s+ago', time_part)
+        if not match:
+            raise ValueError("Time pattern not found")
+
+        number = int(match.group(1))
+        unit = match.group(2)
+
+        # Calculate posted_on date
+        now = datetime.utcnow()
+        if unit == 'minute':
+            posted_on = now - timedelta(minutes=number)
+        elif unit == 'hour':
+            posted_on = now - timedelta(hours=number)
+        elif unit == 'day':
+            posted_on = now - timedelta(days=number)
+        elif unit == 'week':
+            posted_on = now - timedelta(weeks=number)
+
+        return posted_on.strftime('%Y-%m-%d %H:%M')
+
+    except Exception as e:
+        print(f"Error parsing date: {e}")
+        return datetime.utcnow().strftime('%Y-%m-%d %H:%M')
 
 
 def initialize_driver():
@@ -774,15 +811,24 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
                         continue
 
                 # Clean up location text
-                location = location.replace('\n', ' ').replace('  ', ' ').strip()
-                location = location.split('·')[0].strip()
+                cleaned_location_string = location.replace('\n', ' ').replace('  ', ' ').strip()
+                posted_on = parse_posted_date(cleaned_location_string)
+
+                cleaned_location_string = cleaned_location_string.split('·')
+                location = cleaned_location_string[0].strip()
+
+                # following 2 print statements only for testing. They may be removed.
+                print(location)
+                print(posted_on)
+
                 if title:
                     job_data = {
                         "title": title,
                         "company": company if company else "Company not found",
                         "location": location,
                         "url": job_url,
-                        "scraped_at": datetime.now().strftime("%Y-%m-%d")
+                        "scraped_at": datetime.now().strftime("%Y-%m-%d"),
+                        "posted_on": posted_on + " UTC"
                     }
 
                     jobs.append(job_data)
@@ -883,13 +929,13 @@ def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     try:
         mode = 'a' if append else 'w'
         with open(filename, mode, newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['title', 'company', 'location', 'url', 'scraped_at']
+            fieldnames = ['title', 'company', 'location', 'url', 'scraped_at', 'posted_on']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
            # Write header only if it's a new file
             if not append:
                 writer.writeheader()
-            
+
             for job in jobs:
                 writer.writerow(job)
 
