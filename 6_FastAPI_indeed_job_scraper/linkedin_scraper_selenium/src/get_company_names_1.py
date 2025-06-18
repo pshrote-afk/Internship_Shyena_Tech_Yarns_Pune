@@ -13,7 +13,24 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 import re
 
+# last_scraping_date should not be taken from user input
+last_scraping_date = "2025-06-15 10:20" # later take from metadata table
 
+
+def is_job_recent(posted_on_str, last_scraping_date_str):
+    """Check if job posted_on date is after last_scraping_date."""
+    try:
+        # Remove " UTC" suffix if present
+        posted_clean = posted_on_str.replace(" UTC", "").strip()
+
+        # Parse both dates
+        posted_date = datetime.strptime(posted_clean, '%Y-%m-%d %H:%M')
+        last_date = datetime.strptime(last_scraping_date_str, '%Y-%m-%d %H:%M')
+
+        return posted_date > last_date
+    except Exception as e:
+        print(f"⚠️ Date comparison error: {e}")
+        return True  # Include job if comparison fails
 
 # Load environment variables
 load_dotenv()
@@ -821,6 +838,11 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
                 print(location)
                 print(posted_on)
 
+                # Filter jobs based on posted_on date
+                if not is_job_recent(posted_on + " UTC", last_scraping_date):
+                    print(f"⏭️ Skipping old job: {title} (posted: {posted_on})")
+                    continue
+
                 if title:
                     job_data = {
                         "title": title,
@@ -908,7 +930,7 @@ def scrape_all_pages(driver, JOB_TITLE, max_pages_scraped):
         time.sleep(extra_delay)
 
     print(f"\n🎉 SCRAPING COMPLETE!")
-    print(f"📊 Total pages processed: {current_page}")
+    print(f"📊 Total pages processed: {current_page - 1}")
     print(f"📊 Total jobs collected: {len(all_jobs)}")
 
     return all_jobs
