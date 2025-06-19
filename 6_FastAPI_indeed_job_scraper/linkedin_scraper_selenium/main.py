@@ -12,7 +12,7 @@ if __name__ == "__main__":
 	# Part 1 - get company names
 
 	LOCATION = "United States"
-	JOB_TITLE = "Data Science"
+	JOB_TITLE = "Data Analytics"
 	DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
 	INDUSTRY_FILTER = ["IT Services and IT Consulting","Software Development","Technology, Information and Internet"]
 	max_pages_scraped = 2  # Safety limit to prevent infinite loops. Default: 40

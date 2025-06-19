@@ -1,0 +1,2783 @@
+{
+  "Vertisystem_CEO": [
+    {
+      "name": "Amith Mascarenhas",
+      "job_title": "CEO - Vertisystem",
+      "linkedin_url": "https://www.linkedin.com/in/amith-mascarenhas-344a26a3",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Matthew Lebo",
+      "job_title": "Vice President Solutions",
+      "linkedin_url": "https://www.linkedin.com/in/matthewlebo",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_COO": [
+    {
+      "name": "Raman Arumugam",
+      "job_title": "Senior Vice President- Global Automotive and ...",
+      "linkedin_url": "https://in.linkedin.com/in/ramanarumugam",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_CFO": [
+    {
+      "name": "Sandy Miller",
+      "job_title": "Facilities Resources Coordinator @ Sempra Energy",
+      "linkedin_url": "https://www.linkedin.com/in/sandylmiller",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_President": [
+    {
+      "name": "Chris Bobertz",
+      "job_title": "School Board President",
+      "linkedin_url": "https://www.linkedin.com/in/cbobertz",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Anisha Jaimini",
+      "job_title": "President and CIO",
+      "linkedin_url": "https://www.linkedin.com/in/anisha-jaimini-4b2318163",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Vijay Krishnan",
+      "job_title": "Vice President",
+      "linkedin_url": "https://in.linkedin.com/in/vijay-krishnan-5204416",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_General Manager": [],
+  "Vertisystem_Director of Operations": [
+    {
+      "name": "Chavi Vijay",
+      "job_title": "Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/chavi-vijay-5556a8307?trk=public_post_main-feed-card-text",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_Business Development Manager": [
+    {
+      "name": "Anna Swacker",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/anna-swacker-54173745",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Ravindra Kale",
+      "job_title": "Coordinate with the Business Development colleagues to have a thorough understanding of the job profiles given by the client",
+      "linkedin_url": "https://in.linkedin.com/in/ravinderakale",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Vertisystem_Head of Strategy": [],
+  "Vertisystem_VP of Business Operations": [],
+  "Vertisystem_Managing Director": [
+    {
+      "name": "Savi Choudhary",
+      "job_title": "Executive Assistant to Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/savi-choudhary-921421189",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Yochana_Chief Technology Officer": [],
+  "Yochana_Chief Information Officer": [
+    {
+      "name": "Yochana Vadlakonda",
+      "job_title": "Chief Information Officer",
+      "linkedin_url": "https://in.linkedin.com/in/yochanavadlakonda",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Yochana_IT Director": [],
+  "Yochana_IT Manager": [],
+  "Yochana_VP of IT": [],
+  "Yochana_Director of IT Services": [],
+  "Yochana_Solutions Architect": [
+    {
+      "name": "Wei Shi",
+      "job_title": "AWS Certified Solutions Architect – Associate Certification · Amazon",
+      "linkedin_url": "https://www.linkedin.com/in/wei-shi-a68ab836",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Srikanth Y",
+      "job_title": "Cert Prep: AWS Certified Solutions Architect - Associate Graphic · Cert Prep: AWS",
+      "linkedin_url": "https://in.linkedin.com/in/srikanthyellaturu",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Yochana_IT Consulting Manager": [],
+  "Yochana_Head of Infrastructure": [],
+  "Yochana_Cloud Services Manager": [],
+  "Quora_Chief Technology Officer": [
+    {
+      "name": "Håkon Hapnes Strand",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/h%C3%A5kon-hapnes-strand-196b4819/",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Pravin Gupta",
+      "job_title": "Chief Technology Officer (CTO) at MicTale, a new-aged open mic platform, and",
+      "linkedin_url": "https://in.linkedin.com/in/enigmaticpravin",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Usman Ellahi",
+      "job_title": "Founder and Chief Technology Officer",
+      "linkedin_url": "https://pk.linkedin.com/in/usmanellahi",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Oliver Starr",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/oliverstarr",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Alex Moor",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/alex-moor-662152234",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Chief Product Officer": [
+    {
+      "name": "Quinten Vandermeulen",
+      "job_title": "Co-founder & Chief Product Officer ...",
+      "linkedin_url": "https://be.linkedin.com/in/quintenvandermeulen",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Sergei Ternovykh",
+      "job_title": "Chief Product Officer",
+      "linkedin_url": "https://cy.linkedin.com/in/terno",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Nehaa Chimmbulkar",
+      "job_title": "Marketing Specialist | Creative Thinker | Product Manager I Social Media Expert l Digital Specialist |",
+      "linkedin_url": "https://au.linkedin.com/in/nehaa-chimmbulkar",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Raju Malhotra",
+      "job_title": "Hiring Strong Product Managers - Quora Post",
+      "linkedin_url": "https://www.linkedin.com/in/rajumalhotra",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_VP of Technology": [
+    {
+      "name": "Rajat Disawal",
+      "job_title": "VP of Technology",
+      "linkedin_url": "https://in.linkedin.com/in/rajat-disawal-b1a805215",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Sankalp Suryawanshi",
+      "job_title": "VP of Technology in Jan 2021",
+      "linkedin_url": "https://in.linkedin.com/in/sankalp-suryawanshi",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Gaurav Mokhasi",
+      "job_title": "VP of Technology, Chief Product Officer and several SVPs for office events",
+      "linkedin_url": "https://www.linkedin.com/in/gauravmokhasi",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Jackie Bavaro",
+      "job_title": "Cracking the PM Interview: How to Land a Product Manager Job in Technology",
+      "linkedin_url": "https://www.linkedin.com/in/jackiebavaro",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Director of Engineering": [
+    {
+      "name": "Dr. Hari Kishan Kondaveeti",
+      "job_title": "Director of Engineering Clinics",
+      "linkedin_url": "https://in.linkedin.com/in/kishankondaveeti",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Arnaud Lucas",
+      "job_title": "Director of Engineering - Wayfair Keynote: - Dr Kam Kafi, Vice President of",
+      "linkedin_url": "https://www.linkedin.com/in/lucasarn",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Head of Digital Transformation": [
+    {
+      "name": "Hao Yan",
+      "job_title": "com Americas, Head of Digital Transformation at HP and Customer",
+      "linkedin_url": "https://cn.linkedin.com/in/haoyan1129",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Product Manager": [
+    {
+      "name": "Richard Arai-Lopez",
+      "job_title": "Group Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/richard-arai-lopez-5b628589",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Steven W.",
+      "job_title": "Staff Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/stevenwalling",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Pranav Shekhar",
+      "job_title": "Sr. Product Manager",
+      "linkedin_url": "https://in.linkedin.com/in/pranavshekhar",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Gopalakrishna A",
+      "job_title": "Product Manager",
+      "linkedin_url": "https://in.linkedin.com/in/gopalakrishna-anegundi",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Elisa Miguelena",
+      "job_title": "Product Manager, Safety Tools",
+      "linkedin_url": "https://www.linkedin.com/in/elisa-miguelena",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Data Science Manager": [],
+  "Quora_Director of Information Systems": [],
+  "Quora_Head of Innovation": [
+    {
+      "name": "Jessica Brooks",
+      "job_title": "Head of Innovation and Strategic Partnerships",
+      "linkedin_url": "https://www.linkedin.com/in/jessicabrooksghai",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "RAKAESH K MISRA",
+      "job_title": "Head of Innovation Center, Enterprise Solutions",
+      "linkedin_url": "https://in.linkedin.com/in/rakaeshkmisra",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Quora_Technical Program Manager": [
+    {
+      "name": "Ripin Yadav",
+      "job_title": "Senior Technical Program Manager",
+      "linkedin_url": "https://in.linkedin.com/in/ripin-yadav-a11411172",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Dustin Anglin",
+      "job_title": "Senior Technical Program Manager",
+      "linkedin_url": "https://www.linkedin.com/in/dustinanglin",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Anupam Anand",
+      "job_title": "Technical Program Manager II",
+      "linkedin_url": "https://in.linkedin.com/in/anupampb",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Seneca Resources_Chief Technology Officer": [],
+  "Seneca Resources_Chief Information Officer": [],
+  "Seneca Resources_IT Director": [],
+  "Seneca Resources_IT Manager": [
+    {
+      "name": "Philip Benware",
+      "job_title": "IT Manager, Infrastructure & Support",
+      "linkedin_url": "https://www.linkedin.com/in/philip-benware-28a61ba",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Jeff Richman, MBA, PMP",
+      "job_title": "IT Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jeffrichmanmba",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "David Norlin",
+      "job_title": "IT Manager",
+      "linkedin_url": "https://www.linkedin.com/in/david-norlin-481a6619",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Andrew B.",
+      "job_title": "IT Manager | Innovation Manager | Digital Transformation | Collaboration",
+      "linkedin_url": "https://www.linkedin.com/in/andrew-b-b4aa903",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Seneca Resources_VP of IT": [],
+  "Seneca Resources_Director of IT Services": [],
+  "Seneca Resources_Solutions Architect": [
+    {
+      "name": "Grant Francis",
+      "job_title": "IT Workforce Solutions Architect (Corporate Matchmaker)",
+      "linkedin_url": "https://www.linkedin.com/in/grantdavidfrancis",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Jason Arrington",
+      "job_title": "Solutions Architect",
+      "linkedin_url": "https://www.linkedin.com/in/jason-arrington-6585aa48",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Leon Faircloth IV PMP",
+      "job_title": "Amazon Web Services Solutions Architect Associate",
+      "linkedin_url": "https://www.linkedin.com/in/leon-faircloth-iv-pmp-108a151b6",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Seneca Resources_IT Consulting Manager": [
+    {
+      "name": "Justin Metcalf",
+      "job_title": "Audit Manager",
+      "linkedin_url": "https://www.linkedin.com/in/justinmetcalf",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Seneca Resources_Head of Infrastructure": [],
+  "Seneca Resources_Cloud Services Manager": [],
+  "QUICK USA, Inc._CEO": [
+    {
+      "name": "Tadashi Saito",
+      "job_title": "President & CEO",
+      "linkedin_url": "https://www.linkedin.com/in/tadashisaito1",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Rie Homma",
+      "job_title": "Managed high confidential files and administered CEO and Chairman's documentations",
+      "linkedin_url": "https://www.linkedin.com/in/rie-homma-9b367217",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Filippo Bovio",
+      "job_title": "Managing Director for Quick USA, Inc",
+      "linkedin_url": "https://www.linkedin.com/in/filippo-bovio-745ba016",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Takeshi Yamagishi",
+      "job_title": "General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/takeshi-yamagishi-8162b5226",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Shoichi Yamanaka",
+      "job_title": "COO / General Manager at Quick USA, Inc",
+      "linkedin_url": "https://www.linkedin.com/in/shoichiyamanaka",
+      "industry": "Staffing and Recruiting"
+    }
+  ],
+  "QUICK USA, Inc._COO": [],
+  "QUICK USA, Inc._CFO": [],
+  "QUICK USA, Inc._President": [
+    {
+      "name": "Ryuji Watanabe",
+      "job_title": "leader and a club baseball president, going to a university abroad",
+      "linkedin_url": "https://www.linkedin.com/in/ryuji-watanabe-39a76b206",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Tamano Yamanaka",
+      "job_title": "President of Japanese Cultuere Club",
+      "linkedin_url": "https://www.linkedin.com/in/tamano-yamanaka-4633b8212",
+      "industry": "Staffing and Recruiting"
+    },
+    {
+      "name": "Takako Shimakage",
+      "job_title": "Vice President/General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/takako-shimakage-40b56ba1",
+      "industry": "Staffing and Recruiting"
+    }
+  ],
+  "QUICK USA, Inc._General Manager": [
+    {
+      "name": "Mami Schwartz",
+      "job_title": "General Manager / Personal Trainer",
+      "linkedin_url": "https://www.linkedin.com/in/mami-schwartz-6093381a7",
+      "industry": "Staffing and Recruiting"
+    }
+  ],
+  "QUICK USA, Inc._Director of Operations": [],
+  "QUICK USA, Inc._Business Development Manager": [
+    {
+      "name": "Tenga Waratani",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/tenga-waratani-267743265",
+      "industry": "Staffing and Recruiting"
+    }
+  ],
+  "QUICK USA, Inc._Head of Strategy": [],
+  "QUICK USA, Inc._VP of Business Operations": [
+    {
+      "name": "Mieko Janvier",
+      "job_title": "As a Senior Coordinator, I oversaw the planning and execution of business events and activities",
+      "linkedin_url": "https://www.linkedin.com/in/mieko-janvier-b2760a8",
+      "industry": "Staffing and Recruiting"
+    }
+  ],
+  "QUICK USA, Inc._Managing Director": [],
+  "PETADATA_Chief Technology Officer": [],
+  "PETADATA_Chief Product Officer": [],
+  "PETADATA_VP of Technology": [],
+  "PETADATA_Director of Engineering": [],
+  "PETADATA_Head of Digital Transformation": [],
+  "PETADATA_Product Manager": [
+    {
+      "name": "Dini Nur Auliya",
+      "job_title": "- Collaborate with the Product Manager team to understand business processes and feature development",
+      "linkedin_url": "https://id.linkedin.com/in/dini-nur-auliya-866255130",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "PETADATA_Data Science Manager": [],
+  "PETADATA_Director of Information Systems": [],
+  "PETADATA_Head of Innovation": [],
+  "PETADATA_Technical Program Manager": [],
+  "Kodeva LLC_Chief Technology Officer": [],
+  "Kodeva LLC_Chief Information Officer": [],
+  "Kodeva LLC_IT Director": [],
+  "Kodeva LLC_IT Manager": [],
+  "Kodeva LLC_VP of IT": [],
+  "Kodeva LLC_Director of IT Services": [],
+  "Kodeva LLC_Solutions Architect": [],
+  "Kodeva LLC_IT Consulting Manager": [],
+  "Kodeva LLC_Head of Infrastructure": [],
+  "Kodeva LLC_Cloud Services Manager": [],
+  "Kces_CEO": [
+    {
+      "name": "KEN B",
+      "job_title": "PROFESSIONAL EXPERIENCE Sept 2021- -Present Kces Technology And Data Services Limited, Nigeria Managing Director/Head of Technical Operations",
+      "linkedin_url": "https://ng.linkedin.com/in/ken-b-8842422a4",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Prasad Rane",
+      "job_title": "CEO",
+      "linkedin_url": "https://in.linkedin.com/in/prasad-rane-b4892319",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_COO": [
+    {
+      "name": "Harshal Katariya",
+      "job_title": "COO of Kankria Agro Limited in India , an organization committed to",
+      "linkedin_url": "https://in.linkedin.com/in/harshal-katariya-734689193",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_CFO": [],
+  "Kces_President": [
+    {
+      "name": "Ganesh K Patil",
+      "job_title": "Founder, Chairman and President",
+      "linkedin_url": "https://in.linkedin.com/in/ganesh-k-patil",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Rupak Naik",
+      "job_title": "Assistant Vice President",
+      "linkedin_url": "https://in.linkedin.com/in/rupak-naik-49bb2b1a",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Shraddha Jaiswal",
+      "job_title": "Assistant Vice President",
+      "linkedin_url": "https://in.linkedin.com/in/shraddha-jaiswal7",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Pankaj Saraf",
+      "job_title": "Assistant Vice President ( Mortgage)",
+      "linkedin_url": "https://in.linkedin.com/in/pankaj-saraf-79b555a4",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Shital Jare-Bandal",
+      "job_title": "Vice President",
+      "linkedin_url": "https://in.linkedin.com/in/shital-jare-bandal-969b0b103",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_General Manager": [
+    {
+      "name": "Robert Ashley",
+      "job_title": "General Manager",
+      "linkedin_url": "https://au.linkedin.com/in/robertashley",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Ramchandra Nayak",
+      "job_title": "General Manager Operations",
+      "linkedin_url": "https://in.linkedin.com/in/ramchandranayak",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Subbarao Mullapudi",
+      "job_title": "General Manager Finance",
+      "linkedin_url": "https://in.linkedin.com/in/subbarao-mullapudi-66a3805",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_Director of Operations": [
+    {
+      "name": "Ron Smith, CFRE",
+      "job_title": "Director of Operations & Advancement",
+      "linkedin_url": "https://ca.linkedin.com/in/ronaldlornesmith",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_Business Development Manager": [
+    {
+      "name": "Sagar Sapkale",
+      "job_title": "Business Development Manager | B2B Marketing · At Intellitech Solutions",
+      "linkedin_url": "https://in.linkedin.com/in/sagar-sapkale-02056b14b",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Mustafa BADAMI",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://in.linkedin.com/in/mustafa-badami-392106122",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Damini Bhangale",
+      "job_title": "Business Development Manager at Banao Technologies",
+      "linkedin_url": "https://in.linkedin.com/in/damini-bhangale-945a78281",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Sayali Tayade",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://in.linkedin.com/in/sayali-tayade-262948206",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_Head of Strategy": [
+    {
+      "name": "VIRAT SHARMA",
+      "job_title": "Associate Vice President",
+      "linkedin_url": "https://in.linkedin.com/in/virat-sharma-145399170",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_VP of Business Operations": [
+    {
+      "name": "Amit Ahuja",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/amit-ahuja-668b7319",
+      "industry": "Higher Education"
+    }
+  ],
+  "Kces_Managing Director": [
+    {
+      "name": "Er Upendra Koli",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/er-upendra-koli-ba547b153",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Shrikant Palve",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/shrikant-palve-8a7618117",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "R Lalrempuia",
+      "job_title": "Founder and Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/r-lalrempuia-76692640",
+      "industry": "Higher Education"
+    },
+    {
+      "name": "Chandan Narkhede",
+      "job_title": "Chairman Managing Director (Khoshal Group) · Chandan Arun Narkhede Managing Director",
+      "linkedin_url": "https://in.linkedin.com/in/chandan-narkhede-27582149",
+      "industry": "Higher Education"
+    }
+  ],
+  "EvenUp_Chief Technology Officer": [],
+  "EvenUp_Chief Product Officer": [
+    {
+      "name": "Ryan Miller-Plack",
+      "job_title": "Experience · Business Operations Lead · Product Manager - Kitchen Technology · Product Operations - Kitchens · Head of Strategy & Operations · Business Operations",
+      "linkedin_url": "https://www.linkedin.com/in/ryan-miller-plack-a1b47b3a",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "EvenUp_VP of Technology": [],
+  "EvenUp_Director of Engineering": [],
+  "EvenUp_Head of Digital Transformation": [],
+  "EvenUp_Product Manager": [],
+  "EvenUp_Data Science Manager": [
+    {
+      "name": "Aleeza Hashmi Shafi",
+      "job_title": "Marketing Analytics and Data Science Manager, Cloud & Enterprise",
+      "linkedin_url": "https://www.linkedin.com/in/aleeza-hashmi-shafi-0885985b",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "EvenUp_Director of Information Systems": [],
+  "EvenUp_Head of Innovation": [],
+  "EvenUp_Technical Program Manager": [],
+  "xAI_Chief Technology Officer": [
+    {
+      "name": "Christopher Dean",
+      "job_title": "I am the Chief Technology Officer at MINED XAI, an explainable artificial intelligence startup",
+      "linkedin_url": "https://www.linkedin.com/in/christopherldean",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Rajesh Naik",
+      "job_title": "Chief Technology Officer at Air Force Research Laboratory",
+      "linkedin_url": "https://www.linkedin.com/in/rajesh-naik-044276ab",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Morley Stone",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/morleystone",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Kenneth Wenger",
+      "job_title": "Chief Technology Officer at Squint AI Inc",
+      "linkedin_url": "https://ca.linkedin.com/in/kennethwenger",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Chief Product Officer": [
+    {
+      "name": "Aditya Kumar",
+      "job_title": "Chief Product Officer",
+      "linkedin_url": "https://in.linkedin.com/in/adityahetamsaria",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Andrew Hobson",
+      "job_title": "Chief Product Officer",
+      "linkedin_url": "https://www.linkedin.com/in/andrew-hobson-3ab782",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Greger Ottosson",
+      "job_title": "Chief Product Officer at an private market analytics company, and Lead AI",
+      "linkedin_url": "https://fr.linkedin.com/in/gregerottosson",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Siddharth R. Das",
+      "job_title": "Digital Advisor - Innovating with AI and emerging technologies | Chief Product Officer | Start-up Advisor",
+      "linkedin_url": "https://uk.linkedin.com/in/siddharth-r-das-b10628a",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Shreyas Upasane",
+      "job_title": "I operated as a Chief Product Officer for the company's 1st product",
+      "linkedin_url": "https://uk.linkedin.com/in/shreyasupasane",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_VP of Technology": [
+    {
+      "name": "Mayank Agarwal",
+      "job_title": "Director Engineering, Brokerage · Director of Engineering, Brokerage",
+      "linkedin_url": "https://www.linkedin.com/in/mayankagarwal-rh",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Director of Engineering": [
+    {
+      "name": "Jiacheng Hong",
+      "job_title": "Director of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/jiacheng-hong",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Emil Pei",
+      "job_title": "Director of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/emil-pei-03aa6615b",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Themos Kallos",
+      "job_title": "CTO | Director of Engineering | Deep Tech Prognosticator · 20+ years",
+      "linkedin_url": "https://uk.linkedin.com/in/themos-kallos",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Head of Digital Transformation": [],
+  "xAI_Product Manager": [
+    {
+      "name": "Jenny Shen",
+      "job_title": "Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jenny-shen-50749928",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Lili M.",
+      "job_title": "Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/lilimophl",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Chris Duerkop",
+      "job_title": "Senior Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/chrisduerkop",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Sidney Scott",
+      "job_title": "Becoming a Product Manager Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/sidney-scott",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Olivia Anastassov – Global PHC Analytic Product Manager – Procter ...",
+      "job_title": "Global PHC Analytic Product Manager @ Procter & Gamble | AI and Machine",
+      "linkedin_url": "https://ch.linkedin.com/in/oliviaanastassov",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Data Science Manager": [
+    {
+      "name": "Abhinaba Bala",
+      "job_title": "Data Science Manager",
+      "linkedin_url": "https://www.linkedin.com/in/abhinaba-bala-7306aa137/",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Muhammed Hafeez",
+      "job_title": "Data Science Manager - Geographic Information System",
+      "linkedin_url": "https://pk.linkedin.com/in/muhammed-hafeez-777b1a109",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Stefano Perasso, Ph.D.",
+      "job_title": "Data Science Manager at Warner Bros Discovery, I guided impactful",
+      "linkedin_url": "https://fr.linkedin.com/in/stefanoperasso",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Surbhi Jain",
+      "job_title": "Data Science Manager",
+      "linkedin_url": "https://in.linkedin.com/in/surbhijain1501",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Mike Mgbame",
+      "job_title": "Here's how you can navigate the unique challenges of leading remote teams as a data science manager",
+      "linkedin_url": "https://uk.linkedin.com/in/michaelmgbame",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Director of Information Systems": [],
+  "xAI_Head of Innovation": [
+    {
+      "name": "Antonela Germek – Head of Innovation Excellence / Site Manager ...",
+      "job_title": "Head of Innovation Excellence | New Business & Technologies | AI",
+      "linkedin_url": "https://de.linkedin.com/in/antonela-germek",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Muath A. Jalil",
+      "job_title": "Head of Innovation & Digital Product Marketing I Insurtech I Fintech I",
+      "linkedin_url": "https://ae.linkedin.com/in/muath-a-jalil-59115318",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "xAI_Technical Program Manager": [
+    {
+      "name": "Sarah C.",
+      "job_title": "Senior Technical Program Manager",
+      "linkedin_url": "https://www.linkedin.com/in/sarah-c-363174217",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "David Gunning",
+      "job_title": "Senior Technical Program Manager",
+      "linkedin_url": "https://www.linkedin.com/in/dgunning",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "e2f, inc._Chief Technology Officer": [
+    {
+      "name": "Thomas Arndt",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/thomasarndtphd",
+      "industry": "Software Development"
+    }
+  ],
+  "e2f, inc._VP of Engineering": [
+    {
+      "name": "Serhii H.",
+      "job_title": "Engineering Manager | Head of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/serhii-halkin",
+      "industry": "Software Development"
+    }
+  ],
+  "e2f, inc._Director of Software Development": [],
+  "e2f, inc._Software Development Manager": [],
+  "e2f, inc._Head of Product Development": [],
+  "e2f, inc._Technical Lead": [],
+  "e2f, inc._Engineering Manager": [
+    {
+      "name": "Silvana Palacios",
+      "job_title": "* Roles I recruited: Front-end Engineer, Back-en Engineer, Engineering Manager",
+      "linkedin_url": "https://ar.linkedin.com/in/silvanaanaliapalacios",
+      "industry": "Software Development"
+    }
+  ],
+  "e2f, inc._Product Manager (Technical)": [],
+  "e2f, inc._DevOps Manager": [],
+  "e2f, inc._Scrum Master / Agile Coach": [],
+  "Lensa_Chief Technology Officer": [
+    {
+      "name": "István Bagyura",
+      "job_title": "Chief Technology Officer & Software Architect",
+      "linkedin_url": "https://hu.linkedin.com/in/istv%C3%A1n-bagyura-823748104",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Alexandru Ruguleț-Gardon",
+      "job_title": "Reporting to the Chief Technology Officer (CTO), I hold a key role… Afișați",
+      "linkedin_url": "https://ro.linkedin.com/in/alexgardon",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Ahmad Bulling",
+      "job_title": "VP of IT Retail",
+      "linkedin_url": "https://id.linkedin.com/in/ahmad-bulling-746842a5",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Lensa_Chief Information Officer": [],
+  "Lensa_IT Director": [
+    {
+      "name": "Edo Kurniawan",
+      "job_title": "Especially related to my role as IT director in",
+      "linkedin_url": "https://id.linkedin.com/in/edokurniawan",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Kanda Mubarrag",
+      "job_title": "IT Director - Nonprofit Organization",
+      "linkedin_url": "https://id.linkedin.com/in/kanda-mubarrag",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Lensa_IT Manager": [],
+  "Lensa_VP of IT": [],
+  "Lensa_Director of IT Services": [],
+  "Lensa_Solutions Architect": [
+    {
+      "name": "Arpad Csoke",
+      "job_title": "AWS Solutions Architect · Experience: Amazon Web Services (AWS) · Education",
+      "linkedin_url": "https://www.linkedin.com/in/arpad-csoke-29967257",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Lensa_IT Consulting Manager": [],
+  "Lensa_Head of Infrastructure": [],
+  "Lensa_Cloud Services Manager": [],
+  "YO IT Group_Chief Technology Officer": [],
+  "YO IT Group_Chief Information Officer": [],
+  "YO IT Group_IT Director": [],
+  "YO IT Group_IT Manager": [],
+  "YO IT Group_VP of IT": [],
+  "YO IT Group_Director of IT Services": [],
+  "YO IT Group_Solutions Architect": [],
+  "YO IT Group_IT Consulting Manager": [],
+  "YO IT Group_Head of Infrastructure": [],
+  "YO IT Group_Cloud Services Manager": [],
+  "Labelbox_Chief Technology Officer": [
+    {
+      "name": "Noah Shibley",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/noahshibley",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Matthew McCann",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://es.linkedin.com/in/mat-mccann",
+      "industry": "Software Development"
+    }
+  ],
+  "Labelbox_VP of Engineering": [],
+  "Labelbox_Director of Software Development": [],
+  "Labelbox_Software Development Manager": [],
+  "Labelbox_Head of Product Development": [],
+  "Labelbox_Technical Lead": [
+    {
+      "name": "Florijan Stamenković",
+      "job_title": "Worked as a technical lead in a the Styria data-science",
+      "linkedin_url": "https://hr.linkedin.com/in/florijan-stamenkovi%C4%87-8ab040bb",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Hazel Erickson",
+      "job_title": "technical lead for an AI squad in a large public sector project",
+      "linkedin_url": "https://nz.linkedin.com/in/hazel-erickson-6b3383213",
+      "industry": "Software Development"
+    }
+  ],
+  "Labelbox_Engineering Manager": [
+    {
+      "name": "Kenny Lee",
+      "job_title": "Engineering Manager, Platform & Payments ...",
+      "linkedin_url": "https://www.linkedin.com/in/kenny-lee-697b39132",
+      "industry": "Software Development"
+    }
+  ],
+  "Labelbox_Product Manager (Technical)": [],
+  "Labelbox_DevOps Manager": [],
+  "Labelbox_Scrum Master / Agile Coach": [],
+  "Ember Group Consulting_CEO": [],
+  "Ember Group Consulting_COO": [],
+  "Ember Group Consulting_CFO": [],
+  "Ember Group Consulting_President": [
+    {
+      "name": "Rochelle Rivas MBA~PHR",
+      "job_title": "CEO, Founder",
+      "linkedin_url": "https://www.linkedin.com/in/rochellerivas",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Taylor Morrison",
+      "job_title": "Vice President and Managing Director",
+      "linkedin_url": "https://www.linkedin.com/in/taylorgmorrison",
+      "industry": "Business Consulting and Services"
+    },
+    {
+      "name": "Nicholas Brink CA(SA), CFA",
+      "job_title": "Vice President of Finance",
+      "linkedin_url": "https://www.linkedin.com/in/nicholas-brink-ca-sa-cfa-753302b8",
+      "industry": "Business Consulting and Services"
+    }
+  ],
+  "Ember Group Consulting_General Manager": [],
+  "Ember Group Consulting_Director of Operations": [],
+  "Ember Group Consulting_Business Development Manager": [],
+  "Ember Group Consulting_Head of Strategy": [],
+  "Ember Group Consulting_VP of Business Operations": [],
+  "Ember Group Consulting_Managing Director": [],
+  "Waabi_CEO": [],
+  "Waabi_COO": [
+    {
+      "name": "Holly Czarnecky",
+      "job_title": "President Illinois Chapter/National President",
+      "linkedin_url": "https://www.linkedin.com/in/holly-czarnecky-5a12154",
+      "industry": "Truck Transportation"
+    },
+    {
+      "name": "Dustin A. Koehl",
+      "job_title": "ATA's Chief Operating Officer and Senior Vice President of",
+      "linkedin_url": "https://www.linkedin.com/in/dustin-a-koehl-37068b1a",
+      "industry": "Truck Transportation"
+    }
+  ],
+  "Waabi_CFO": [],
+  "Waabi_President": [
+    {
+      "name": "Lottie Smith",
+      "job_title": "Calhoun Honors College President's List",
+      "linkedin_url": "https://www.linkedin.com/in/charlotted-smith",
+      "industry": "Truck Transportation"
+    },
+    {
+      "name": "Kion Fallah",
+      "job_title": "Activities and Societies: Founding president of Theta Chi Fraternity, Alpha",
+      "linkedin_url": "https://www.linkedin.com/in/kfallah",
+      "industry": "Truck Transportation"
+    },
+    {
+      "name": "Dan Foisy",
+      "job_title": "President",
+      "linkedin_url": "https://ca.linkedin.com/in/dan-foisy-0295b79",
+      "industry": "Truck Transportation"
+    }
+  ],
+  "Waabi_General Manager": [
+    {
+      "name": "Deirdre Nicolopoulos (Dellaportas)",
+      "job_title": "General Manager, North America",
+      "linkedin_url": "https://www.linkedin.com/in/ddnico?trk=public_post_main-feed-card_reshare_feed-actor-name",
+      "industry": "Truck Transportation"
+    }
+  ],
+  "Waabi_Director of Operations": [],
+  "Waabi_Business Development Manager": [
+    {
+      "name": "Lily Ma",
+      "job_title": "Talent Acquisition Coordinator",
+      "linkedin_url": "https://ca.linkedin.com/in/lily-ma-8566a1164",
+      "industry": "Truck Transportation"
+    },
+    {
+      "name": "Michel Komba",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://ci.linkedin.com/in/michelkomba/en",
+      "industry": "Truck Transportation"
+    }
+  ],
+  "Waabi_Head of Strategy": [],
+  "Waabi_VP of Business Operations": [],
+  "Waabi_Managing Director": [],
+  "OpenQQuantify_Chief Technology Officer": [],
+  "OpenQQuantify_Chief Product Officer": [],
+  "OpenQQuantify_VP of Technology": [],
+  "OpenQQuantify_Director of Engineering": [],
+  "OpenQQuantify_Head of Digital Transformation": [],
+  "OpenQQuantify_Product Manager": [
+    {
+      "name": "Joeson Stanes",
+      "job_title": "Product Manager Accelerator",
+      "linkedin_url": "https://in.linkedin.com/in/joeson-stanes-355850240",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "OpenQQuantify_Data Science Manager": [],
+  "OpenQQuantify_Director of Information Systems": [],
+  "OpenQQuantify_Head of Innovation": [],
+  "OpenQQuantify_Technical Program Manager": [],
+  "TieTalent_Chief Technology Officer": [
+    {
+      "name": "Morio Nakatsuka",
+      "job_title": "Product Manager, Coach, Founder · Senior Agile Product Owner with 15",
+      "linkedin_url": "https://es.linkedin.com/in/morio-nakatsuka-3493a22b",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "TieTalent_Chief Product Officer": [],
+  "TieTalent_VP of Technology": [],
+  "TieTalent_Director of Engineering": [],
+  "TieTalent_Head of Digital Transformation": [],
+  "TieTalent_Product Manager": [
+    {
+      "name": "Antonio Aguilar Geronazzo",
+      "job_title": "Product manager",
+      "linkedin_url": "https://www.linkedin.com/in/aguilargeronazzo/",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Lynn Rosalie Mueller",
+      "job_title": "Product Manager",
+      "linkedin_url": "https://es.linkedin.com/in/lynn-rosalie-mueller-406a0a188",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Tobias Pittorf – Junior Category Manager – TSI Consumer Goods ...",
+      "job_title": "Spezialisierung IBM Product Manager",
+      "linkedin_url": "https://de.linkedin.com/in/tobias-pittorf",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "TieTalent_Data Science Manager": [],
+  "TieTalent_Director of Information Systems": [],
+  "TieTalent_Head of Innovation": [],
+  "TieTalent_Technical Program Manager": [],
+  "Flow_Chief Technology Officer": [
+    {
+      "name": "Russell Kemp",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://uk.linkedin.com/in/russell-kemp-9852ba18",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sean Jarvie",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/sean-jarvie",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Ian Rock",
+      "job_title": "Chief Technology Officer @ Terraflow Energy | Clean Grid ...",
+      "linkedin_url": "https://www.linkedin.com/in/ijrock",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Eli Hirschfeld",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/eli-hirschfeld?trk=people-guest_people_search-card",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Mark LaPlante",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/mark-laplante-b08002297",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_VP of Engineering": [
+    {
+      "name": "John Ditter",
+      "job_title": "My career journey began as a VP of Engineering at Flow Science, Inc",
+      "linkedin_url": "https://www.linkedin.com/in/johnditter",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Joshua Shreve",
+      "job_title": "VP of Engineering R&D",
+      "linkedin_url": "https://www.linkedin.com/in/joshua-shreve-engineering",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Bernie Gigas, PE",
+      "job_title": "VP of Engineering at SPX FLOW",
+      "linkedin_url": "https://www.linkedin.com/in/berniegigas",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jeff Conrad",
+      "job_title": "VP of engineering",
+      "linkedin_url": "https://www.linkedin.com/in/jeffc62",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Patrick Alloway",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/patrick-alloway-344ba9119",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Director of Software Development": [
+    {
+      "name": "Md Bader Alam",
+      "job_title": "Director Of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/bader-alam",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Katina Krittenen, MBA",
+      "job_title": "Director Of Software Development- Metadata and Content Curation",
+      "linkedin_url": "https://www.linkedin.com/in/katina-krittenen-mba-5a0673b",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Srinivasan Dasasathyan",
+      "job_title": "Director Of Software Development",
+      "linkedin_url": "https://in.linkedin.com/in/srinivasan-dasasathyan-9b20515",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Brian Pettit",
+      "job_title": "Director of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/brianpettit",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Bimarsh Neupane",
+      "job_title": "Director of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/bimarshneupane",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Software Development Manager": [
+    {
+      "name": "Joshua Hu",
+      "job_title": "Software Development Manager, Shopping ...",
+      "linkedin_url": "https://www.linkedin.com/in/hujoshua",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Dan Bretl",
+      "job_title": "Senior Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/danbretl",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Edwin Molero",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/edwin-molero-988b22114",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Rebecca Turchin",
+      "job_title": "Senior Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/rebecca-turchin-72569258",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Himanshu Tripathi",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/iamhimanshutripathi",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Head of Product Development": [
+    {
+      "name": "Carsten Corazza",
+      "job_title": "Head of Product Development & Engineering ...",
+      "linkedin_url": "https://au.linkedin.com/in/carsten-corazza-1134abb4",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Shauna Lee",
+      "job_title": "Head of Product Development & Strategic Sourcing ...",
+      "linkedin_url": "https://www.linkedin.com/in/shauna-lee-569368141",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Tory Roberts",
+      "job_title": "Head of Product Development",
+      "linkedin_url": "https://www.linkedin.com/in/toryroberts",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Calliste Yeboah",
+      "job_title": "Head Of Product Development",
+      "linkedin_url": "https://uk.linkedin.com/in/calliste-yeboah-68426837",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Stanley Etra",
+      "job_title": "Head Of Product Development and Delivery",
+      "linkedin_url": "https://www.linkedin.com/in/stan-etra",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Technical Lead": [
+    {
+      "name": "John Palmieri",
+      "job_title": "Web Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/johnj5palmieri",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Christopher Henyard",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/chrishenyard",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Pullaiah Gujjala",
+      "job_title": "Technical Lead | Mechanical | CFD | Flow & Thermal | NPI | Mentor | IITM · ➢ Leading a Technology team and contributing to product development of various GE",
+      "linkedin_url": "https://in.linkedin.com/in/pullaiah-gujjala-9b960354",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Ankur Choudhary",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://in.linkedin.com/in/ankur-choudhary-6405b449",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Zach van der Westhuizen",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://za.linkedin.com/in/zach-van-der-westhuizen-31410266",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Engineering Manager": [
+    {
+      "name": "Kerry Daniels",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/kerry-daniels-74401683",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Daniel Bryan",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://uk.linkedin.com/in/thedanielbryan",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jeff Blasius",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jeffblasius",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Aleksandar Todorović",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/aleksandar-todorovi%C4%87-6bb46a34",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Thomas DePirro",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/thomas-depirro-609b0818",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Product Manager (Technical)": [],
+  "Flow_DevOps Manager": [
+    {
+      "name": "Kamal Kant Sharma",
+      "job_title": "Senior DevOps Manager",
+      "linkedin_url": "https://in.linkedin.com/in/kamal-kant-sharma-341b8332",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Alyssa Wilkowski",
+      "job_title": "AVP Devops Manager",
+      "linkedin_url": "https://www.linkedin.com/in/alyssa-wilkowski-38712942",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sean Clary",
+      "job_title": "DevOps Manager",
+      "linkedin_url": "https://www.linkedin.com/in/sean-clary-833a6947",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Kunal Bhargava",
+      "job_title": "Devops Manager| DevOps Specialist | DevOps Coach | Production Support",
+      "linkedin_url": "https://in.linkedin.com/in/kunal-bhargava-08263b54",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Vinod Penjarla",
+      "job_title": "DevOps Manager Robotic Process Automation",
+      "linkedin_url": "https://www.linkedin.com/in/vinod-penjarla-a9503017",
+      "industry": "Software Development"
+    }
+  ],
+  "Flow_Scrum Master / Agile Coach": [
+    {
+      "name": "Jade Taylor",
+      "job_title": "Product Owner / Snr Scrum Master / Agile Coach / Agile & Scrum Trainer - #OneIT",
+      "linkedin_url": "https://za.linkedin.com/in/jade-taylor-41120b1b",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Mihir Shah",
+      "job_title": "Technical Project Manager / Lead Scrum Master / Agile Coach",
+      "linkedin_url": "https://www.linkedin.com/in/mihir-shah-52a314b",
+      "industry": "Software Development"
+    }
+  ],
+  "ActivTrak_Chief Technology Officer": [],
+  "ActivTrak_Chief Product Officer": [],
+  "ActivTrak_VP of Technology": [],
+  "ActivTrak_Director of Engineering": [],
+  "ActivTrak_Head of Digital Transformation": [],
+  "ActivTrak_Product Manager": [
+    {
+      "name": "Scott Reed",
+      "job_title": "Senior Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/scottd3v",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Christopher Hoynes, PMP CSM",
+      "job_title": "Sr. Web Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/christopher-hoynes-pmp-csm-3b28bb1b",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Nicole Kaufmann",
+      "job_title": "Worked closely with the Product Manager on admin-related",
+      "linkedin_url": "https://www.linkedin.com/in/nicolekaufmann",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Alexandra Kusherets",
+      "job_title": "Senior Technical Program Manager ...",
+      "linkedin_url": "https://www.linkedin.com/in/alexandra-kusherets",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "ActivTrak_Data Science Manager": [],
+  "ActivTrak_Director of Information Systems": [],
+  "ActivTrak_Head of Innovation": [],
+  "ActivTrak_Technical Program Manager": [
+    {
+      "name": "John Bertagni",
+      "job_title": "Technical Program Manager | Proposal Manager | QA Auditor",
+      "linkedin_url": "https://www.linkedin.com/in/johnbertagni",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Ideogram_Chief Technology Officer": [
+    {
+      "name": "Rahul Pandit",
+      "job_title": "CTO CHIEF TECHNOLOGY OFFICER EXECUTIVE CERTIFICATION · Institute of Management",
+      "linkedin_url": "https://in.linkedin.com/in/rahul-pandit-in",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Ideogram_Chief Product Officer": [],
+  "Ideogram_VP of Technology": [],
+  "Ideogram_Director of Engineering": [],
+  "Ideogram_Head of Digital Transformation": [],
+  "Ideogram_Product Manager": [],
+  "Ideogram_Data Science Manager": [],
+  "Ideogram_Director of Information Systems": [],
+  "Ideogram_Head of Innovation": [],
+  "Ideogram_Technical Program Manager": [],
+  "Grata_Chief Technology Officer": [
+    {
+      "name": "Wesley Bryan",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/wesley-bryan-a52a9a333",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Rey Ortega",
+      "job_title": "Providing fractional Chief Technology Officer and Solutions Architect to",
+      "linkedin_url": "https://www.linkedin.com/in/biztechguru",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Francesco Gatti",
+      "job_title": "Representing the city were Chief Technology Officer Miguel Gamiño Jr and Chief",
+      "linkedin_url": "https://www.linkedin.com/in/f-gatti",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jan Bitter",
+      "job_title": "IT Consultant & DevOps at Adbitech · Experienced Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/janbitter",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_VP of Engineering": [
+    {
+      "name": "Corbett O.",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/corbett-o-643771112/",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Nikhil Raju",
+      "job_title": "VP of engineering was off",
+      "linkedin_url": "https://www.linkedin.com/in/nikhil-raju",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_Director of Software Development": [
+    {
+      "name": "Karl Schultz",
+      "job_title": "com: Project Manager and Technical Lead for team that… Show more",
+      "linkedin_url": "https://www.linkedin.com/in/karldfw",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Ivanna Kozlov",
+      "job_title": "Senior Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/ivanna-kozlov",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_Software Development Manager": [
+    {
+      "name": "Carlos Carvalho",
+      "job_title": "Software Development Manager and Support",
+      "linkedin_url": "https://www.linkedin.com/in/carlos-carvalho-7623a0b/",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_Head of Product Development": [
+    {
+      "name": "James Kantor",
+      "job_title": "Head of Product Development",
+      "linkedin_url": "https://www.linkedin.com/in/jameskantor",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Ana Taquecita",
+      "job_title": "Head Of Product Development",
+      "linkedin_url": "https://br.linkedin.com/in/ana-taquecita-957a71116",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_Technical Lead": [
+    {
+      "name": "Christie Frush",
+      "job_title": "Technical Lead and Officer",
+      "linkedin_url": "https://www.linkedin.com/in/cjfrush",
+      "industry": "Software Development"
+    }
+  ],
+  "Grata_Engineering Manager": [],
+  "Grata_Product Manager (Technical)": [],
+  "Grata_DevOps Manager": [],
+  "Grata_Scrum Master / Agile Coach": [],
+  "Flexential_Chief Technology Officer": [
+    {
+      "name": "Steve Hasselbach",
+      "job_title": "As Chief Technology Officer with Bayshore Solutions, Mr",
+      "linkedin_url": "https://www.linkedin.com/in/shasselbach",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_Chief Information Officer": [
+    {
+      "name": "Alani Lee",
+      "job_title": "Chief Information Officer",
+      "linkedin_url": "https://www.linkedin.com/in/alani-lee-7a51a718a",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_IT Director": [
+    {
+      "name": "Christopher Luckett",
+      "job_title": "I am a seasoned IT director with extensive experience managing personnel and",
+      "linkedin_url": "https://www.linkedin.com/in/christopherluckett",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Derek Thomas",
+      "job_title": "IT Director role",
+      "linkedin_url": "https://www.linkedin.com/in/derek-thomas-30753523",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_IT Manager": [
+    {
+      "name": "Sandy Ward",
+      "job_title": "IT Manager",
+      "linkedin_url": "https://www.linkedin.com/in/sandyward",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Kurt Mosley",
+      "job_title": "IT Manager with experience building IT departments in growing companies",
+      "linkedin_url": "https://www.linkedin.com/in/kurt-mosley-87b4b813",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Brian Elias",
+      "job_title": "IT Manager",
+      "linkedin_url": "https://www.linkedin.com/in/brian-elias",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Jim Parks",
+      "job_title": "IT Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jimparksiv",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_VP of IT": [
+    {
+      "name": "Cesar Schmitd",
+      "job_title": "Cesar collaborated with the VP of IT at Eurofins Digital Media Services and",
+      "linkedin_url": "https://www.linkedin.com/in/cesarschmitd",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_Director of IT Services": [
+    {
+      "name": "Rod Ivy",
+      "job_title": "Solutions Architect",
+      "linkedin_url": "https://www.linkedin.com/in/rod-ivy-6b01496",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_Solutions Architect": [
+    {
+      "name": "Kelly Wood",
+      "job_title": "Datacenter Solutions Architect",
+      "linkedin_url": "https://www.linkedin.com/in/kelly-wood-344868a5",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Rich Hand",
+      "job_title": "AWS Certified Solutions Architect",
+      "linkedin_url": "https://www.linkedin.com/in/rhand",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Chris Smith",
+      "job_title": "His ability to work as a team to achieve the goal at hand is just one of many attributes that makes Chris so good at being a solutions architect and cloud",
+      "linkedin_url": "https://www.linkedin.com/in/chrisdba",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Kevin Annis",
+      "job_title": "AWS Certified Solutions Architect – Professional",
+      "linkedin_url": "https://www.linkedin.com/in/kevinannis",
+      "industry": "IT Services and IT Consulting"
+    },
+    {
+      "name": "Michael Hale",
+      "job_title": "“Michael is a hard working knowledgeable strategic solutions architect",
+      "linkedin_url": "https://www.linkedin.com/in/michaelhale1",
+      "industry": "IT Services and IT Consulting"
+    }
+  ],
+  "Flexential_IT Consulting Manager": [],
+  "Flexential_Head of Infrastructure": [],
+  "Flexential_Cloud Services Manager": [],
+  "Joinrs US_CEO": [],
+  "Joinrs US_COO": [],
+  "Joinrs US_CFO": [],
+  "Joinrs US_President": [],
+  "Joinrs US_General Manager": [],
+  "Joinrs US_Director of Operations": [],
+  "Joinrs US_Business Development Manager": [],
+  "Joinrs US_Head of Strategy": [],
+  "Joinrs US_VP of Business Operations": [],
+  "Joinrs US_Managing Director": [],
+  "Extend_CEO": [
+    {
+      "name": "Woodrow Levin",
+      "job_title": "Currently Founder and CEO of Extend - Powerful Product Protection… · Experience: Extend · Location: San Francisco · 500+ connections on LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/woodrowlevin",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Christy Jones",
+      "job_title": "CEO",
+      "linkedin_url": "https://www.linkedin.com/in/christy-jones-9609498",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Darren Stevenson",
+      "job_title": "Group CEO",
+      "linkedin_url": "https://au.linkedin.com/in/dstevenson101",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Kris Saunders",
+      "job_title": "CEO & Founder",
+      "linkedin_url": "https://www.linkedin.com/in/kristophersaunders",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Richard Millstein",
+      "job_title": "50+ Years in the Hair & Beauty Industry | Co-Founder & CEO of Extend USA · Extend USA Hair Extension Training Courses were created to help hairdressers",
+      "linkedin_url": "https://www.linkedin.com/in/richard-millstein",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_COO": [
+    {
+      "name": "Guillaume Bouvard",
+      "job_title": "Guillaume is a forward-thinking executive, strategist, and general manager with over 20… · Experience: Extend Enterprises Inc · Location: New York · 500+",
+      "linkedin_url": "https://www.linkedin.com/in/bouvard",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Elizabeth Mullins",
+      "job_title": "Managing Director and COO",
+      "linkedin_url": "https://www.linkedin.com/in/elizabeth-mullins-263935127",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_CFO": [
+    {
+      "name": "Gary Matson",
+      "job_title": "CFO",
+      "linkedin_url": "https://www.linkedin.com/in/gary-matson-1090934",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Jessica Nilsen",
+      "job_title": "As the CFO of The Results Companies",
+      "linkedin_url": "https://www.linkedin.com/in/jessicalnilsen",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Rozina Kassam",
+      "job_title": "✓ How CFOs extend their influence beyond finance by establishing",
+      "linkedin_url": "https://www.linkedin.com/in/rozinakassam",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_President": [
+    {
+      "name": "Katie Bush",
+      "job_title": "Vice President Partnerships and Bank Solutions",
+      "linkedin_url": "https://www.linkedin.com/in/katiebush",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Rafael Alter",
+      "job_title": "President",
+      "linkedin_url": "https://ca.linkedin.com/in/rafaelalter",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Audrey Weinstein",
+      "job_title": "Vice President & General Counsel",
+      "linkedin_url": "https://www.linkedin.com/in/audrey-weinstein",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Trina Doheny",
+      "job_title": "President, Founder",
+      "linkedin_url": "https://www.linkedin.com/in/trina-doheny-b24466",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Davis Martinez",
+      "job_title": "Vice President Operations",
+      "linkedin_url": "https://ca.linkedin.com/in/davis-martinez-vp",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_General Manager": [
+    {
+      "name": "Lina Masri Cunningham",
+      "job_title": "General Manager at Extend Communications Inc",
+      "linkedin_url": "https://ca.linkedin.com/in/linamasri1",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Feroz ali",
+      "job_title": "General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/feroz-ali-bb1894125",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Olivia Maese",
+      "job_title": "General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/olivia-maese-a42a36280",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Anthony Grasso",
+      "job_title": "General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/anthonygrasso1",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Mike Rajewski",
+      "job_title": "General Manager",
+      "linkedin_url": "https://www.linkedin.com/in/mike-rajewski-9903975",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_Director of Operations": [
+    {
+      "name": "Melissa Collins",
+      "job_title": "Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/melissa-collins-3b1a9b7",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Erin Kearns",
+      "job_title": "Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/erin-kearns-4815539",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Bryan Baker",
+      "job_title": "Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/jbryanbaker",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Bob McDermott",
+      "job_title": "Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/bob-mcdermott-4a8a419",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Steve Hargis",
+      "job_title": "Director Of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/steve-hargis-8623b310",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_Business Development Manager": [
+    {
+      "name": "Massimo De Nigris",
+      "job_title": "Senior Business Development Manager Extend Financial · The role of a Business Development Manager is a constant challenge and requires a number of skills",
+      "linkedin_url": "https://ca.linkedin.com/in/massimodenigris",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Cherie Krake",
+      "job_title": "National Business Development Manager",
+      "linkedin_url": "https://au.linkedin.com/in/ckrake",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Alan Ellis",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://au.linkedin.com/in/alan-ellis-7b411938",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Jack W. McCarthy",
+      "job_title": "Business Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jack-william-mccarthy",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Vinayak MASAL",
+      "job_title": "Central INDIA Business Development Manager",
+      "linkedin_url": "https://in.linkedin.com/in/vinayak-masal-03b74251",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_Head of Strategy": [
+    {
+      "name": "Ousama Harb",
+      "job_title": "Group Head of Strategy",
+      "linkedin_url": "https://ae.linkedin.com/in/ousama-harb-71975513",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Jon Pollard",
+      "job_title": "Head Of Strategy",
+      "linkedin_url": "https://uk.linkedin.com/in/jonp65",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Mike Holtschlag",
+      "job_title": "SVP, Head of Strategy & Business Development (Personal Investing)",
+      "linkedin_url": "https://www.linkedin.com/in/mike-holtschlag-11964b3",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Vidya Venkateswaran",
+      "job_title": "Vice President and Head of Strategy, South",
+      "linkedin_url": "https://in.linkedin.com/in/vidyaven",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Pam Vastardis",
+      "job_title": "Head of Strategy and Operations, Google Cloud ...",
+      "linkedin_url": "https://www.linkedin.com/in/pamvastardis",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_VP of Business Operations": [
+    {
+      "name": "Marleen Applebaum",
+      "job_title": "VP of Business Operations",
+      "linkedin_url": "https://www.linkedin.com/in/marleen-applebaum",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Tricia Spiler",
+      "job_title": "VP of Business Operations",
+      "linkedin_url": "https://ca.linkedin.com/in/tricia-spiler",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Philip Y.",
+      "job_title": "extend pet's life expectancy through early diagnosis and treatment □ VP of Business Operations is responsible for overseeing Finance, eCommerce, Product",
+      "linkedin_url": "https://ca.linkedin.com/in/philip-y-456b80128",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Livia Foo",
+      "job_title": "Activities and Societies: VISION Chairperson, Net Impact President, MBA Advisory",
+      "linkedin_url": "https://www.linkedin.com/in/liviafoo",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Tyler Mani",
+      "job_title": "Regional Director of Operations",
+      "linkedin_url": "https://www.linkedin.com/in/tyler-mani-7120457",
+      "industry": "Financial Services"
+    }
+  ],
+  "Extend_Managing Director": [
+    {
+      "name": "Ben Miller",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://www.linkedin.com/in/ben-miller-38596731",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Sophie Russell",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://uk.linkedin.com/in/sophiecorryrussell",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "James Quinn",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://uk.linkedin.com/in/james-quinn-022a1a13a",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "John Daintith",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://uk.linkedin.com/in/john-daintith-18a614113",
+      "industry": "Financial Services"
+    },
+    {
+      "name": "Uzair Mumtaz",
+      "job_title": "Managing Director",
+      "linkedin_url": "https://www.linkedin.com/in/uzairmumtaz",
+      "industry": "Financial Services"
+    }
+  ],
+  "Jerry_Chief Technology Officer": [
+    {
+      "name": "Jerry Allen, M. Ed., RTSBA",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-allen-m-ed-rtsba-45478612",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Pratt",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-pratt",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Fox",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-fox-aa2936151",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Nowell",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/nowell",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry S. Iwanski",
+      "job_title": "EVP & Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/iwanski",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_VP of Engineering": [
+    {
+      "name": "Jerry Krikheli",
+      "job_title": "Jerry is the VP of engineering during my time at Houzz, he showed great capability in growing the engineering team while setting high standard for engineering",
+      "linkedin_url": "https://www.linkedin.com/in/jerrykrikheli",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Schutt",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-schutt-46b91710",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Le",
+      "job_title": "VP of Engineering at OKX · Experience: OKX · Location: Hong Kong SAR · 413 connections on LinkedIn",
+      "linkedin_url": "https://hk.linkedin.com/in/jerry-le-60ba6613",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Babb",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-babb-81440568",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Ko",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-ko-81ba9714",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Director of Software Development": [
+    {
+      "name": "Jerry Doebler",
+      "job_title": "Director of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-doebler-a2771a6",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Noel Massey",
+      "job_title": "Director of Software Development | Solutions Architect | Innovator | Leader",
+      "linkedin_url": "https://www.linkedin.com/in/noel-massey",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Bailey",
+      "job_title": "Software Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-bailey-951a0626",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Thomas",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerrymthomas",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Iacuzio",
+      "job_title": "“It's my absolute pleasure to recommend Jerry Iacuzio for the Software Development Manager position with your company",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-iacuzio",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Software Development Manager": [
+    {
+      "name": "Jerry Hao",
+      "job_title": "Software Development Manager III",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-hao-2b213432",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Bullard",
+      "job_title": "Senior Software Development Manager, Consumer Engagement",
+      "linkedin_url": "https://www.linkedin.com/in/bullardj",
+      "industry": "Software Development"
+    },
+    {
+      "name": "jerry readel",
+      "job_title": "Senior Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-readel-66296314a",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Beech II",
+      "job_title": "As the Software Development Manager I'm responsible for Development",
+      "linkedin_url": "https://www.linkedin.com/in/jbeechii",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Ifeanyi",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://ng.linkedin.com/in/jerry-ifeanyi",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Head of Product Development": [
+    {
+      "name": "Jerry R",
+      "job_title": "Head of Product Development Regional Pricing Regional Client Manager There's",
+      "linkedin_url": "https://hk.linkedin.com/in/jerryras",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Technical Lead": [
+    {
+      "name": "Jerry Weeks",
+      "job_title": "Global Service Technical lead & team manager for ...",
+      "linkedin_url": "https://dk.linkedin.com/in/jerry-weeks-6b193629",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Jeffers",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-jeffers-8bb28592",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Xiao",
+      "job_title": "Software Architect, Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-xiao-0803567",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jielei (Jerry) Xu",
+      "job_title": "Senior Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/jieleixu",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Callaghan",
+      "job_title": "Senior Technical Lead - Information",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-callaghan-264641b",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Engineering Manager": [
+    {
+      "name": "Jerry Smith",
+      "job_title": "Sr Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-smith-824a79a",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Krane",
+      "job_title": "System Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-krane-2908b5a",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Wagner",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-wagner-40282672",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Sevigny",
+      "job_title": "Systems Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-sevigny-41b20aa",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jerry Silecchia, Jr. RPA, FMA",
+      "job_title": "Vice President, Regional Engineering Manager · Experience: JLL · Education",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-silecchia-jr-rpa-fma-280a3933",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Product Manager (Technical)": [],
+  "Jerry_DevOps Manager": [
+    {
+      "name": "Jerry Kouba",
+      "job_title": "DevOps Manager",
+      "linkedin_url": "https://www.linkedin.com/in/jerry-kouba-184586318",
+      "industry": "Software Development"
+    }
+  ],
+  "Jerry_Scrum Master / Agile Coach": [
+    {
+      "name": "Jerry Yang",
+      "job_title": "Scrum Master / Agile Coach",
+      "linkedin_url": "https://cn.linkedin.com/in/jerry-yang-92888913b",
+      "industry": "Software Development"
+    }
+  ],
+  "Whatnot_Chief Technology Officer": [
+    {
+      "name": "Vaibhav Devnani",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://in.linkedin.com/in/vaibhavdevnani7",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "George Papamatthaiakis",
+      "job_title": "Senior Product Manager, Head of ...",
+      "linkedin_url": "https://cy.linkedin.com/in/george-papamatthaiakis",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_Chief Product Officer": [
+    {
+      "name": "Viktor Kyosev",
+      "job_title": "Chief Product Officer",
+      "linkedin_url": "https://sg.linkedin.com/in/viktorkyosev",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Logan Head",
+      "job_title": "Co-Founder - CTO · Senior Product Manager · Director Of Engineering · Technical Lead Engineer · Software Engineer · Full Stack Engineer · CEO/President",
+      "linkedin_url": "https://www.linkedin.com/in/logan-head",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Megan R.",
+      "job_title": "Product Manager, Data",
+      "linkedin_url": "https://www.linkedin.com/in/megrourke",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_VP of Technology": [
+    {
+      "name": "Ramya Sree Yarlagadda",
+      "job_title": "Staff Technical Program Manager",
+      "linkedin_url": "https://www.linkedin.com/in/ramya-sree-yarlagadda",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_Director of Engineering": [
+    {
+      "name": "Jackie Ryan",
+      "job_title": "Our most recent Director of Engineering hire landed perfectly from kick-off",
+      "linkedin_url": "https://www.linkedin.com/in/jackie-ryan-28046b45",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Nikhil Patel",
+      "job_title": "“I am Matthew Teece, the Director of Engineering at We Tribute, Inc",
+      "linkedin_url": "https://www.linkedin.com/in/patel-nikhil",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Stephen Voorhees",
+      "job_title": "He clearly sets a gold standard for what being a director of engineering is all about",
+      "linkedin_url": "https://www.linkedin.com/in/stephenvoorhees",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Gustavo Adolfo Costa Borges",
+      "job_title": "Director of Engineering",
+      "linkedin_url": "https://br.linkedin.com/in/gustavo-adolfo-costa-borges-b5b1301b",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_Head of Digital Transformation": [],
+  "Whatnot_Product Manager": [
+    {
+      "name": "Sameer Bhutani",
+      "job_title": "Product Manager, Seller Scaling",
+      "linkedin_url": "https://www.linkedin.com/in/sbhutani",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Erin McDermott",
+      "job_title": "Associate Product Manager",
+      "linkedin_url": "https://www.linkedin.com/in/erin--mcdermott",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Jen L.",
+      "job_title": "product managers and designers in the development process",
+      "linkedin_url": "https://www.linkedin.com/in/thejenlee",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_Data Science Manager": [],
+  "Whatnot_Director of Information Systems": [],
+  "Whatnot_Head of Innovation": [
+    {
+      "name": "Bradley Leimer",
+      "job_title": "According to Bradley Leimer (2015) who is the head of innovation at Santander",
+      "linkedin_url": "https://www.linkedin.com/in/leimer",
+      "industry": "Technology, Information and Internet"
+    },
+    {
+      "name": "Renato Cairo",
+      "job_title": "Senior Product Manager",
+      "linkedin_url": "https://br.linkedin.com/in/renato-cairo",
+      "industry": "Technology, Information and Internet"
+    }
+  ],
+  "Whatnot_Technical Program Manager": [],
+  "ShiftKey_Chief Technology Officer": [
+    {
+      "name": "Sergey Nedzelskyi",
+      "job_title": "“I had the privilege of working alongside Sergey during my time at ShiftKey, and I wholeheartedly recommend him as a Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/sergeynedzelskyi",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Tomasz Żełudziewicz – Chief Technology Officer – NoCake",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://pl.linkedin.com/in/tomasz-zeludziewicz",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_VP of Engineering": [
+    {
+      "name": "David Dampier",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/daveydampier",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Director of Software Development": [
+    {
+      "name": "Eric Merkys",
+      "job_title": "Director of Software Development/Engineering excelling in driving healthy",
+      "linkedin_url": "https://www.linkedin.com/in/ericmerkys",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Marcin Jeleński",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://pl.linkedin.com/in/marcin-jelenski/en",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Software Development Manager": [
+    {
+      "name": "Maciej Gromada – ShiftKey",
+      "job_title": "Software Development Manager with solid engineering background and strong focus on… · Doświadczenie: ShiftKey · Wykształcenie: Technical University of Lodz",
+      "linkedin_url": "https://pl.linkedin.com/in/maciej-gromada-9250a444",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Head of Product Development": [
+    {
+      "name": "Christopher Conner, MBA",
+      "job_title": "Award for performance as head of Product Development for EveryCarListed",
+      "linkedin_url": "https://www.linkedin.com/in/cdconner",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Technical Lead": [
+    {
+      "name": "Visakan Bapu Thurvas Jeyakumar",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://ca.linkedin.com/in/visakan-bapu",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Maciej Moszoro – CEO – 10X Academy",
+      "job_title": "Technical Lead Mobile",
+      "linkedin_url": "https://pl.linkedin.com/in/maciejmoszoro",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Engineering Manager": [
+    {
+      "name": "Hima Somarapu",
+      "job_title": "“I had the privilege of working closely with Hima for over two years at ShiftKey, where she served as a Senior Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/hima-somarapu",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Maciej Brózdowski – Engineering Manager – Google",
+      "job_title": "Engineering Manager at Google | MBA · Manager experienced in many fields",
+      "linkedin_url": "https://pl.linkedin.com/in/maciej-brozdowski",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Damian Rogulski – shiftkey",
+      "job_title": "Senior Engineering Manager with 9 years of experience in software development and 4+… · Doświadczenie: shiftkey · Wykształcenie: University of Wroclaw",
+      "linkedin_url": "https://pl.linkedin.com/in/damian-rogulski",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Marcin Jeleński – Software Engineer – ElevenLabs",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://pl.linkedin.com/in/marcin-jelenski",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Jacek Tyrakowski – shiftkey",
+      "job_title": "After joining ShiftKey as Senior Engineering Manager in March of 2022, Jacek quickly established himself as one of the best leaders ShiftKey",
+      "linkedin_url": "https://pl.linkedin.com/in/jacek-tyrakowski-68440062",
+      "industry": "Software Development"
+    }
+  ],
+  "ShiftKey_Product Manager (Technical)": [],
+  "ShiftKey_DevOps Manager": [],
+  "ShiftKey_Scrum Master / Agile Coach": [],
+  "Signifyd_Chief Technology Officer": [
+    {
+      "name": "Michael Pezely",
+      "job_title": "Roberto Arnetoli Chief Technology Officer, Prosper",
+      "linkedin_url": "https://www.linkedin.com/in/mpezely",
+      "industry": "Software Development"
+    }
+  ],
+  "Signifyd_VP of Engineering": [
+    {
+      "name": "Mark E.",
+      "job_title": "Senior Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/mark-e-b769015",
+      "industry": "Software Development"
+    }
+  ],
+  "Signifyd_Director of Software Development": [
+    {
+      "name": "Tristan Smith",
+      "job_title": "Software Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/tristan-smith-001857a7",
+      "industry": "Software Development"
+    }
+  ],
+  "Signifyd_Software Development Manager": [],
+  "Signifyd_Head of Product Development": [],
+  "Signifyd_Technical Lead": [
+    {
+      "name": "Adam Davidson",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://uk.linkedin.com/in/adam-davidson-a6534926",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Fabio F.",
+      "job_title": "As a Data Scientist at Signifyd, my responsibilities include: DS Technical lead to onboard new clients, working closely with sales and customer success teams",
+      "linkedin_url": "https://br.linkedin.com/in/fabio-fujii",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Eugene Pulber",
+      "job_title": "Eugene is a technical lead developer with 9+ years of experience in the digital commerce… ·",
+      "linkedin_url": "https://www.linkedin.com/in/pulber",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Laxmi Narayana Anupoju",
+      "job_title": "Technical Lead at GSPANN Technologies, Inc · • Having around 8+ years of",
+      "linkedin_url": "https://in.linkedin.com/in/laxmi-narayana-anupoju-340b05148",
+      "industry": "Software Development"
+    }
+  ],
+  "Signifyd_Engineering Manager": [
+    {
+      "name": "John McGettrick",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://uk.linkedin.com/in/johnmcgettrick",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sarah Nibs",
+      "job_title": "Software Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/sarahnibs",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Declan Q.",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://uk.linkedin.com/in/declan-q-11ba1833",
+      "industry": "Software Development"
+    }
+  ],
+  "Signifyd_Product Manager (Technical)": [],
+  "Signifyd_DevOps Manager": [],
+  "Signifyd_Scrum Master / Agile Coach": [],
+  "Render_Chief Technology Officer": [
+    {
+      "name": "Hristijan B.",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://mk.linkedin.com/in/hristijanb",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sam Marrocco",
+      "job_title": "Chief Technology Officer (CTO)",
+      "linkedin_url": "https://www.linkedin.com/in/sam-marrocco-486a1714",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Richard Mauge",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://www.linkedin.com/in/richard-mauge",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Chandra Mohan",
+      "job_title": "Chief Information Officer, Chief Technology Officer ...",
+      "linkedin_url": "https://www.linkedin.com/in/chandramohan2",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Matt Collie",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://ca.linkedin.com/in/mattcollie",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_VP of Engineering": [
+    {
+      "name": "Anirban Halder",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/anirban-halder-1163914",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Georgios Vouzounaras",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/gvouzounaras",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Chengchen(Rex) Wang",
+      "job_title": "VP of Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/chengchenwang",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Eric Webb",
+      "job_title": "Eric Webb is the VP of Engineering at Higharc, where he leads a remote engineering team… ·",
+      "linkedin_url": "https://www.linkedin.com/in/ericthomaswebb",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Greg Jones",
+      "job_title": "Chief Technology Officer / VP of Engineering for a multibillion-dollar",
+      "linkedin_url": "https://www.linkedin.com/in/greg-jones-miso",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Director of Software Development": [
+    {
+      "name": "Alexander Render",
+      "job_title": "Promoted at completion of project to Director of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/alexanderrender",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sean Carson",
+      "job_title": "Director of Software Development and Engineering ...",
+      "linkedin_url": "https://www.linkedin.com/in/seantcarson",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Dieter Sliter",
+      "job_title": "Director of Software Development & IT",
+      "linkedin_url": "https://www.linkedin.com/in/dsliterdev",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Paolo Hilario",
+      "job_title": "Director of Software Development",
+      "linkedin_url": "https://www.linkedin.com/in/paolohilario",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Srikanth Chittineni",
+      "job_title": "Director of Software Development- Enterprise Platforms & Services OCI",
+      "linkedin_url": "https://www.linkedin.com/in/srikanthchittineni",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Software Development Manager": [
+    {
+      "name": "Mike Schmidt",
+      "job_title": "SOFTWARE DEVELOPMENT MANAGER (MICROSOFT, 1999-2014)",
+      "linkedin_url": "https://www.linkedin.com/in/mike-schmidt-45732a100",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Devesh Srivastava",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/deveshshri",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Ashutosh Khidrapurkar",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://in.linkedin.com/in/ashkhi",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Christopher Bell",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/christopher-bell-8679586",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Vincent J Waites",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://www.linkedin.com/in/vincent-j-waites-318a0775",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Head of Product Development": [
+    {
+      "name": "Gabriele Zocchi – Head of Product Development",
+      "job_title": "Head of Product Development - Enterprises XR and Interactive Streaming",
+      "linkedin_url": "https://de.linkedin.com/in/gabriele-zocchi-4b91a74",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Kerry Russo",
+      "job_title": "Application Engineer Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/kerry-russo-b71a8b13",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Guru Hariharan",
+      "job_title": "* Head of Product Development Center at Phoenix",
+      "linkedin_url": "https://www.linkedin.com/in/gurushyam",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Rohan Chawda",
+      "job_title": "Head of Product Development",
+      "linkedin_url": "https://in.linkedin.com/in/rohan-chawda",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Waheed ur Rehman",
+      "job_title": "Head of Product Development, Customer Services, HR, Operations, Business Development",
+      "linkedin_url": "https://pk.linkedin.com/in/waheedurrehman",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Technical Lead": [
+    {
+      "name": "Angela Render, UXC",
+      "job_title": "Strategic Project and Technical Lead ...",
+      "linkedin_url": "https://www.linkedin.com/in/angelarender",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Tharindu Dananjaya Karunanayaka",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/tharindu-dananjaya-karunanayaka-76851210a/",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Yvette Render",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://za.linkedin.com/in/yvette-render-aa3810b3",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Dmitry Vinnik",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://ca.linkedin.com/in/dmitry-vinnik-22028712",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Yicheng liu",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/yicheng-liu-0a6427249",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Engineering Manager": [
+    {
+      "name": "Bradley Stecker",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/bradley-stecker",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Alex Anton",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://au.linkedin.com/in/alex-anton-394b60123",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Sean Doughty",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://ca.linkedin.com/in/doughtysean",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Justin Murray",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/murrayju",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Tyrone Northcutt",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/tyronenorthcutt",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Product Manager (Technical)": [],
+  "Render_DevOps Manager": [
+    {
+      "name": "Justin Samuel",
+      "job_title": "Experienced Senior DevOps Manager with a strong focus on Infrastructure as Code (IaC)…",
+      "linkedin_url": "https://www.linkedin.com/in/justinsamuel",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Raja Moukhass",
+      "job_title": "backend & DevOps Manager",
+      "linkedin_url": "https://ma.linkedin.com/in/raja-moukhass",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Robin Rocky is a Certified SAFe® 5 Agilist",
+      "job_title": "DevOps manager who implemented end-to-end solution for a Major Hedge fund",
+      "linkedin_url": "https://ca.linkedin.com/in/robin-rocky",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Christina R.",
+      "job_title": "Engineering Manager| Site Reliability (SRE), Security, DevOps Software Engineer",
+      "linkedin_url": "https://www.linkedin.com/in/christina-roberts-dev",
+      "industry": "Software Development"
+    }
+  ],
+  "Render_Scrum Master / Agile Coach": [
+    {
+      "name": "Tom DiGiovanni, CSM, SSGB, ITIL, SAFe POPM",
+      "job_title": "Scrum Master / Agile Coach",
+      "linkedin_url": "https://www.linkedin.com/in/tom-digiovanni",
+      "industry": "Software Development"
+    }
+  ],
+  "FutureFit AI_Chief Technology Officer": [],
+  "FutureFit AI_VP of Engineering": [],
+  "FutureFit AI_Director of Software Development": [],
+  "FutureFit AI_Software Development Manager": [],
+  "FutureFit AI_Head of Product Development": [],
+  "FutureFit AI_Technical Lead": [
+    {
+      "name": "Sufyan K.",
+      "job_title": "Software Engineer · Jan 2024 - Present ; Technical Lead · May 2022 - Jan 2024 ; Front-End Developer · Jan 2022 - May 2022 ; Front-End Developer · Aug 2021 - Dec 2021",
+      "linkedin_url": "https://ca.linkedin.com/in/khansuf",
+      "industry": "Software Development"
+    }
+  ],
+  "FutureFit AI_Engineering Manager": [],
+  "FutureFit AI_Product Manager (Technical)": [],
+  "FutureFit AI_DevOps Manager": [],
+  "FutureFit AI_Scrum Master / Agile Coach": [],
+  "Fieldguide_Chief Technology Officer": [],
+  "Fieldguide_VP of Engineering": [],
+  "Fieldguide_Director of Software Development": [],
+  "Fieldguide_Software Development Manager": [],
+  "Fieldguide_Head of Product Development": [],
+  "Fieldguide_Technical Lead": [
+    {
+      "name": "Nishant Panchal",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/nishant-panchal",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Cody Swaney",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://www.linkedin.com/in/cody-swaney-42017596",
+      "industry": "Software Development"
+    }
+  ],
+  "Fieldguide_Engineering Manager": [
+    {
+      "name": "Madeline Klecker",
+      "job_title": "Hands-on Engineering Manager with 8 years of experience building web applications",
+      "linkedin_url": "https://www.linkedin.com/in/madeline-klecker-03176313a",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Marco Chiappetta",
+      "job_title": "Senior Software Engineer / Engineering Manager",
+      "linkedin_url": "https://www.linkedin.com/in/chpmrc/",
+      "industry": "Software Development"
+    }
+  ],
+  "Fieldguide_Product Manager (Technical)": [],
+  "Fieldguide_DevOps Manager": [],
+  "Fieldguide_Scrum Master / Agile Coach": [],
+  "micro1_Chief Technology Officer": [
+    {
+      "name": "Muhammad Tahir Awan",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://pk.linkedin.com/in/muhammadtahir-?trk=public_post_feed-actor-image",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Hannah Graham",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://uk.linkedin.com/in/hvg-711501230",
+      "industry": "Software Development"
+    },
+    {
+      "name": "Arkodeep G.",
+      "job_title": "Chief Technology Officer",
+      "linkedin_url": "https://in.linkedin.com/in/arkodeep",
+      "industry": "Software Development"
+    }
+  ],
+  "micro1_VP of Engineering": [],
+  "micro1_Director of Software Development": [],
+  "micro1_Software Development Manager": [
+    {
+      "name": "Waqas Ahmed, MCS, MCP (Microsoft Certified Professional)",
+      "job_title": "Software Development Manager",
+      "linkedin_url": "https://pk.linkedin.com/in/waqasahmed7",
+      "industry": "Software Development"
+    }
+  ],
+  "micro1_Head of Product Development": [],
+  "micro1_Technical Lead": [
+    {
+      "name": "Ravi Jaiswal",
+      "job_title": "Technical Lead",
+      "linkedin_url": "https://in.linkedin.com/in/ravijais",
+      "industry": "Software Development"
+    }
+  ],
+  "micro1_Engineering Manager": [
+    {
+      "name": "Joseph Armas",
+      "job_title": "Engineering Manager",
+      "linkedin_url": "https://ec.linkedin.com/in/joseph-armas-a8953610b",
+      "industry": "Software Development"
+    }
+  ],
+  "micro1_Product Manager (Technical)": [],
+  "micro1_DevOps Manager": [
+    {
+      "name": "Rishi Kaushal",
+      "job_title": "Led a team of 12 engineers as a Senior DevOps Manager at EPAM Systems, optimizing cloud costs by 30%",
+      "linkedin_url": "https://in.linkedin.com/in/rishi-kaushal-devops",
+      "industry": "Software Development"
+    }
+  ],
+  "micro1_Scrum Master / Agile Coach": []
+}
