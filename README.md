@@ -2,91 +2,180 @@
 
 ## Purpose
 
-This project is designed to scrape LinkedIn for job-related data, specifically targeting company names, company sizes, and decision-maker information. It leverages Selenium for scraping LinkedIn job listings and company pages, and the Google Custom Search API to identify decision makers. The final output is a consolidated CSV file containing all collected data.
+This project is designed to scrape LinkedIn for job-related data, specifically targeting company names from job listings. The scraper uses Selenium for web automation and OpenAI's API for job description summarization. It includes intelligent filtering to only collect recent jobs and provides data extraction with pagination support.
 
 ## Project Structure
 
 The project is modular, with each script handling a specific task:
 
-- `main.py`: The entry point that coordinates the workflow by calling each module in sequence.
-- `get_company_names_1.py`: Scrapes company names from LinkedIn job listings based on user-defined filters.
-- `get_company_size_data_2.py`: Extracts company size data from LinkedIn company pages.
-- `get_decision_makers_with_google_search_api_3.py`: Queries the Google Custom Search API to find decision makers’ LinkedIn profiles.
-- `generate_final_output_4.py`: Merges all collected data into a single CSV file.
+- `main.py`: The entry point that coordinates the workflow by calling each module in sequence
+- `get_company_names_1.py`: Scrapes company names and job details from LinkedIn job listings based on user-defined filters
+- `get_company_size_data_2.py`: Extracts company size data from LinkedIn company pages
+- `get_decision_makers_with_google_search_api_3.py`: Queries the Google Custom Search API to find decision makers' LinkedIn profiles
+- `generate_final_output_4.py`: Merges all collected data into a single CSV file
+
+## Current Implementation Features
+
+### Enhanced Job Scraping (`get_company_names_1.py`)
+
+- **Smart Date Filtering**: Only scrapes jobs posted after the last scraping date to avoid duplicates
+- **AI-Powered Summarization**: Uses OpenAI's GPT-3.5-turbo to generate concise job description summaries
+- **Multi-Page Support**: Automatically navigates through multiple pages of job listings with configurable limits
+- **Enhanced Scrolling**: Simulates human-like scrolling behavior to load all job listings on each page
+- **Robust Error Handling**: Multiple fallback selectors and retry mechanisms for reliable data extraction
+- **Real-time CSV Saving**: Saves each job immediately to prevent data loss during long scraping sessions
+
+### Data Collected
+
+For each job posting, the scraper collects:
+- **Job Title**: Position name
+- **Company Name**: Hiring organization
+- **Location**: Job location (cleaned and parsed)
+- **Job URL**: Direct link to the LinkedIn job posting
+- **Job Description**: AI-summarized description (max 30 words)
+- **Scraped At**: Timestamp when the job was scraped
+- **Posted On**: When the job was originally posted on LinkedIn
 
 ## How It Works
 
-1. **Login to LinkedIn**
+### 1. **Login to LinkedIn**
+- Selenium automates browser login using credentials from `.env` file
+- Handles multiple post-login scenarios including CAPTCHA and email verification
+- Includes robust verification with multiple success indicators
 
-   - Selenium automates browser login using user-provided credentials (username and password).
-   - Handles two-factor authentication prompts if enabled.
+### 2. **Apply Job Filters**
+- **Location Filter**: Targets specific geographic areas (e.g., "United States")
+- **Job Title Filter**: Searches for specific roles (e.g., "Generative AI Developer")
+- **Date Posted Filter**: Options include "Past 24 hours", "Past week", "Past month"
+- **Industry Filter**: Targets specific industries like:
+  - IT Services and IT Consulting
+  - Software Development
+  - Technology, Information and Internet
+- **Experience Level Filter**: Filters by experience levels:
+  - Entry level
+  - Associate
+  - Mid-Senior level
 
-2. **Scrape Company Names**
+### 3. **Enhanced Scraping Process**
+- **Intelligent Scrolling**: Uses multiple scrolling methods to ensure all jobs are loaded
+- **Human-like Behavior**: Random delays and mouse movements to avoid detection
+- **Date-based Filtering**: Only processes jobs newer than the last scraping date
+- **Real-time Processing**: Each job is processed and saved immediately
+- **Pagination Support**: Automatically navigates through multiple pages with configurable limits
 
-   - Applies filters such as location (e.g., "United States"), job title (e.g., "Software Engineer"), date posted (e.g., "Past 24 hours"), industry (e.g., "Technology"), and experience level (e.g., "Entry level").
-   - Scrapes company names from the resulting job listings, storing them in a CSV.
-
-3. **Get Company Size Data**
-
-   - For each company name, navigates to its LinkedIn company page (e.g., `linkedin.com/company/[company-name]`).
-   - Extracts size data (e.g., "51-200 employees") from the "About" section and saves it to a separate CSV.
-
-4. **Find Decision Makers**
-
-   - Uses the Google Custom Search API to search for LinkedIn profiles of decision makers (e.g., "site:linkedin.com/in/ \[industry\] 'CEO' | 'CTO' | 'Director'").
-   - Industry-specific titles are predefined in the script (e.g., "VP of Engineering" for tech).
-   - Stores names, titles, and profile URLs in a CSV.
-
-5. **Generate Final Output**
-
-   - Combines data from all previous steps into a single CSV, including columns like company name, size, decision maker name, title, LinkedIn profile URL, and original job posting link.
+### 4. **AI-Enhanced Data Processing**
+- **Job Description Summarization**: Uses OpenAI API to create concise, readable summaries
+- **Date Parsing**: Converts relative dates ("2 days ago") to absolute timestamps
+- **Data Validation**: Ensures all required fields are populated before saving
 
 ## Setup
 
-- **Dependencies**:
+### Environment Configuration
+Create a `.env` file with the following credentials:
+```env
+LINKEDIN_EMAIL=your_email@example.com
+LINKEDIN_PASSWORD=your_password
+OPENAI_API_KEY=your_openai_api_key
+```
 
-  - Install Python packages via `pip`: `selenium`, `pandas`, `requests`, `webdriver-manager` (for managing browser drivers).
-  - Example: `pip install selenium pandas requests webdriver-manager`.
+### Configuration Variables
+Edit the configurables of main.py:
+```python
 
-- **Credentials**:
+# In main.py
+LOCATION = "United States"
+JOB_TITLE = "Generative AI Developer"
+DATE_POSTED = "Past week"  # Options: "Past 24 hours", "Past week", "Past month"
+max_pages_scraped = 2  # Safety limit to prevent infinite loops
+INDUSTRY_FILTER = ["IT Services and IT Consulting", "Software Development"]
+EXPERIENCE_LEVEL_FILTER = ["Entry level", "Associate", "Mid-Senior level"]
+```
 
-  - Store LinkedIn username and password, plus Google API key and Custom Search Engine ID, in environment variables (e.g., `.env` file):
+Edit the configurable `last_scraping_date` at the beginning of `get_company_names_1.py`:
+```
+# At the beginning of get_company_names_1.py
+last_scraping_date = "2025-06-15 10:20"  # Configure this for date filtering. # later take last_scraping_data from metadata table
 
-    ```
-    LINKEDIN_USERNAME=your_email@example.com
-    LINKEDIN_PASSWORD=your_password
-    ```
 
-- **Search Filters**:
+## Output Structure
 
-  - Edit `main.py` to set filters like location, job title, and company size range.
+### File Organization
+```
+scraped_data/
+├── 1_get_company_names/
+│   └── linkedin_[JOB_TITLE]_jobs.csv
+├── 2_get_company_size_data/
+│   └── company_size_data.csv
+├── 3_get_decision_makers_with_google_search_api/
+│   └── decision_makers_data.csv
+└── 4_generate_final_output/
+    └── final_output.csv
+```
 
-- **Decision Maker Titles**:
+### CSV Columns
+- `title`: Job position title
+- `company`: Company name
+- `location`: Job location
+- `url`: LinkedIn job posting URL
+- `job_description`: AI-generated summary (max 30 words)
+- `scraped_at`: Timestamp of when data was collected
+- `posted_on`: When the job was posted on LinkedIn (UTC)
 
-  - Customize titles in `get_decision_makers_with_google_search_api_3.py` based on target industries.
+## Key Features
 
-## Output
+### Anti-Detection Measures
+- **Random Delays**: Variable wait times between actions (0.5-4 seconds)
+- **Human-like Scrolling**: Multiple scrolling methods with realistic timing
+- **User Agent Spoofing**: Mimics real browser behavior
+- **Action Chains**: Uses Selenium's ActionChains for mouse-like interactions
 
-- **Intermediate CSVs**: Each step generates a CSV in subfolders under `scraped_data/` (e.g., `scraped_data/1_company_names/`).
-- **Final CSV**: A merged file (e.g., `final_output.csv`) in `scraped_data/4_final_output/`, with all data structured for easy analysis.
 
-## Notes
+### Performance Optimizations
+- **Immediate Saving**: Prevents data loss during long scraping sessions
+- **Configurable Limits**: `max_pages_scraped` prevents infinite loops
+- **Date Filtering**: Avoids processing old job postings
 
-- **Anti-Scraping Measures**:
-  - Random delays (e.g., 2-5 seconds) and mouse-like navigation are implemented to mimic human behavior and avoid LinkedIn bans.
-- **API Limits**:
-  - The Google Custom Search API has a free tier limit (100 queries/day). Monitor usage or upgrade for larger projects.
-- **Potential Issues**:
-  - LinkedIn may block accounts for excessive scraping; use cautiously.
-  - Missing data (e.g., private company pages) may result in incomplete rows.
+## Usage
 
-## Running the Project
+### Basic Execution
+```python
+python main.py
+```
 
-1. Ensure dependencies are installed and credentials are configured.
-2. Run `python main.py` from the project root.
-3. Check `scraped_data/` for output files after completion.
+### Customization
+Modify the configuration variables at the bottom of the script:
+- `LOCATION`: Target geographic area
+- `JOB_TITLE`: Specific job role to search for
+- `DATE_POSTED`: How recent jobs should be
+- `max_pages_scraped`: Maximum number of pages to process
+- `INDUSTRY_FILTER`: List of target industries
+- `EXPERIENCE_LEVEL_FILTER`: List of experience levels
 
-## Future Work
+## Important Notes
 
-- Add IP rotation (e.g., via proxies) to improve scraping reliability and avoid detection.
-- Expand filters to include more job attributes (e.g., remote vs. on-site).
+### API Usage
+- **OpenAI Integration**: Requires valid API key for job description summarization
+- **Token Management**: Optimized prompts to minimize API costs
+- **Error Handling**: Graceful fallback if AI summarization fails
+
+### Potential Limitations
+- **LinkedIn Changes**: May require updates if LinkedIn modifies their interface
+- **Network Dependencies**: Requires stable internet connection for reliable operation
+- **API Costs**: OpenAI API usage incurs costs based on token consumption
+
+## Troubleshooting
+
+### Common Issues
+- **Login Failures**: Check credentials in `.env` file
+- **No Jobs Found**: Verify search filters aren't too restrictive
+- **Scrolling Issues**: LinkedIn interface changes may require selector updates
+- **API Errors**: Ensure OpenAI API key is valid and has sufficient credits
+
+## Future Enhancements
+
+### Planned Improvements
+- **Proxy Support**: IP rotation for improved reliability
+- **Database Storage**: Direct database insertion instead of CSV files
+
+
+--Paras Shrote
