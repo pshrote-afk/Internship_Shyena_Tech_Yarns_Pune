@@ -12,10 +12,38 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 import re
+import openai
 
 # last_scraping_date should not be taken from user input
 last_scraping_date = "2025-06-15 10:20" # later take from metadata table
 
+
+def summarize_job_description(description):
+    """Send description to LLM for summarization using OpenAI API."""
+    try:
+        # Set your API key - add this to your .env file
+        openai.api_key = os.getenv("OPENAI_API_KEY")
+
+        # Default prompt if none provided
+        prompt = "Using simple words, summarize this job description in one line with a maximum of 30 words, focusing on key responsibilities and requirements:"
+
+
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",  # or "gpt-4" if you prefer
+            messages=[
+                {"role": "system",
+                 "content": "You are a helpful assistant that summarizes job descriptions clearly and concisely."},
+                {"role": "user", "content": f"{prompt}\n\n{description}"}
+            ],
+            max_tokens=75,  # Adjust based on desired summary length
+            temperature=0.3  # Lower for more consistent summaries
+        )
+
+        return response.choices[0].message.content.strip()
+
+    except Exception as e:
+        print(f"⚠️ LLM summarization failed: {e}")
+        return "Summary not available"
 
 def is_job_recent(posted_on_str, last_scraping_date_str):
     """Check if job posted_on date is after last_scraping_date."""
@@ -838,6 +866,27 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
                 print(location)
                 print(posted_on)
 
+                # Get job description
+                description = "unknown"
+                description_selectors = [
+                    "//div[contains(@class, 'jobs-description__details')]",
+                    "//div[contains(@class, 'jobs-description-content')]",
+                    "//section[contains(@class, 'jobs-description')]"
+                ]
+
+                for selector in description_selectors:
+                    try:
+                        desc_element = WebDriverWait(driver, 2).until(
+                            EC.presence_of_element_located((By.XPATH, selector))
+                        )
+                        description = desc_element.text.strip()
+                        if description:
+                            break
+                    except:
+                        continue
+
+                summarized_description = summarize_job_description(description)
+
                 # Filter jobs based on posted_on date
                 if not is_job_recent(posted_on + " UTC", last_scraping_date):
                     print(f"⏭️ Skipping old job: {title} (posted: {posted_on})")
@@ -849,7 +898,8 @@ def scrape_job_listings(driver, page_num=1, job_title=""):
                         "company": company if company else "Company not found",
                         "location": location,
                         "url": job_url,
-                        "scraped_at": datetime.now().strftime("%Y-%m-%d"),
+                        "job_description": summarized_description,
+                        "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
                         "posted_on": posted_on + " UTC"
                     }
 
@@ -951,7 +1001,7 @@ def save_to_csv(jobs, JOB_TITLE, filename=None, append=False):
     try:
         mode = 'a' if append else 'w'
         with open(filename, mode, newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['title', 'company', 'location', 'url', 'scraped_at', 'posted_on']
+            fieldnames = ['title', 'company', 'location', 'url', 'job_description', 'scraped_at', 'posted_on']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
            # Write header only if it's a new file
