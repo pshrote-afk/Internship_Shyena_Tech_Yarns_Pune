@@ -43,7 +43,7 @@ def process_data(LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path, company_details_cs
         }
 
     # Load decision makers JSON file
-    with open(decision_makers_json_path, 'r') as f:
+    with open(decision_makers_json_path, 'r', encoding='utf-8') as f:
         decision_makers_data = json.load(f)
 
     # Create final output list
@@ -54,6 +54,9 @@ def process_data(LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path, company_details_cs
         company_name = job_row['company'].strip()
         location = job_row['location'].strip()
         linkedin_job_link = job_row['url']
+        job_description = job_row['job_description']
+        scraped_at = job_row['scraped_at']
+        posted_on = job_row['posted_on']
 
         # Skip companies not in filtered company details
         if company_name not in company_details_dict:
@@ -84,7 +87,10 @@ def process_data(LINKEDIN_COMPANY_SIZE_FILTER, csv_file_path, company_details_cs
                     'Mobile Number': '',  # Left blank as requested
                     'State': location,
                     'LinkedIn': contact_info.get('linkedin_url', 'unknown'),
-                    'LinkedIn Job link': linkedin_job_link
+                    'LinkedIn Job link': linkedin_job_link,
+                    'LinkedIn Job Description': job_description,
+                    'Scraped at': scraped_at,
+                    'Posted on': posted_on
                 }
                 final_output.append(row)
                 sr_no += 1

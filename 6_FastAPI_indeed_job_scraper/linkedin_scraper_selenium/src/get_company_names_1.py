@@ -12,38 +12,47 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 import re
-import openai
+import requests
 
-# last_scraping_date should not be taken from user input
+
+# last_scraping_date should not be taken from main.py
 last_scraping_date = "2025-06-15 10:20" # later take from metadata table
-
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 def summarize_job_description(description):
     """Send description to LLM for summarization using OpenAI API."""
     try:
         # Set your API key - add this to your .env file
-        openai.api_key = os.getenv("OPENAI_API_KEY")
 
         # Default prompt if none provided
-        prompt = "Using simple words, summarize this job description in one line with a maximum of 30 words, focusing on key responsibilities and requirements:"
+        prompt = "Summarize in exactly 30 words or less:"
 
-
-        response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",  # or "gpt-4" if you prefer
-            messages=[
-                {"role": "system",
-                 "content": "You are a helpful assistant that summarizes job descriptions clearly and concisely."},
-                {"role": "user", "content": f"{prompt}\n\n{description}"}
-            ],
-            max_tokens=75,  # Adjust based on desired summary length
-            temperature=0.3  # Lower for more consistent summaries
+        response = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {groq_api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "llama-3.1-8b-instant",  # or "llama-3.1-70b-versatile"
+                "messages": [
+                    {"role": "system",
+                     "content": "You summarize job descriptions. Output ONLY the summary, no extra text or explanations."},
+                    {"role": "user", "content": f"{prompt}\n\n{description}"}
+                ],
+                "max_tokens": 75,
+                "temperature": 0.3
+            }
         )
 
-        return response.choices[0].message.content.strip()
+        result = response.json()
+        if "choices" in result and len(result["choices"]) > 0:
+            return result["choices"][0]["message"]["content"].strip()
+        else:
+            return f"Error: {result.get('error', 'No response generated')}"
 
     except Exception as e:
-        print(f"⚠️ LLM summarization failed: {e}")
-        return "Summary not available"
+        return f"API Error: {str(e)}"
 
 def is_job_recent(posted_on_str, last_scraping_date_str):
     """Check if job posted_on date is after last_scraping_date."""
