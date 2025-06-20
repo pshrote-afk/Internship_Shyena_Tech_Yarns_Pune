@@ -1,0 +1,4 @@
+nylas
+python-dotenv
+flask
+requests
