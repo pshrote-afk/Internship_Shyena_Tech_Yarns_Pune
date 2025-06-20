@@ -5,8 +5,8 @@ import os
 app = Flask(__name__)
 
 # Replace with your actual values
-CLIENT_ID = 'your_client_id'
-CLIENT_SECRET = 'your_client_secret'
+CLIENT_ID = os.getenv('NYLAS_CLIENT_ID')
+CLIENT_SECRET = os.getenv('NYLAS_CLIENT_SECRET')
 API_BASE = 'https://api.us.nylas.com'
 NYLAS_API_KEY = os.getenv('NYLAS_API_KEY')
 
