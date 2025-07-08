@@ -1,0 +1,22 @@
+Processing company 3/4: Scale AI
+  Searching for CTO at Scale AI
+    Strategy 1 - Query: site:linkedin.com/in/ "CTO" Scale AI
+      Found: Shoukri Kattan - Founder & Head CTO - invalid_linkedin_url (Score: 1.70)
+      Found: Supreeth Girish - LinkedIn Aug 15, 2023 ... CTO @Boostmysites - invalid_linkedin_url (Score: 1.70)
+      Found: Aaron Bawcom - Field CTO - https://www.linkedin.com/in/abawcom (Score: 1.50)
+      Found: Tom Block - Founding Engineer and CTO - https://www.linkedin.com/in/tom-block (Score: 1.50)
+      Found: Jason Wang - Founder & CTO - https://www.linkedin.com/in/jason-zhanshi-wang (Score: 1.20)
+    Total extracted profiles: 5
+    Waiting 1.4 seconds...
+  Searching for CIO at Scale AI
+    Strategy 1 - Query: site:linkedin.com/in/ "CIO" Scale AI
+      Found: Supantha Banerjee - LinkedIn Nov 13, 2023 ... How to Scale AI for Maximum Impact. Heller Report July 17, 2024 ... CIO Review Apr 2016. Metals/Mining and Manufacturing industry in undergoing ... - https://www.linkedin.com/in/supantha (Score: 1.70)
+      Found: Steve Phillpott - Society for Information Management (SIM) San ... Sep 26, 2020 ... 2020 CIO Hall of Fame, 2020 CIO 100 award for AI/Advanced Analytics/ML Project, for… · Experience: Society for ... Extreme Scale HPC: How Western Digital ... - https://www.linkedin.com/in/stevephillpott (Score: 1.20)
+      Found: Khan Tran - Artificial Intelligence Field CIO/CTO - https://www.linkedin.com/in/khan-v-tran (Score: 1.20)
+      Found: Jonathan Woodward - CIO / Director of Operations - https://www.linkedin.com/in/jonathankwoodward (Score: 1.20)
+      Found: Julio Santiago Haag - CIO Data & AI Lead - https://www.linkedin.com/in/julio-santiago-haag-5493b669 (Score: 1.20)
+    Total extracted profiles: 5
+    Waiting 2.0 seconds...
+
+Scraping interrupted by user. Progress saved.
+

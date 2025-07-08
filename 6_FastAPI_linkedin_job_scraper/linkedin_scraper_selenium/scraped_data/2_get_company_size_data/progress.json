@@ -1,0 +1,84 @@
+{
+  "processed": [
+    "Aditi Consulting",
+    "Hooglee",
+    "BioRender",
+    "DoubleVerify",
+    "Software Engineering Institute | Carnegie Mellon University",
+    "Infosys",
+    "Jobs via Dice",
+    "Tech Mahindra Business Process Services",
+    "SIDRAM TECHNOLOGIES",
+    "ATC",
+    "TELUS Digital AI Data Solutions",
+    "World",
+    "Autodesk"
+  ],
+  "company_data": {
+    "Infosys": {
+      "website": "https://www.infosys.com",
+      "industry": "IT Services and IT Consulting",
+      "company_size": "10,001+ employees"
+    },
+    "BioRender": {
+      "website": "http://www.biorender.com",
+      "industry": "Software Development",
+      "company_size": "201-500 employees"
+    },
+    "Jobs via Dice": {
+      "website": "https://www.dice.com",
+      "industry": "Software Development",
+      "company_size": "0-1 employees"
+    },
+    "World": {
+      "website": "http://www.wfscorp.com",
+      "industry": "Oil and Gas",
+      "company_size": "5,001-10,000 employees"
+    },
+    "Aditi Consulting": {
+      "website": "http://www.aditiconsulting.com",
+      "industry": "IT Services and IT Consulting",
+      "company_size": "1,001-5,000 employees"
+    },
+    "Hooglee": {
+      "website": "https://hooglee.com/",
+      "industry": "Software Development",
+      "company_size": "11-50 employees"
+    },
+    "DoubleVerify": {
+      "website": "http://www.doubleverify.com",
+      "industry": "Software Development",
+      "company_size": "501-1,000 employees"
+    },
+    "Software Engineering Institute | Carnegie Mellon University": {
+      "website": "http://www.sei.cmu.edu",
+      "industry": "Software Development",
+      "company_size": "501-1,000 employees"
+    },
+    "SIDRAM TECHNOLOGIES": {
+      "website": "www.sidramtech.com",
+      "industry": "Technology, Information and Internet",
+      "company_size": "51-200 employees"
+    },
+    "ATC": {
+      "website": "http://www.atc.xyz",
+      "industry": "Information Technology & Services",
+      "company_size": "201-500 employees"
+    },
+    "TELUS Digital AI Data Solutions": {
+      "website": "https://www.telusdigital.com/careers",
+      "industry": "IT Services and IT Consulting",
+      "company_size": "10,001+ employees"
+    },
+    "Tech Mahindra Business Process Services": {
+      "website": "http://bps.techmahindra.com/",
+      "industry": "IT Services and IT Consulting",
+      "company_size": "10,001+ employees"
+    },
+    "Autodesk": {
+      "website": "http://www.autodesk.com",
+      "industry": "Software Development",
+      "company_size": "10,001+ employees"
+    }
+  }
+}

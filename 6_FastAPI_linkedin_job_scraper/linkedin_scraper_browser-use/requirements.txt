@@ -1,0 +1,6 @@
+dotenv	
+browser_use
+langchain_openai
+logging
+playwright
+

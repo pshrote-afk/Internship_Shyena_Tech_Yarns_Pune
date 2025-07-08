@@ -1,0 +1,704 @@
+{
+  "Life360_CTO": [],
+  "Life360_CIO": [
+    {
+      "name": "Adam Williams",
+      "job_title": "Founder (YC S23)",
+      "linkedin_url": "https://www.linkedin.com/in/adam-williams-0995a949"
+    }
+  ],
+  "Life360_VP - Engineering": [
+    {
+      "name": "michael shiplett",
+      "job_title": "Code Wrangler & People Person (VP Engineering/Lead Architect)",
+      "linkedin_url": "https://www.linkedin.com/in/walrusmonkey"
+    },
+    {
+      "name": "Orrin Cross",
+      "job_title": "We do cool things with locations, events and sensors",
+      "linkedin_url": "https://www.linkedin.com/in/orrin-cross"
+    }
+  ],
+  "Life360_VP - Delivery": [
+    {
+      "name": "Leslie S.",
+      "job_title": "Vice President-Clark University Women in",
+      "linkedin_url": "https://www.linkedin.com/in/lesliemstarr"
+    },
+    {
+      "name": "Dominic Moore",
+      "job_title": "Senior Director of Channel Marketing and Sales ...",
+      "linkedin_url": "https://uk.linkedin.com/in/dominic-moore-uk"
+    }
+  ],
+  "Life360_Director - Engineering": [],
+  "Life360_Director - Delivery": [],
+  "Life360_Director of Software Engineering": [
+    {
+      "name": "Kaveh H.",
+      "job_title": "“Kaveh was the lead QA engineer for the product line which I was head of for many",
+      "linkedin_url": "https://www.linkedin.com/in/kaveh-h-17b45117b"
+    }
+  ],
+  "Life360_Director of Data": [
+    {
+      "name": "Kalee Fambrough",
+      "job_title": "Maintained communication with the Executive Director in order to accomplish said tasks",
+      "linkedin_url": "https://www.linkedin.com/in/kalee-fambrough"
+    }
+  ],
+  "Life360_Director of AI Delivery": [],
+  "Life360_Head of Solutions Engineering": [
+    {
+      "name": "Gevorg A. Galstyan",
+      "job_title": "Experience · Tech Lead of the Data Enablements Team · Contractor Platform Engineering · Founding Chief Executive Officer · Contractor Technical Director · Founding",
+      "linkedin_url": "https://am.linkedin.com/in/gevorggalstyan"
+    }
+  ],
+  "Life360_Vice President of Professional Services": [
+    {
+      "name": "Robert O.",
+      "job_title": "President & CEO",
+      "linkedin_url": "https://ca.linkedin.com/in/robert-o-40aab150"
+    },
+    {
+      "name": "Arlene Hadden Marcos",
+      "job_title": "VP Membership Elect 2017-18/President Elect 2018-19/President 2019-21/Sustainer (Alumni) Coordinator 2021-23",
+      "linkedin_url": "https://www.linkedin.com/in/arlenehaddenmarcos"
+    }
+  ],
+  "Life360_Director Software Engineering": [],
+  "Life360_Director of AI Solutions": [],
+  "Life360_Head of AI": [
+    {
+      "name": "TJ Koreis",
+      "job_title": "Nov 2024 ; Founder and CEO",
+      "linkedin_url": "https://www.linkedin.com/in/tj-koreis-78b635b9"
+    }
+  ],
+  "Life360_Director of Product Engineering": [],
+  "Goal Solutions_CTO": [
+    {
+      "name": "John Massie",
+      "job_title": "As a direct report to the Chief Technology Officer (CTO), expertly manage",
+      "linkedin_url": "https://www.linkedin.com/in/jcmassie"
+    }
+  ],
+  "Goal Solutions_CIO": [],
+  "Goal Solutions_VP - Engineering": [],
+  "Goal Solutions_VP - Delivery": [
+    {
+      "name": "Mark Mousseau",
+      "job_title": "VP Strategic Partnerships",
+      "linkedin_url": "https://www.linkedin.com/in/markmousseau"
+    }
+  ],
+  "Goal Solutions_Director - Engineering": [],
+  "Goal Solutions_Director - Delivery": [],
+  "Goal Solutions_Director of Software Engineering": [],
+  "Goal Solutions_Director of Data": [
+    {
+      "name": "Alec Tilley",
+      "job_title": "SVP, Operations",
+      "linkedin_url": "https://www.linkedin.com/in/alectilley"
+    }
+  ],
+  "Goal Solutions_Director of AI Delivery": [],
+  "Goal Solutions_Head of Solutions Engineering": [],
+  "Goal Solutions_Vice President of Professional Services": [],
+  "Goal Solutions_Director Software Engineering": [],
+  "Goal Solutions_Director of AI Solutions": [
+    {
+      "name": "Chaili Trentham",
+      "job_title": "Director, Learning & Talent Development · Founder & Leadership Development Consultant · Partner · Director of Organizational Development · Learning Development and",
+      "linkedin_url": "https://www.linkedin.com/in/chailitrentham"
+    }
+  ],
+  "Goal Solutions_Head of AI": [],
+  "Goal Solutions_Director of Product Engineering": [],
+  "Wisk_CTO": [
+    {
+      "name": "Sebastien Vigneron",
+      "job_title": "Sebastien is the Chief Executive Officer of Wisk Aero, an Advanced Air Mobility (AAM)… · Experience: Wisk · Education: Stanford University · Location:",
+      "linkedin_url": "https://www.linkedin.com/in/sebastien-vigneron-07722216"
+    }
+  ],
+  "Wisk_CIO": [
+    {
+      "name": "Colin Haubrich",
+      "job_title": "DIRECTOR/VP OF IT/CIO Technical leader with extensive experience in… · Experience: Wisk · Education: Carleton University · Location: San Jose · 500+",
+      "linkedin_url": "https://www.linkedin.com/in/colin-haubrich"
+    },
+    {
+      "name": "David Garcia",
+      "job_title": "Experience · Sr Software Developer · Co-Founder / CEO · Software Architect & Engineer · Member of Research Staff · Computer Programmer",
+      "linkedin_url": "https://www.linkedin.com/in/david-g"
+    },
+    {
+      "name": "Michael Johnson",
+      "job_title": "Activities and Societies: Chapter President - Phi Mu Alpha Sinfonia, Tau Beta Pi - Engineering Honors Fraternity, Sigma Gamma Tau - Aerospace Honors",
+      "linkedin_url": "https://www.linkedin.com/in/michaelblainejohnson"
+    }
+  ],
+  "Wisk_VP - Engineering": [
+    {
+      "name": "James Sykes, FRAeS",
+      "job_title": "Experienced VP/Engineering Executive with a demonstrated history of working in the aviation industry",
+      "linkedin_url": "https://www.linkedin.com/in/james-sykes-fraes-3a905812"
+    },
+    {
+      "name": "Tomasz Iwaszkiewicz – Director of Software Engineering – Verocel ...",
+      "job_title": "VP Engineering",
+      "linkedin_url": "https://pl.linkedin.com/in/tomasz-iwaszkiewicz-9170334a"
+    },
+    {
+      "name": "Kacy Anderson",
+      "job_title": "Head of Flight Test and Operations",
+      "linkedin_url": "https://www.linkedin.com/in/kacyanderson"
+    },
+    {
+      "name": "Eric Johnson",
+      "job_title": "Senior Vice President Of Engineering, Wisk Aero JV",
+      "linkedin_url": "https://www.linkedin.com/in/ericwjohnson-director-engineering"
+    }
+  ],
+  "Wisk_VP - Delivery": [
+    {
+      "name": "Nicola Barry",
+      "job_title": "Vice President of Quality Assurance",
+      "linkedin_url": "https://www.linkedin.com/in/nicola-barry-505b89148"
+    },
+    {
+      "name": "Greg Bibbes",
+      "job_title": "Vice President, General Counsel and Secretary",
+      "linkedin_url": "https://www.linkedin.com/in/greg-bibbes-2a48243"
+    },
+    {
+      "name": "Cathleen Bonner",
+      "job_title": "Supply Chain & Intellectual Property Coordinator ...",
+      "linkedin_url": "https://www.linkedin.com/in/cathleen-bonner"
+    }
+  ],
+  "Wisk_Director - Engineering": [
+    {
+      "name": "Chris Foster",
+      "job_title": "Head of Propulsion",
+      "linkedin_url": "https://www.linkedin.com/in/chris-foster-85028113"
+    }
+  ],
+  "Wisk_Director - Delivery": [],
+  "Wisk_Director of Software Engineering": [],
+  "Wisk_Director of Data": [
+    {
+      "name": "Chong Zhai",
+      "job_title": "As our COO & Director of Operations, he's one of the powerhouses behind our success",
+      "linkedin_url": "https://ca.linkedin.com/in/chongzhai"
+    }
+  ],
+  "Wisk_Director of AI Delivery": [
+    {
+      "name": "Melissa Souza",
+      "job_title": "Senior Director and Associate General Counsel, Product and IP",
+      "linkedin_url": "https://www.linkedin.com/in/melissassouza"
+    }
+  ],
+  "Wisk_Head of Solutions Engineering": [
+    {
+      "name": "Tyler Sehorne",
+      "job_title": "Head of Enterprise Continuous Improvement, Wisk Aero · Experience: Wisk · Education: College of Engineering at Tennessee Technological University",
+      "linkedin_url": "https://www.linkedin.com/in/sehorne"
+    }
+  ],
+  "Wisk_Vice President of Professional Services": [
+    {
+      "name": "Bill Knees",
+      "job_title": "Vice President for Unilever's $1",
+      "linkedin_url": "https://www.linkedin.com/in/billknees"
+    }
+  ],
+  "Wisk_Director Software Engineering": [
+    {
+      "name": "Naomi Kyle",
+      "job_title": "Responsible for coordinating a cross-functional team including engineering team thru software development",
+      "linkedin_url": "https://www.linkedin.com/in/naomi-kyle"
+    }
+  ],
+  "Wisk_Director of AI Solutions": [
+    {
+      "name": "Juan Jose Cabrera Gamez",
+      "job_title": "Head of Digital Transformation and AI ...",
+      "linkedin_url": "https://ca.linkedin.com/in/jcabreragamez"
+    }
+  ],
+  "Wisk_Head of AI": [
+    {
+      "name": "Maria Feris",
+      "job_title": "General Manager Administration",
+      "linkedin_url": "https://www.linkedin.com/in/maria-feris-151a0822b"
+    }
+  ],
+  "Wisk_Director of Product Engineering": [],
+  "CMES, Inc._CTO": [],
+  "CMES, Inc._CIO": [],
+  "CMES, Inc._VP - Engineering": [
+    {
+      "name": "Shriji Suhagia",
+      "job_title": "Chief Operating Officer",
+      "linkedin_url": "https://www.linkedin.com/in/shriji-suhagia-094097191"
+    },
+    {
+      "name": "Darshan Patel | Smart Road Technology",
+      "job_title": "Drafted change orders and calculated quantities, prepared monthly pay apps and coordinated with area engineer and project engineer to get necessary approvals",
+      "linkedin_url": "https://www.linkedin.com/in/pateld3"
+    }
+  ],
+  "CMES, Inc._VP - Delivery": [],
+  "CMES, Inc._Director - Engineering": [],
+  "CMES, Inc._Director - Delivery": [
+    {
+      "name": "Champ Rittenhouse",
+      "job_title": "Chief Executive Officer",
+      "linkedin_url": "https://www.linkedin.com/in/champ-rittenhouse-425a116"
+    }
+  ],
+  "CMES, Inc._Director of Software Engineering": [],
+  "CMES, Inc._Director of Data": [
+    {
+      "name": "Petra Davis",
+      "job_title": "Estimating Coordinator",
+      "linkedin_url": "https://www.linkedin.com/in/petra-davis-0b61b289"
+    }
+  ],
+  "CMES, Inc._Director of AI Delivery": [],
+  "CMES, Inc._Head of Solutions Engineering": [
+    {
+      "name": "Hiren Lad",
+      "job_title": "• Coordinated subcontractors and optimized scheduling to improve",
+      "linkedin_url": "https://www.linkedin.com/in/hiren-lad"
+    }
+  ],
+  "CMES, Inc._Vice President of Professional Services": [],
+  "CMES, Inc._Director Software Engineering": [],
+  "CMES, Inc._Director of AI Solutions": [],
+  "CMES, Inc._Head of AI": [
+    {
+      "name": "chatur Chhabhaya",
+      "job_title": "CEO",
+      "linkedin_url": "https://www.linkedin.com/in/chatur-chhabhaya-64114015"
+    }
+  ],
+  "CMES, Inc._Director of Product Engineering": [],
+  "Delta Electronics Americas_CTO": [],
+  "Delta Electronics Americas_CIO": [],
+  "Delta Electronics Americas_VP - Engineering": [
+    {
+      "name": "Franziskus Gehle",
+      "job_title": "Vice President Americas Region",
+      "linkedin_url": "https://www.linkedin.com/in/franziskus-gehle-1b5aa4132"
+    }
+  ],
+  "Delta Electronics Americas_VP - Delivery": [],
+  "Delta Electronics Americas_Director - Engineering": [],
+  "Delta Electronics Americas_Director - Delivery": [],
+  "Delta Electronics Americas_Director of Software Engineering": [],
+  "Delta Electronics Americas_Director of Data": [],
+  "Delta Electronics Americas_Director of AI Delivery": [],
+  "Delta Electronics Americas_Head of Solutions Engineering": [
+    {
+      "name": "Joseph Na",
+      "job_title": "Head of Solutions Engineering",
+      "linkedin_url": "https://www.linkedin.com/in/joseph-na-21353079"
+    }
+  ],
+  "Delta Electronics Americas_Vice President of Professional Services": [],
+  "Delta Electronics Americas_Director Software Engineering": [],
+  "Delta Electronics Americas_Director of AI Solutions": [],
+  "Delta Electronics Americas_Head of AI": [],
+  "Delta Electronics Americas_Director of Product Engineering": [],
+  "Orange EV_CTO": [
+    {
+      "name": "Zouhair Lazreq",
+      "job_title": "Invited to a private roundtable discussion with Allan Mullaly (CEO Ford Motor Company) about leadership in the Automotive Industry, industry trends and future",
+      "linkedin_url": "https://www.linkedin.com/in/zouhairlazreq"
+    }
+  ],
+  "Orange EV_CIO": [],
+  "Orange EV_VP - Engineering": [
+    {
+      "name": "Amy Kaufman",
+      "job_title": "Executive Director of Recruiting Operations",
+      "linkedin_url": "https://www.linkedin.com/in/amy-kaufman-engineering"
+    }
+  ],
+  "Orange EV_VP - Delivery": [
+    {
+      "name": "Kyle Prosser",
+      "job_title": "Vice President of Programming at Alpha Epsilon Chi Chapter(2013-2014), Member since 2013",
+      "linkedin_url": "https://www.linkedin.com/in/kyle-prosser-810a87a4"
+    }
+  ],
+  "Orange EV_Director - Engineering": [],
+  "Orange EV_Director - Delivery": [],
+  "Orange EV_Director of Software Engineering": [],
+  "Orange EV_Director of Data": [],
+  "Orange EV_Director of AI Delivery": [],
+  "Orange EV_Head of Solutions Engineering": [],
+  "Orange EV_Vice President of Professional Services": [
+    {
+      "name": "Shannon Shackelford",
+      "job_title": "Vice President of Sales",
+      "linkedin_url": "https://www.linkedin.com/in/shannon-shackelford-7248b950"
+    }
+  ],
+  "Orange EV_Director Software Engineering": [],
+  "Orange EV_Director of AI Solutions": [
+    {
+      "name": "Ron Temple II, CPA, CMA, MBA",
+      "job_title": "Chief Financial Officer",
+      "linkedin_url": "https://www.linkedin.com/in/ron-temple-ii-cpa-cma-mba-6369587b"
+    }
+  ],
+  "Orange EV_Head of AI": [],
+  "Orange EV_Director of Product Engineering": [],
+  "Aurubis Richmond_CTO": [],
+  "Aurubis Richmond_CIO": [],
+  "Aurubis Richmond_VP - Engineering": [
+    {
+      "name": "Stacey Lewis",
+      "job_title": "Responsible for identifying and coordinating all interface points between Product Supply (Engineering, Manufacturing, and Logistics), Marketing, Consumer Market",
+      "linkedin_url": "https://www.linkedin.com/in/staceyhlewis"
+    }
+  ],
+  "Aurubis Richmond_VP - Delivery": [],
+  "Aurubis Richmond_Director - Engineering": [],
+  "Aurubis Richmond_Director - Delivery": [],
+  "Aurubis Richmond_Director of Software Engineering": [],
+  "Aurubis Richmond_Director of Data": [],
+  "Aurubis Richmond_Director of AI Delivery": [],
+  "Aurubis Richmond_Head of Solutions Engineering": [],
+  "Aurubis Richmond_Vice President of Professional Services": [
+    {
+      "name": "Sherrie Martin Bishop",
+      "job_title": "- Support President and Vice President as needed for legal, administrative, and",
+      "linkedin_url": "https://www.linkedin.com/in/sherriebishop"
+    }
+  ],
+  "Aurubis Richmond_Director Software Engineering": [],
+  "Aurubis Richmond_Director of AI Solutions": [],
+  "Aurubis Richmond_Head of AI": [],
+  "Aurubis Richmond_Director of Product Engineering": [],
+  "BE Power Equipment_CTO": [],
+  "BE Power Equipment_CIO": [],
+  "BE Power Equipment_VP - Engineering": [
+    {
+      "name": "David Megathlin",
+      "job_title": "Vice President",
+      "linkedin_url": "https://www.linkedin.com/in/david-megathlin-b97b8230"
+    }
+  ],
+  "BE Power Equipment_VP - Delivery": [],
+  "BE Power Equipment_Director - Engineering": [],
+  "BE Power Equipment_Director - Delivery": [],
+  "BE Power Equipment_Director of Software Engineering": [],
+  "BE Power Equipment_Director of Data": [
+    {
+      "name": "Marcello Fortuna",
+      "job_title": "Data Warehousing Warehouse safety Coordinating with supervisors Supervisory expertise Warehouse training Warehouse equipment operation Warehouse and",
+      "linkedin_url": "https://ca.linkedin.com/in/marcello-fortuna-46469584"
+    }
+  ],
+  "BE Power Equipment_Director of AI Delivery": [],
+  "BE Power Equipment_Head of Solutions Engineering": [],
+  "BE Power Equipment_Vice President of Professional Services": [],
+  "BE Power Equipment_Director Software Engineering": [],
+  "BE Power Equipment_Director of AI Solutions": [],
+  "BE Power Equipment_Head of AI": [
+    {
+      "name": "Cameron Martyn",
+      "job_title": "Chief Operating Officer",
+      "linkedin_url": "https://ca.linkedin.com/in/cameron-martyn-b8b541110"
+    },
+    {
+      "name": "Scott Karsen, CPA, CA",
+      "job_title": "Chief Financial Officer",
+      "linkedin_url": "https://ca.linkedin.com/in/scott-karsen-cpa-ca-3a516917"
+    }
+  ],
+  "BE Power Equipment_Director of Product Engineering": [],
+  "Synapse ITS_CTO": [],
+  "Synapse ITS_CIO": [],
+  "Synapse ITS_VP - Engineering": [],
+  "Synapse ITS_VP - Delivery": [],
+  "Synapse ITS_Director - Engineering": [],
+  "Synapse ITS_Director - Delivery": [],
+  "Synapse ITS_Director of Software Engineering": [],
+  "Synapse ITS_Director of Data": [],
+  "Synapse ITS_Director of AI Delivery": [],
+  "Synapse ITS_Head of Solutions Engineering": [],
+  "Synapse ITS_Vice President of Professional Services": [
+    {
+      "name": "Aaryan Dharmadhikari",
+      "job_title": "Activities and Societies: ○ Envision - Vice President ○ Maharashtra Mandal UTD Chapter - President ○ AIMD - Member",
+      "linkedin_url": "https://www.linkedin.com/in/dharma-aaryan"
+    }
+  ],
+  "Synapse ITS_Director Software Engineering": [],
+  "Synapse ITS_Director of AI Solutions": [],
+  "Synapse ITS_Head of AI": [],
+  "Synapse ITS_Director of Product Engineering": [],
+  "East Kentucky Power Cooperative_CTO": [
+    {
+      "name": "Keenan Shue",
+      "job_title": "East Kentucky Power Cooperatives",
+      "linkedin_url": "https://www.linkedin.com/in/keenan-shue-241a091"
+    }
+  ],
+  "East Kentucky Power Cooperative_CIO": [
+    {
+      "name": "Don Mosier, P.E.",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/donmosier"
+    },
+    {
+      "name": "Jeannie Jones",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/jeannie-jones-696a82a"
+    },
+    {
+      "name": "Derek Wingfield",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/derek-wingfield"
+    },
+    {
+      "name": "Anoop Joseph",
+      "job_title": "East Kentucky Power Cooperative Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/-anoopjoseph"
+    },
+    {
+      "name": "Seth Bishop",
+      "job_title": "East Kentucky Power Cooperative Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/seth-bishop-48000ba"
+    }
+  ],
+  "East Kentucky Power Cooperative_VP - Engineering": [
+    {
+      "name": "Brad Young",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/brad-young-a5b19768"
+    },
+    {
+      "name": "Jim McGuire",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/jim-mcguire-3b949b82"
+    },
+    {
+      "name": "Denver York",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/denver-york-98966425"
+    },
+    {
+      "name": "Scott Drake, P.E.",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/gscottdrake"
+    },
+    {
+      "name": "Denise Foster Cronin",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/denise-foster-cronin-5194319"
+    }
+  ],
+  "East Kentucky Power Cooperative_VP - Delivery": [
+    {
+      "name": "Steve Anderson",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/steve-anderson-696b7b13"
+    },
+    {
+      "name": "Barry Lindeman, SPHR, SHRM-SCP",
+      "job_title": "Vice President, Human ...",
+      "linkedin_url": "https://www.linkedin.com/in/barry-lindeman-sphr-shrm-scp-085b758"
+    },
+    {
+      "name": "Darrin Adams",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/darrin-adams-197a349"
+    },
+    {
+      "name": "Chris Adams",
+      "job_title": "· 15-year plus career in the Cooperative G&T business at East Kentucky Power Cooperative: (Current",
+      "linkedin_url": "https://www.linkedin.com/in/chris-e-adams"
+    },
+    {
+      "name": "Joseph VonDerHaar",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/joseph-vonderhaar-56118543"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director - Engineering": [
+    {
+      "name": "Amanda Stacy, PE PMP",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/amanda-stacy-pe-pmp-67ba289"
+    },
+    {
+      "name": "Kirk Morrow",
+      "job_title": "East Kentucky Power Cooperative 150MW expansion to J",
+      "linkedin_url": "https://www.linkedin.com/in/kirk-morrow-86736a30"
+    },
+    {
+      "name": "Doug Meadows",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/doug-meadows-a37a349"
+    },
+    {
+      "name": "Patrick Bischoff",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/patrick-bischoff-1a35bb13"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director - Delivery": [
+    {
+      "name": "Jonathan Porter",
+      "job_title": "Manager Power Delivery Maintenance at East Kentucky Power Cooperative · •Provides employees with coaching, feedback, and developmental opportunities and",
+      "linkedin_url": "https://www.linkedin.com/in/jonathan-porter-42b76345"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director of Software Engineering": [
+    {
+      "name": "Greg McKinney",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/greg-mckinney-124b21a6"
+    },
+    {
+      "name": "Rick Otte",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/rick-otte-920a339"
+    },
+    {
+      "name": "Fernie Williams",
+      "job_title": "Manager, Power Supply Analytics at East Kentucky Power Cooperative · Experienced Senior Analyst with a demonstrated history of working in the utilities",
+      "linkedin_url": "https://www.linkedin.com/in/fernie-williams-889a5017"
+    },
+    {
+      "name": "James Carver",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/james-carver-386756124"
+    },
+    {
+      "name": "Scott Selby",
+      "job_title": "East Kentucky Power Cooperative Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/scott-selby-697b0899"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director of Data": [
+    {
+      "name": "Jamie Bryan Hall",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/jamiebryanhall"
+    },
+    {
+      "name": "Gregory Justice",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/gregory-justice-2a3267123"
+    },
+    {
+      "name": "Joe Settles",
+      "job_title": "Manager, Member Services at East Kentucky Power Cooperative · Provides effective management and maintains overall authority and accountability for the",
+      "linkedin_url": "https://www.linkedin.com/in/joe-settles-29aa359"
+    },
+    {
+      "name": "Cliff Scott, CMA, CPA",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/cliffscott"
+    },
+    {
+      "name": "Lanny Brannock, MPA",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/lanny-brannock-mpa-58ab948"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director of AI Delivery": [
+    {
+      "name": "Sha Phillips",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/sha-phillips-30817a63"
+    }
+  ],
+  "East Kentucky Power Cooperative_Head of Solutions Engineering": [
+    {
+      "name": "Matthew Trimble",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/mstrimble"
+    },
+    {
+      "name": "Thomas Spence",
+      "job_title": "Southwest Transmission COOP",
+      "linkedin_url": "https://www.linkedin.com/in/thomas-spence-03533210"
+    },
+    {
+      "name": "Craig Johnson",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/craig-johnson-20a66825"
+    },
+    {
+      "name": "Patrick Wells",
+      "job_title": "President",
+      "linkedin_url": "https://www.linkedin.com/in/patrick-wells-45871a35"
+    },
+    {
+      "name": "Gregory Cecil",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/gregorycecil1968"
+    }
+  ],
+  "East Kentucky Power Cooperative_Vice President of Professional Services": [
+    {
+      "name": "Brian Tucker",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/brian-tucker-37955839"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director Software Engineering": [
+    {
+      "name": "Mark Horn",
+      "job_title": "Director, Fuel & Emissions at East Kentucky Power Cooperative · Experience: East Kentucky Power Cooperative · Education: Eastern Kentucky University",
+      "linkedin_url": "https://www.linkedin.com/in/mark-horn-a7481183"
+    },
+    {
+      "name": "David A. Berry",
+      "job_title": "East Kentucky Power Cooperative | LinkedIn",
+      "linkedin_url": "https://www.linkedin.com/in/david-a-berry-34044878"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director of AI Solutions": [
+    {
+      "name": "Phillip Dyer, PMI-SP",
+      "job_title": "East Kentucky Power Cooperative",
+      "linkedin_url": "https://www.linkedin.com/in/phillip-dyer-pmi-sp-b66368a"
+    }
+  ],
+  "East Kentucky Power Cooperative_Head of AI": [
+    {
+      "name": "Anthony Campbell",
+      "job_title": "CEO",
+      "linkedin_url": "https://www.linkedin.com/in/anthony-campbell-49668227"
+    }
+  ],
+  "East Kentucky Power Cooperative_Director of Product Engineering": [
+    {
+      "name": "Brian Fatch",
+      "job_title": "East Kentucky Power Cooperative ...",
+      "linkedin_url": "https://www.linkedin.com/in/brianfatch"
+    },
+    {
+      "name": "Akil Matcheswala",
+      "job_title": "East Kentucky Power Cooperative Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/akilm"
+    },
+    {
+      "name": "James Sparks",
+      "job_title": "East Kentucky Power Cooperative Graphic",
+      "linkedin_url": "https://www.linkedin.com/in/james-devin-sparks"
+    }
+  ]
+}
