@@ -1,4 +1,4 @@
-# LinkedIn Job Scraper Documentation
+# Folder 6: LinkedIn Job Scraper Documentation
 
 ## Purpose
 
